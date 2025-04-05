@@ -82,4 +82,29 @@ newsletterForm.addEventListener('submit', (e) => {
     const email = newsletterForm.querySelector('input[type="email"]').value;
     alert(`Thank you for subscribing with ${email}!`);
     newsletterForm.reset();
+});
+
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+        menuToggle.textContent = '☰';
+    }
+});
+
+// Close menu when clicking a link
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.textContent = '☰';
+    });
 }); 
