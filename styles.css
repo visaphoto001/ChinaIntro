@@ -505,39 +505,155 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        text-align: center;
+@media screen and (max-width: 768px) {
+    /* Header and Navigation */
+    header {
+        padding: 10px 0;
     }
-    
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .nav-links {
-        margin-top: 1rem;
         flex-direction: column;
-        gap: 1rem;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
-    
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-content p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
-    
-    .section h2, .intro-section h2 {
-        font-size: 2rem;
+
+    /* Intro Section */
+    .intro-section {
+        padding: 40px 0;
     }
-    
-    .content-grid, .intro-grid {
+
+    .intro-cards {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
     }
-    
+
+    .card {
+        margin: 0;
+    }
+
+    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
     }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input[type="email"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+        bottom: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet Devices */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .intro-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve touch targets for mobile */
+button, 
+a {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+}
+
+/* Add better spacing for mobile navigation */
+.nav-links a {
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Improve form elements for touch devices */
+input, 
+textarea, 
+select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px;
 }
 
 /* Print Styles */
