@@ -54,4 +54,32 @@ document.querySelectorAll('.card').forEach(card => {
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(card);
+});
+
+// Back to Top Button
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Newsletter Form
+const newsletterForm = document.getElementById('newsletter-form');
+
+newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = newsletterForm.querySelector('input[type="email"]').value;
+    alert(`Thank you for subscribing with ${email}!`);
+    newsletterForm.reset();
 }); 

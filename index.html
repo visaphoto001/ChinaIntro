@@ -27,10 +27,11 @@
             <h1>Welcome to China</h1>
             <p>A Journey Through 5,000 Years of Civilization</p>
             <p class="subtitle">A comprehensive guide for international visitors to explore Chinese culture, history, and traditions</p>
+            <a href="#explore" class="cta-button">Start Exploring</a>
         </div>
     </section>
 
-    <section class="intro-section">
+    <section class="intro-section" id="explore">
         <div class="container">
             <h2>Explore Chinese Culture and Heritage</h2>
             <p>Welcome to ChinaIntro, your gateway to understanding one of the world's oldest and most fascinating civilizations. This website is designed to help you explore different aspects of Chinese culture, from ancient traditions to modern life. Each section offers unique insights into what makes China special.</p>
@@ -82,15 +83,24 @@
     </section>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 ChinaIntro. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Stay updated with the latest insights about Chinese culture and travel tips.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2023 ChinaIntro. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
 
     <script src="script.js"></script>
 </body>

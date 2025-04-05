@@ -87,8 +87,11 @@ header {
 }
 
 .hero-content {
+    text-align: center;
+    color: white;
     max-width: 800px;
-    padding: 2rem;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-content h1 {
@@ -110,20 +113,18 @@ header {
 
 .cta-button {
     display: inline-block;
-    padding: 1rem 2rem;
     background-color: var(--primary-color);
     color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    background-color: #a01830;
+    background-color: #d32f2f;
 }
 
 /* Intro Section (Main Page) */
@@ -457,6 +458,39 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #d32f2f;
 }
 
 .social-links a {
@@ -557,4 +591,24 @@ footer {
 
 .festival-links a:hover {
     background-color: #a01830;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #d32f2f;
 } 
