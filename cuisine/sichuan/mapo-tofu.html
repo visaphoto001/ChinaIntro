@@ -10,18 +10,6 @@
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://source.unsplash.com/1600x900/?mapo,tofu,chinese,food') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
         .dish-content {
             max-width: 800px;
             margin: 2rem auto;
@@ -35,6 +23,30 @@
         .dish-section h2 {
             color: var(--primary-color);
             margin-bottom: 1rem;
+        }
+
+        .dish-title {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .dish-title h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .dish-title .chinese-text {
+            font-size: 1.5rem;
+            color: #666;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .dish-description {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2rem;
         }
 
         .ingredients-list, .steps-list {
@@ -66,83 +78,31 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Image Styles */
-        .responsive-image-container {
-            margin: 2rem 0;
+        .responsive-image {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .responsive-image {
+        .responsive-image img {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.3s ease;
         }
 
-        .responsive-image:hover {
+        .responsive-image:hover img {
             transform: scale(1.02);
         }
 
         .image-caption {
             text-align: center;
-            padding: 0.75rem;
-            background-color: #f8f9fa;
+            color: #666;
+            margin-top: 1rem;
             font-style: italic;
-            color: #666;
-            border-top: 1px solid #eee;
-        }
-
-        /* Resolution-specific styles */
-        .resolution-info {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem;
-            background-color: #f8f9fa;
-            border-top: 1px solid #eee;
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .resolution-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .resolution-item:hover {
-            background-color: #e9ecef;
-        }
-
-        .resolution-label {
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-        }
-
-        .resolution-size {
-            font-size: 0.8rem;
-            color: #888;
-        }
-
-        @media (max-width: 768px) {
-            .resolution-info {
-                flex-wrap: wrap;
-            }
-            
-            .resolution-item {
-                width: 50%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .resolution-item {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -172,32 +132,23 @@
         <span>Mapo Tofu</span>
     </div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Mapo Tofu <span class="chinese-text">麻婆豆腐</span></h1>
-            <p>A classic Sichuan dish that combines silky tofu with spicy minced meat in a numbing sauce</p>
-        </div>
-    </section>
-
     <main class="dish-content">
+        <div class="dish-title">
+            <h1>Mapo Tofu</h1>
+            <span class="chinese-text">麻婆豆腐</span>
+            <p class="dish-description">A spicy and numbing Sichuan dish featuring silky tofu and minced meat in a complex sauce</p>
+        </div>
+
         <section class="dish-section">
             <h2>About the Dish</h2>
-            <p>Mapo Tofu is one of the most famous dishes in Sichuan cuisine. The name literally means "Pockmarked Grandma's Tofu," named after its creator. This dish perfectly represents the málà (numbing and spicy) flavor profile that Sichuan cuisine is famous for.</p>
-        </section>
-
-        <!-- Responsive Image Section -->
-        <section class="dish-section">
-            <h2>Mapo Tofu</h2>
-            <div class="responsive-image-container">
+            <p>Mapo Tofu is a famous Sichuan dish that combines the numbing sensation of Sichuan peppercorns with the heat of chili peppers. The dish's name literally means "pockmarked grandmother's tofu," referring to the story of its creation by a woman with smallpox scars who ran a restaurant in Chengdu.</p>
+            
+            <div class="responsive-image">
                 <picture>
-                    <!-- High resolution for large screens -->
-                    <source media="(min-width: 1024px)" srcset="../../images/mapo-tofu/mapo-1920.webp">
-                    <!-- Medium resolution for tablets and smaller desktops -->
+                    <source media="(min-width: 1200px)" srcset="../../images/mapo-tofu/mapo-1920.webp">
                     <source media="(min-width: 768px)" srcset="../../images/mapo-tofu/mapo-1024.webp">
-                    <!-- Low resolution for mobile devices -->
                     <source media="(min-width: 480px)" srcset="../../images/mapo-tofu/mapo-768.webp">
-                    <!-- Fallback for very small screens -->
-                    <img src="../../images/mapo-tofu/mapo-480.webp" alt="Mapo Tofu - Traditional Sichuan Dish" class="responsive-image">
+                    <img src="../../images/mapo-tofu/mapo-480.webp" alt="Mapo Tofu">
                 </picture>
                 <div class="image-caption">
                     Traditional Mapo Tofu with silky tofu and minced pork in a spicy, numbing sauce
