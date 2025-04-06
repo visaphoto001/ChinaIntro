@@ -33,12 +33,84 @@
         <span>Geography</span>
     </div>
 
-    <section class="hero">
+    <section class="hero geography-hero">
         <div class="hero-content">
-            <h1>Chinese Geography</h1>
-            <p>From Mountains to Deserts: China's Diverse Landscapes</p>
+            <h1>Geography of China</h1>
+            <p>Discover the diverse landscapes of the world's third-largest country</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">9.6M</span>
+                    <span class="stat-label">Square Kilometers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Countries Bordered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">22,117km</span>
+                    <span class="stat-label">Coastline Length</span>
+                </div>
+            </div>
         </div>
     </section>
+
+    <style>
+        .geography-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?china,mountains,landscape') center/cover;
+            height: 70vh;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 1rem;
+            }
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            .stat-label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 
     <main class="festival-content">
         <div class="content-grid">

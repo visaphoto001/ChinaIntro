@@ -33,12 +33,84 @@
         <span>Language</span>
     </div>
 
-    <section class="hero">
+    <section class="hero language-hero">
         <div class="hero-content">
             <h1>Chinese Language</h1>
-            <p>Unlocking the Mysteries of Chinese Characters and Dialects</p>
+            <p>Explore the world's most spoken language and its rich writing system</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">1.3B+</span>
+                    <span class="stat-label">Native Speakers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Characters</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3,000+</span>
+                    <span class="stat-label">Years of History</span>
+                </div>
+            </div>
         </div>
     </section>
+
+    <style>
+        .language-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,calligraphy') center/cover;
+            height: 70vh;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 1rem;
+            }
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            .stat-label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 
     <main class="festival-content">
         <div class="content-grid">
