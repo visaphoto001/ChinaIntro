@@ -41,13 +41,54 @@ A modern, responsive website showcasing various aspects of Chinese culture, hist
 
 ## Local Development
 
-To run this website locally:
-1. Simply open the `index.html` file in your web browser
-2. Or use a local development server:
+To run this website locally, you have two options:
+
+### Option 1: Using Python's Built-in Server (Recommended)
+1. Make sure you have Python 3 installed on your system
+2. Navigate to the project directory:
    ```bash
-   python -m http.server 8000
+   cd ChinaIntro
    ```
-   Then visit `http://localhost:8000` in your browser
+3. Run the local server:
+   ```bash
+   python3 -m http.server 8000
+   ```
+4. Open your web browser and visit `http://localhost:8000`
+5. To stop the server, press `Ctrl+C` in the terminal
+
+### Option 2: Direct File Opening
+1. Simply open the `index.html` file in your web browser
+   - Note: Some features might not work correctly due to browser security restrictions when opening files directly
+
+The Python server method is recommended as it:
+- Properly serves all static files (HTML, CSS, JavaScript)
+- Handles MIME types correctly
+- Avoids potential CORS issues
+- Better simulates a real web hosting environment
+
+## Analytics Setup
+
+To track website visitors using Google Analytics:
+
+1. Create a Google Analytics account:
+   - Go to [Google Analytics](https://analytics.google.com/)
+   - Sign in with your Google account
+   - Click "Start measuring"
+   - Follow the setup wizard to create a new property
+
+2. Get your Measurement ID:
+   - In Google Analytics, go to Admin → Data Streams → Web
+   - Create a new stream or select an existing one
+   - Copy your Measurement ID (starts with "G-")
+
+3. Update the tracking code:
+   - Replace `G-XXXXXXXXXX` in `index.html` with your actual Measurement ID
+   - The tracking code is already added in the `<head>` section of the HTML file
+
+4. Verify tracking:
+   - Deploy your website
+   - Visit your website
+   - Check Google Analytics Real-Time reports to confirm tracking is working
 
 ## Contributing
 
