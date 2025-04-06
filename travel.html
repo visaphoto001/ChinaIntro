@@ -6,11 +6,258 @@
     <title>China Travel Guide - China Guide</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .travel-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?china,travel,greatwall') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .travel-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .travel-section {
+            margin-bottom: 3rem;
+        }
+
+        .travel-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .travel-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .travel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .travel-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .travel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .travel-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .travel-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .travel-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .travel-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .travel-hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .travel-hero {
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        .dark-mode .travel-card {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .travel-card-content {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .travel-card p,
+        .dark-mode .feature-list li {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .feature-list li {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Return to homepage">
                 <span class="logo-text">China Guide</span>
                 <span class="logo-tagline">Discover the Middle Kingdom</span>
             </a>
@@ -54,110 +301,206 @@
         </div>
     </section>
 
-    <style>
-        .travel-hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://source.unsplash.com/1600x900/?china,travel,greatwall') center/cover;
-            height: 70vh;
-        }
+    <main class="travel-content">
+        <section class="travel-section">
+            <h2>Planning Your Trip</h2>
+            <div class="travel-grid">
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Essential Documents</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <p>Most visitors need a visa to enter China. Start your application process early and ensure all documents are in order.</p>
+                        <ul class="feature-list">
+                            <li>Visa Requirements</li>
+                            <li>Passport Validity</li>
+                            <li>Travel Insurance</li>
+                            <li>Health Certificates</li>
+                        </ul>
+                    </div>
+                </div>
 
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-            padding: 0 1rem;
-        }
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Best Times to Visit</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <p>Spring (March-May) and autumn (September-November) offer the most pleasant weather for exploring China.</p>
+                        <ul class="feature-list">
+                            <li>Spring Festival - January/February</li>
+                            <li>Cherry Blossoms - March/April</li>
+                            <li>Autumn Colors - October</li>
+                            <li>Winter Sports - December/January</li>
+                        </ul>
+                    </div>
+                </div>
 
-        .stat-item {
-            text-align: center;
-            min-width: 120px;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .stat-label {
-            display: block;
-            font-size: 0.9rem;
-            opacity: 0.9;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-        }
-
-        @media (max-width: 768px) {
-            .hero-stats {
-                gap: 1rem;
-            }
-            .stat-item {
-                min-width: 100px;
-                padding: 0.75rem;
-            }
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            .stat-label {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
-
-    <main class="festival-content">
-        <div class="content-grid">
-            <div class="card">
-                <h3>Essential Information</h3>
-                <p>Traveling to China requires some preparation to ensure a smooth experience. Most visitors need a visa, which should be obtained before arrival. The best times to visit are spring (March-May) and autumn (September-November), when weather is mild. Major cities have extensive public transportation systems, including high-speed trains connecting urban centers. While English is spoken in tourist areas, learning basic Chinese phrases can enhance your experience. Internet access requires a VPN in most cases, and payment is increasingly digital through platforms like WeChat Pay and Alipay.</p>
-                <ul class="feature-list">
-                    <li>Visa Requirements - Application process and documents</li>
-                    <li>Best Times to Visit - Seasonal considerations</li>
-                    <li>Transportation - Public transit and intercity travel</li>
-                    <li>Language Tips - Basic phrases and communication</li>
-                </ul>
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Digital Essentials</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <p>Prepare your digital tools before arrival to ensure smooth communication and navigation in China.</p>
+                        <ul class="feature-list">
+                            <li>VPN Services</li>
+                            <li>WeChat Installation</li>
+                            <li>Digital Payments Setup</li>
+                            <li>Translation Apps</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h3>Must-Visit Destinations</h3>
-                <p>China offers countless destinations that showcase its rich history and diverse landscapes. The Great Wall, particularly the sections near Beijing, is a must-see for any visitor. The Terracotta Army in Xi'an, discovered in 1974, is one of the most significant archaeological finds of the 20th century. The karst landscapes of Guilin and Yangshuo feature dramatic limestone peaks and scenic river cruises. Shanghai's Bund and Pudong districts contrast historic architecture with futuristic skyscrapers. For nature lovers, the Yellow Mountains (Huangshan) offer stunning vistas of granite peaks and ancient pine trees.</p>
-                <ul class="feature-list">
-                    <li>Great Wall - Sections near Beijing</li>
-                    <li>Terracotta Army - Xi'an's archaeological wonder</li>
-                    <li>Guilin - Karst landscapes and river cruises</li>
-                    <li>Shanghai - Historic Bund and modern Pudong</li>
-                </ul>
+        </section>
+
+        <section class="travel-section">
+            <h2>Must-Visit Destinations</h2>
+            <div class="travel-grid">
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Historic Sites</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <p>China's ancient wonders showcase its rich history and architectural achievements spanning millennia.</p>
+                        <ul class="feature-list">
+                            <li>Great Wall - Multiple Sections</li>
+                            <li>Terracotta Army - Xi'an</li>
+                            <li>Forbidden City - Beijing</li>
+                            <li>Temple of Heaven</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Natural Wonders</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <p>From karst mountains to bamboo forests, China's landscapes offer breathtaking natural beauty.</p>
+                        <ul class="feature-list">
+                            <li>Guilin Karst Mountains</li>
+                            <li>Zhangjiajie Forest Park</li>
+                            <li>Yellow Mountains</li>
+                            <li>Jiuzhaigou Valley</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Modern Cities</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <p>Experience China's rapid development through its modern metropolises and urban innovations.</p>
+                        <ul class="feature-list">
+                            <li>Shanghai - The Bund</li>
+                            <li>Hong Kong - Victoria Peak</li>
+                            <li>Shenzhen - Tech Hub</li>
+                            <li>Chengdu - Modern Culture</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h3>Cultural Etiquette</h3>
-                <p>Understanding Chinese cultural etiquette can help visitors navigate social situations respectfully. Greetings often involve a slight nod or handshake rather than hugs or kisses. When dining, it's polite to try all dishes offered and to leave some food on your plate to show you've had enough. Gift-giving is common, but avoid giving clocks (associated with death) or white flowers (used at funerals). Respect for elders is important, and using appropriate titles shows politeness. When visiting temples or homes, removing shoes is often expected. Understanding these customs can help create positive interactions with locals.</p>
-                <ul class="feature-list">
-                    <li>Greetings - Appropriate ways to say hello</li>
-                    <li>Dining Etiquette - Table manners and customs</li>
-                    <li>Gift Giving - Appropriate and inappropriate gifts</li>
-                    <li>Respect for Elders - Cultural values and practices</li>
-                </ul>
+        </section>
+
+        <section class="travel-section">
+            <h2>Cultural Tips</h2>
+            <div class="travel-grid">
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Etiquette</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <p>Understanding Chinese customs and etiquette will help you navigate social situations respectfully.</p>
+                        <ul class="feature-list">
+                            <li>Greeting Customs</li>
+                            <li>Dining Etiquette</li>
+                            <li>Gift-Giving Rules</li>
+                            <li>Temple Behavior</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Language Basics</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <p>Learning a few basic Chinese phrases can enhance your travel experience and show respect for local culture.</p>
+                        <ul class="feature-list">
+                            <li>Essential Greetings</li>
+                            <li>Numbers and Counting</li>
+                            <li>Directions and Transport</li>
+                            <li>Restaurant Phrases</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="travel-card">
+                    <div class="travel-card-header">
+                        <h3>Local Customs</h3>
+                    </div>
+                    <div class="travel-card-content">
+                        <div class="travel-card-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <p>Familiarize yourself with local customs to better understand and respect Chinese culture.</p>
+                        <ul class="feature-list">
+                            <li>Respect for Elders</li>
+                            <li>Business Card Exchange</li>
+                            <li>Lucky Numbers</li>
+                            <li>Festival Traditions</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 ChinaIntro. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
 </body>
 </html> 
