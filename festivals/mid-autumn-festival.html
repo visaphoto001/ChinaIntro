@@ -187,33 +187,56 @@
         }
         
         .festival-card {
-            background: white;
-            border-radius: 10px;
+            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .festival-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .festival-card-header {
-            background-color: var(--primary-color);
+            background: #dc3545;
             color: white;
-            padding: 1rem;
-            text-align: center;
+            padding: 1.25rem;
+            text-align: left;
+        }
+        
+        .festival-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
         }
         
         .festival-card-content {
             padding: 1.5rem;
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
         
         .festival-card-icon {
             font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            color: #dc3545;
             text-align: center;
+            margin: 0.5rem 0;
+        }
+        
+        .festival-card p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1rem;
         }
         
         .festival-highlights {
@@ -569,7 +592,9 @@
         </section>
 
         <section class="festival-section">
-            <h3>Traditional Foods</h3>
+            <h2>Traditional Foods</h2>
+            <p>The Mid-Autumn Festival features several traditional foods that carry deep cultural significance. Each dish has its own symbolic meaning and is an essential part of the festival celebrations.</p>
+            
             <div class="festival-grid">
                 <div class="festival-card">
                     <div class="festival-card-header">
@@ -597,54 +622,13 @@
 
                 <div class="festival-card">
                     <div class="festival-card-header">
-                        <h3>Tea (茶)</h3>
+                        <h3>Osmanthus Wine (桂花酒)</h3>
                     </div>
                     <div class="festival-card-content">
                         <div class="festival-card-icon">
-                            <i class="fas fa-mug-hot"></i>
+                            <i class="fas fa-wine-glass"></i>
                         </div>
-                        <p>Chinese tea is an essential part of the celebration, often served with mooncakes while admiring the full moon with family.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="festival-section">
-            <h2>Traditional Foods</h2>
-            <p>The most iconic food of the Mid-Autumn Festival is the mooncake (月饼), a rich pastry traditionally filled with lotus seed paste, red bean paste, or salted egg yolks. Other traditional foods include pomelos (a type of citrus fruit), taro, and various seasonal fruits. These foods are enjoyed while admiring the moon and celebrating with family.</p>
-            
-            <div class="festival-gallery">
-                <div class="gallery-item gallery-1"></div>
-                <div class="gallery-item gallery-2"></div>
-                <div class="gallery-item gallery-3"></div>
-                <div class="gallery-item gallery-4"></div>
-            </div>
-            
-            <div class="festival-grid">
-                <div class="festival-card">
-                    <div class="festival-card-header">
-                        <h3>Mooncakes (月饼)</h3>
-                    </div>
-                    <div class="festival-card-content">
-                        <p>Traditional pastries with various fillings like lotus seed paste, red bean paste, or salted egg yolks, often with intricate designs on top.</p>
-                    </div>
-                </div>
-                
-                <div class="festival-card">
-                    <div class="festival-card-header">
-                        <h3>Pomelos</h3>
-                    </div>
-                    <div class="festival-card-content">
-                        <p>A large citrus fruit that is round like the moon and has a sweet, refreshing taste. Its name in Chinese (柚子) sounds like "blessing."</p>
-                    </div>
-                </div>
-                
-                <div class="festival-card">
-                    <div class="festival-card-header">
-                        <h3>Seasonal Fruits</h3>
-                    </div>
-                    <div class="festival-card-content">
-                        <p>Fresh seasonal fruits like pears, apples, and grapes are enjoyed during the festival for their sweetness and symbolism of abundance.</p>
+                        <p>A sweet wine made from fragrant osmanthus flowers, traditionally enjoyed while admiring the full moon with family.</p>
                     </div>
                 </div>
             </div>
