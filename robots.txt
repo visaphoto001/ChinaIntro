@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://visaphoto001.github.io/ChinaIntro/sitemap.xml 
