@@ -23,8 +23,8 @@
     <style>
         .hero {
             height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://source.unsplash.com/1600x900/?china,temple,palace') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+                        url('https://source.unsplash.com/1600x900/?china,greatwall,temple') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -34,7 +34,7 @@
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             padding: 2rem;
             width: 100%;
             position: relative;
@@ -42,7 +42,7 @@
         }
 
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             line-height: 1.2;
@@ -63,13 +63,14 @@
         }
 
         .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             line-height: 1.4;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            color: rgba(255, 255, 255, 0.95);
         }
 
         .hero-content .subtitle {
@@ -81,21 +82,21 @@
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 2.5rem;
+            margin: 2.5rem 0;
             flex-wrap: wrap;
             padding: 0 1rem;
         }
 
         .stat-item {
             text-align: center;
-            min-width: 150px;
+            min-width: 180px;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.15);
             border-radius: 12px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .stat-item:hover {
@@ -109,6 +110,7 @@
             font-weight: bold;
             margin-bottom: 0.5rem;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            color: var(--primary-color);
         }
 
         .stat-label {
@@ -116,6 +118,7 @@
             font-size: 1rem;
             opacity: 0.9;
             text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+            letter-spacing: 0.5px;
         }
 
         .cta-button {
@@ -244,11 +247,15 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Welcome to China <span class="chinese-text">欢迎来到中国</span></h1>
-            <p>A Journey Through 5,000 Years of Civilization</p>
+            <p>Discover the World's Oldest Continuous Civilization</p>
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number">5,000+</span>
                     <span class="stat-label">Years of History</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1.4B+</span>
+                    <span class="stat-label">People & Stories</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">56</span>
@@ -257,10 +264,6 @@
                 <div class="stat-item">
                     <span class="stat-number">23</span>
                     <span class="stat-label">Provinces</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">1.4B+</span>
-                    <span class="stat-label">Population</span>
                 </div>
             </div>
             <p class="subtitle">Your comprehensive guide to exploring Chinese culture, history, and traditions</p>
