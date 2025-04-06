@@ -31,8 +31,9 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
-    padding: 0.5rem 0;
+    height: 70px;
 }
 
 nav {
@@ -40,15 +41,22 @@ nav {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0.5rem 2rem;
+    padding: 0 2rem;
+    height: 100%;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
-    margin-right: 2rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: inline-block;
+    min-height: unset !important;
+    min-width: unset !important;
+    line-height: 1.2;
 }
 
 .nav-links {
@@ -56,19 +64,26 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
-    flex-grow: 1;
-    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
 }
 
 .nav-links li {
-    margin: 0 15px;
+    margin: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 0.5rem;
+    height: auto;
+    min-height: unset !important;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a:hover {
@@ -87,7 +102,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 60vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                 url('https://source.unsplash.com/1600x900/?china,landscape') center/cover;
     display: flex;
@@ -95,7 +110,7 @@ nav {
     justify-content: center;
     text-align: center;
     color: white;
-    padding-top: 80px;
+    margin-bottom: 2rem;
 }
 
 .hero-content {
@@ -380,10 +395,12 @@ nav {
                 url('https://source.unsplash.com/1600x900/?chinese,lantern') center/cover;
 }
 
-.festival-content {
-    max-width: 1000px;
+.festival-content,
+.main-content,
+main {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 70px 2rem 2rem;
 }
 
 .festival-section {
@@ -449,7 +466,7 @@ nav {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin: 1rem;
+    margin-bottom: 2rem;
     transition: background-color var(--transition-speed) ease;
 }
 
@@ -773,12 +790,9 @@ select {
     background-color: #d32f2f;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.menu-toggle {
-    display: none;
+/* Ensure content starts below fixed header */
+main, 
+.main-content,
+.festival-content {
+    padding-top: 70px;
 } 
