@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuanr - Chinese Street Food</title>
+    <!-- Place this code on every page across your site and Google will automatically show ads in all the best places for you -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8267949394096715"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,kebab,skewer,street,food') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .dish-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dish-section {
+            margin-bottom: 2rem;
+        }
+
+        .dish-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .ingredients-list, .steps-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ingredients-list li, .steps-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            margin-right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Explore & Experience</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../culture.html">Culture</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../geography.html">Geography</a></li>
+                <li><a href="../../cuisine.html">Cuisine</a></li>
+                <li><a href="../../language.html">Language</a></li>
+                <li><a href="../../travel.html">Travel Guide</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <span>Chuanr</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chuanr <span class="chinese-text">串儿</span></h1>
+            <p>Chinese-style grilled skewers</p>
+        </div>
+    </section>
+
+    <main class="dish-content">
+        <section class="dish-section">
+            <h2>About Chuanr</h2>
+            <p>Chuanr (串儿) are Chinese-style grilled skewers, a popular street food found throughout China, especially in the northern regions. These skewers feature various meats, vegetables, and other ingredients grilled over charcoal and seasoned with a blend of spices. Chuanr is a favorite late-night snack and social food, often enjoyed with friends at outdoor stalls or specialized restaurants.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Traditional Ingredients</h2>
+            <ul class="ingredients-list">
+                <li>Lamb (羊肉) - Most traditional meat</li>
+                <li>Chicken (鸡肉) - Wings and thighs</li>
+                <li>Beef (牛肉) - Various cuts</li>
+                <li>Vegetables (蔬菜) - Mushrooms, peppers, eggplant</li>
+                <li>Spice Mix (调料) - Cumin, chili powder, salt</li>
+                <li>Garlic (蒜) - For flavor</li>
+                <li>Sesame Oil (香油) - For aroma</li>
+                <li>Bamboo Skewers (竹签) - For grilling</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Making Process</h2>
+            <ol class="steps-list">
+                <li>Cut ingredients into bite-sized pieces</li>
+                <li>Marinate with spices and seasonings</li>
+                <li>Thread onto bamboo skewers</li>
+                <li>Prepare charcoal grill</li>
+                <li>Grill over medium-high heat</li>
+                <li>Brush with oil during cooking</li>
+                <li>Sprinkle with final seasonings</li>
+                <li>Serve hot with dipping sauce</li>
+            </ol>
+        </section>
+
+        <section class="dish-section">
+            <h2>Regional Variations</h2>
+            <ul class="ingredients-list">
+                <li>Xinjiang Style - Heavy on cumin and lamb</li>
+                <li>Beijing Style - More diverse ingredients</li>
+                <li>Sichuan Style - Spicy and numbing</li>
+                <li>Seafood Options - Shrimp, squid, fish</li>
+                <li>Vegetarian Options - Tofu, mushrooms</li>
+                <li>Modern Variations - Fusion ingredients</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Cultural Significance</h2>
+            <p>Chuanr has its origins in the Xinjiang region, where the Uyghur people have been grilling meat on skewers for centuries. The dish spread throughout China and became particularly popular in urban areas during the 1980s and 1990s. Today, chuanr represents the social aspect of Chinese dining culture, where friends gather around street vendors or specialized restaurants to enjoy these grilled skewers together. The dish is also a symbol of China's diverse culinary landscape, incorporating influences from Central Asian cooking traditions.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Street Food Culture</h2>
+            <ul class="ingredients-list">
+                <li>Late Night Food - Popular after dark</li>
+                <li>Street Vendors - Specialized chuanr makers</li>
+                <li>Social Dining - Eaten in groups</li>
+                <li>Portable Food - Easy to eat while standing</li>
+                <li>Affordable - Popular among young people</li>
+                <li>Cultural Experience - Part of nightlife</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Modern Adaptations</h2>
+            <p>While traditional chuanr remain popular, modern variations have emerged to cater to contemporary tastes and dietary preferences. These include vegetarian options, fusion ingredients like cheese or bacon, and even gourmet versions with premium meats. Some restaurants now offer chuanr with international influences, while others focus on health-conscious options with lean meats and organic ingredients. The dish has also gained popularity in food trucks and casual dining establishments outside of China, introducing this traditional street food to a global audience.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 

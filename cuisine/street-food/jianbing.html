@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jianbing - Chinese Street Food</title>
+    <!-- Place this code on every page across your site and Google will automatically show ads in all the best places for you -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8267949394096715"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?jianbing,chinese,street,food,breakfast') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .dish-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dish-section {
+            margin-bottom: 2rem;
+        }
+
+        .dish-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .ingredients-list, .steps-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ingredients-list li, .steps-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            margin-right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Explore & Experience</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../culture.html">Culture</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../geography.html">Geography</a></li>
+                <li><a href="../../cuisine.html">Cuisine</a></li>
+                <li><a href="../../language.html">Language</a></li>
+                <li><a href="../../travel.html">Travel Guide</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <span>Jianbing</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Jianbing <span class="chinese-text">煎饼</span></h1>
+            <p>China's beloved street breakfast crepe</p>
+        </div>
+    </section>
+
+    <main class="dish-content">
+        <section class="dish-section">
+            <h2>About Jianbing</h2>
+            <p>Jianbing (煎饼) is a popular Chinese street food, particularly for breakfast. This savory crepe-like dish is made from a batter of wheat and grain flour, spread thin on a griddle, and filled with various ingredients. It's a quick, portable meal that has become a breakfast staple across China and is gaining popularity internationally.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Traditional Ingredients</h2>
+            <ul class="ingredients-list">
+                <li>Batter (面糊) - Made from wheat flour, mung bean flour, and water</li>
+                <li>Egg (鸡蛋) - Cracked on top of the crepe</li>
+                <li>Scallions (葱花) - For flavor</li>
+                <li>Cilantro (香菜) - Fresh herb garnish</li>
+                <li>Crispy Wonton Strips (薄脆) - For texture</li>
+                <li>Hoisin Sauce (海鲜酱) - Sweet and savory condiment</li>
+                <li>Chili Sauce (辣酱) - For spice</li>
+                <li>Black Sesame Seeds (黑芝麻) - For garnish</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Making Process</h2>
+            <ol class="steps-list">
+                <li>Heat a flat griddle to medium-high</li>
+                <li>Pour batter in a circular motion</li>
+                <li>Spread batter thin with a wooden tool</li>
+                <li>Crack an egg on top and spread it</li>
+                <li>Sprinkle with scallions and sesame seeds</li>
+                <li>Flip the crepe when edges are crispy</li>
+                <li>Add sauces and crispy wonton strips</li>
+                <li>Fold into a rectangular package</li>
+                <li>Cut in half for easy eating</li>
+            </ol>
+        </section>
+
+        <section class="dish-section">
+            <h2>Regional Variations</h2>
+            <ul class="ingredients-list">
+                <li>Beijing Style - Traditional with crispy wonton strips</li>
+                <li>Shanghai Style - Thinner crepe with more egg</li>
+                <li>Taiwanese Style - Sweeter sauce and different fillings</li>
+                <li>Modern Variations - Added meat or vegetables</li>
+                <li>International Adaptations - Fusion fillings</li>
+                <li>Vegetarian Options - Without egg</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Cultural Significance</h2>
+            <p>Jianbing has a history of over 2,000 years, originating from the Shandong province. It was originally a military food during the Three Kingdoms period (220-280 AD) when soldiers needed a quick, portable meal. Today, jianbing stands are a common sight in Chinese cities, especially in the morning, where vendors skillfully prepare this breakfast dish for busy commuters. The dish represents the ingenuity of Chinese street food culture and the importance of quick, satisfying meals in urban life.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Street Food Culture</h2>
+            <ul class="ingredients-list">
+                <li>Breakfast Staple - Eaten primarily in the morning</li>
+                <li>Street Vendors - Skilled jianbing makers</li>
+                <li>Quick Service - Prepared in under 2 minutes</li>
+                <li>Portable Food - Easy to eat while walking</li>
+                <li>Affordable - Popular among students and workers</li>
+                <li>Social Aspect - Gathering point for locals</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Modern Adaptations</h2>
+            <p>While traditional jianbing remains popular, modern variations have emerged to cater to contemporary tastes and dietary preferences. These include vegetarian versions, gluten-free options, and fusion fillings like cheese or avocado. In recent years, jianbing has gained international recognition, with restaurants specializing in this dish appearing in major cities worldwide. Some vendors now offer premium versions with additional ingredients, while others focus on health-conscious options with organic ingredients.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
