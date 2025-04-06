@@ -37,6 +37,30 @@
             margin-bottom: 1rem;
         }
 
+        .dish-title {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .dish-title h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .dish-title .chinese-text {
+            font-size: 1.5rem;
+            color: #666;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .dish-description {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
         .ingredients-list, .steps-list {
             list-style-type: none;
             padding: 0;
@@ -64,6 +88,33 @@
             align-items: center;
             justify-content: center;
             font-size: 0.9rem;
+        }
+
+        .responsive-image {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .responsive-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .responsive-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
         }
     </style>
 </head>
@@ -93,17 +144,30 @@
         <span>Kung Pao Chicken</span>
     </div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Kung Pao Chicken <span class="chinese-text">宫保鸡丁</span></h1>
-            <p>A spicy stir-fry dish with diced chicken, peanuts, vegetables, and chili peppers</p>
-        </div>
-    </section>
-
     <main class="dish-content">
+        <div class="dish-title">
+            <h1>Kung Pao Chicken</h1>
+            <span class="chinese-text">宫保鸡丁</span>
+            <p class="dish-description">A spicy stir-fry dish with diced chicken, peanuts, vegetables, and chili peppers</p>
+        </div>
+
         <section class="dish-section">
             <h2>About the Dish</h2>
             <p>Kung Pao Chicken is a classic Sichuan dish named after Ding Baozhen, a late Qing Dynasty official and governor of Sichuan Province. The dish combines the perfect balance of spicy, sweet, sour, and savory flavors that characterize Sichuan cuisine.</p>
+        </section>
+
+        <section class="dish-section">
+            <div class="responsive-image">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="../../images/kung-pao-chicken/gongbao-1920.webp">
+                    <source media="(min-width: 768px)" srcset="../../images/kung-pao-chicken/gongbao-1024.webp">
+                    <source media="(min-width: 480px)" srcset="../../images/kung-pao-chicken/gongbao-768.webp">
+                    <img src="../../images/kung-pao-chicken/gongbao-480.webp" alt="Kung Pao Chicken">
+                </picture>
+                <div class="image-caption">
+                    Classic Kung Pao Chicken with diced chicken, peanuts, and dried chilies
+                </div>
+            </div>
         </section>
 
         <section class="dish-section">
