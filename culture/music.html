@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Music - China Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,music') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .content-section {
+            padding: 60px 20px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Music</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chinese Music <span class="chinese-text">音乐</span></h1>
+            <p>The Harmony of Tradition and Innovation</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Categories of Instruments</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3000+</span>
+                    <span class="stat-label">Years of History</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Basic Tones</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Historical Development</h2>
+            <p>Chinese music has evolved over thousands of years, creating a rich tapestry of sounds that reflects the country's cultural diversity and artistic achievements.</p>
+            
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Ancient Origins</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <p>The evolution of Chinese music from ancient times to modern styles.</p>
+                        <ul class="feature-list">
+                            <li>Neolithic Drums</li>
+                            <li>Zhou Dynasty Ritual Music</li>
+                            <li>Tang Dynasty Court Music</li>
+                            <li>Song Dynasty Folk Music</li>
+                            <li>Ming-Qing Opera</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Musical Theory</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <p>Fundamental concepts in Chinese music.</p>
+                        <ul class="feature-list">
+                            <li>Five Tones (五音)</li>
+                            <li>Twelve Tones (十二律)</li>
+                            <li>Yin-Yang Theory</li>
+                            <li>Pentatonic Scale</li>
+                            <li>Modal System</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "乐者，天地之和也" (Music is the harmony of heaven and earth)
+                <div class="quote-author">- The Book of Rites</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Traditional Instruments</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>String Instruments</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-guitar"></i>
+                        </div>
+                        <p>Traditional Chinese string instruments.</p>
+                        <ul class="feature-list">
+                            <li>Guzheng (古筝)</li>
+                            <li>Pipa (琵琶)</li>
+                            <li>Erhu (二胡)</li>
+                            <li>Guqin (古琴)</li>
+                            <li>Yangqin (扬琴)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Wind Instruments</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <p>Traditional Chinese wind instruments.</p>
+                        <ul class="feature-list">
+                            <li>Dizi (笛子)</li>
+                            <li>Xiao (箫)</li>
+                            <li>Suona (唢呐)</li>
+                            <li>Sheng (笙)</li>
+                            <li>Guanzi (管子)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Percussion</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-drum"></i>
+                        </div>
+                        <p>Traditional Chinese percussion instruments.</p>
+                        <ul class="feature-list">
+                            <li>Drum (鼓)</li>
+                            <li>Gong (锣)</li>
+                            <li>Cymbals (钹)</li>
+                            <li>Woodblock (木鱼)</li>
+                            <li>Bell (钟)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Musical Genres</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Traditional Forms</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <p>Classical Chinese musical forms.</p>
+                        <ul class="feature-list">
+                            <li>Beijing Opera</li>
+                            <li>Kunqu Opera</li>
+                            <li>Nanyin Music</li>
+                            <li>Jiangnan Sizhu</li>
+                            <li>Folk Songs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Modern Styles</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <p>Contemporary Chinese music.</p>
+                        <ul class="feature-list">
+                            <li>Chinese Pop (C-Pop)</li>
+                            <li>Rock Music</li>
+                            <li>Fusion Music</li>
+                            <li>Electronic Music</li>
+                            <li>Indie Music</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Cultural Significance</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Social Functions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>The role of music in Chinese society.</p>
+                        <ul class="feature-list">
+                            <li>Ritual Ceremonies</li>
+                            <li>Court Entertainment</li>
+                            <li>Folk Celebrations</li>
+                            <li>Social Bonding</li>
+                            <li>Cultural Identity</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Global Influence</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>Chinese music's impact worldwide.</p>
+                        <ul class="feature-list">
+                            <li>Cultural Exchange</li>
+                            <li>Fusion Genres</li>
+                            <li>International Collaboration</li>
+                            <li>Modern Adaptations</li>
+                            <li>Global Recognition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
