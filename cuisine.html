@@ -6,11 +6,258 @@
     <title>Chinese Cuisine - China Guide</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .cuisine-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,food,cooking') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .cuisine-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .cuisine-section {
+            margin-bottom: 3rem;
+        }
+
+        .cuisine-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .cuisine-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .cuisine-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cuisine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .cuisine-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .cuisine-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .cuisine-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cuisine-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .cuisine-hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cuisine-hero {
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        .dark-mode .cuisine-card {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .cuisine-card-content {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .cuisine-card p,
+        .dark-mode .feature-list li {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .feature-list li {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Return to homepage">
                 <span class="logo-text">China Guide</span>
                 <span class="logo-tagline">Discover the Middle Kingdom</span>
             </a>
@@ -54,144 +301,206 @@
         </div>
     </section>
 
-    <style>
-        .cuisine-hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://source.unsplash.com/1600x900/?chinese,food,cooking') center/cover;
-            height: 70vh;
-        }
+    <main class="cuisine-content">
+        <section class="cuisine-section">
+            <h2>Regional Cuisines</h2>
+            <div class="cuisine-grid">
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Sichuan Cuisine</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-pepper-hot"></i>
+                        </div>
+                        <p>Known for its bold flavors and liberal use of garlic and spicy peppers, particularly the unique numbing-spiciness of Sichuan peppercorns.</p>
+                        <ul class="feature-list">
+                            <li>Mapo Tofu</li>
+                            <li>Kung Pao Chicken</li>
+                            <li>Twice-Cooked Pork</li>
+                            <li>Hot Pot</li>
+                        </ul>
+                    </div>
+                </div>
 
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-            padding: 0 1rem;
-        }
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Cantonese Cuisine</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <p>Emphasizes fresh ingredients and subtle flavors, with dim sum being a popular dining experience that showcases the variety of small dishes.</p>
+                        <ul class="feature-list">
+                            <li>Dim Sum</li>
+                            <li>Sweet and Sour Pork</li>
+                            <li>Char Siu</li>
+                            <li>Steamed Fish</li>
+                        </ul>
+                    </div>
+                </div>
 
-        .stat-item {
-            text-align: center;
-            min-width: 120px;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Northern Cuisine</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-wheat-awn"></i>
+                        </div>
+                        <p>Features wheat-based staples and hearty dishes, reflecting the cooler climate and agricultural traditions of northern China.</p>
+                        <ul class="feature-list">
+                            <li>Peking Duck</li>
+                            <li>Hand-Pulled Noodles</li>
+                            <li>Dumplings</li>
+                            <li>Steamed Buns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        .stat-number {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
+        <section class="cuisine-section">
+            <h2>Culinary Traditions</h2>
+            <div class="cuisine-grid">
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Tea Culture</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <p>Tea is an integral part of Chinese culture, with various types and preparation methods developed over thousands of years.</p>
+                        <ul class="feature-list">
+                            <li>Green Tea</li>
+                            <li>Oolong Tea</li>
+                            <li>Pu-erh Tea</li>
+                            <li>Tea Ceremonies</li>
+                        </ul>
+                    </div>
+                </div>
 
-        .stat-label {
-            display: block;
-            font-size: 0.9rem;
-            opacity: 0.9;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-        }
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Cooking Techniques</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <p>Chinese cooking employs various techniques refined over millennia, each bringing out unique flavors and textures in ingredients.</p>
+                        <ul class="feature-list">
+                            <li>Stir-Frying</li>
+                            <li>Steaming</li>
+                            <li>Braising</li>
+                            <li>Deep-Frying</li>
+                        </ul>
+                    </div>
+                </div>
 
-        @media (max-width: 768px) {
-            .hero-stats {
-                gap: 1rem;
-            }
-            .stat-item {
-                min-width: 100px;
-                padding: 0.75rem;
-            }
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            .stat-label {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Festival Foods</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <p>Special dishes are prepared during festivals, each carrying symbolic meanings and cultural significance.</p>
+                        <ul class="feature-list">
+                            <li>Spring Festival Dumplings</li>
+                            <li>Mooncakes</li>
+                            <li>Zongzi</li>
+                            <li>Tangyuan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <main class="main-content">
-        <div class="content-grid">
-            <div class="card">
-                <h3>Regional Cuisines</h3>
-                <p>Chinese cuisine is one of the world's oldest and most diverse culinary traditions, with eight major regional styles. Sichuan cuisine is famous for its bold, spicy flavors and use of Sichuan peppercorns. Cantonese cuisine emphasizes fresh ingredients and subtle flavors, with dim sum being a popular dining experience. Shandong cuisine features seafood and clear soups, while Jiangsu cuisine is known for its artistic presentation and sweet flavors. Each region has its own specialties and cooking techniques, reflecting local ingredients and cultural preferences.</p>
-                <ul class="feature-list">
-                    <li>Sichuan - Spicy and bold flavors</li>
-                    <li>Cantonese - Fresh ingredients and dim sum</li>
-                    <li>Shandong - Seafood and clear soups</li>
-                    <li>Jiangsu - Artistic presentation and sweet flavors</li>
-                </ul>
+        <section class="cuisine-section">
+            <h2>Modern Chinese Food</h2>
+            <div class="cuisine-grid">
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Street Food</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <p>Vibrant street food culture offers authentic tastes and quick meals, from breakfast favorites to late-night snacks.</p>
+                        <ul class="feature-list">
+                            <li>Jianbing (煎饼)</li>
+                            <li>Baozi (包子)</li>
+                            <li>Roujiamo (肉夹馍)</li>
+                            <li>Chuanr (串儿)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Fusion Cuisine</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>Modern Chinese cuisine blends traditional flavors with international influences, creating innovative dishes.</p>
+                        <ul class="feature-list">
+                            <li>Chinese-Western Fusion</li>
+                            <li>Modern Interpretations</li>
+                            <li>Health-Conscious Options</li>
+                            <li>Global Adaptations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cuisine-card">
+                    <div class="cuisine-card-header">
+                        <h3>Dietary Trends</h3>
+                    </div>
+                    <div class="cuisine-card-content">
+                        <div class="cuisine-card-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <p>Contemporary Chinese cuisine adapts to modern dietary preferences while maintaining traditional flavors.</p>
+                        <ul class="feature-list">
+                            <li>Vegetarian Options</li>
+                            <li>Light Cooking Methods</li>
+                            <li>Organic Ingredients</li>
+                            <li>Health-Focused Dishes</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h3>Tea Culture</h3>
-                <p>Tea is an integral part of Chinese culture and daily life. The practice of drinking tea dates back thousands of years and has evolved into a sophisticated art form. Different types of tea—green, black, oolong, white, and pu-erh—are produced in various regions. The traditional tea ceremony emphasizes mindfulness and appreciation of the tea's aroma, color, and taste. Tea houses are social gathering places where people meet to chat, play games, and enjoy performances while sipping tea.</p>
-                <ul class="feature-list">
-                    <li>Tea Types - Green, black, oolong, white, and pu-erh</li>
-                    <li>Tea Ceremony - Traditional preparation and appreciation</li>
-                    <li>Tea Houses - Social gathering places</li>
-                    <li>Health Benefits - Traditional medicinal properties</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Street Food</h3>
-                <p>Chinese street food offers a vibrant and affordable way to experience local cuisine. From morning markets to night food streets, vendors serve everything from breakfast dumplings to late-night skewers. Popular items include jianbing (savory crepes), baozi (steamed buns), roujiamo (Chinese hamburgers), and various noodle dishes. Street food reflects regional specialties and provides insight into everyday eating habits. Food safety standards have improved in recent years, making street food more accessible to visitors.</p>
-                <ul class="feature-list">
-                    <li>Breakfast Foods - Jianbing, baozi, and congee</li>
-                    <li>Snacks - Skewers, pancakes, and fried foods</li>
-                    <li>Regional Specialties - Local street food variations</li>
-                    <li>Food Safety - Modern standards and precautions</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Cooking Techniques</h3>
-                <p>Chinese cooking techniques are diverse and have been refined over thousands of years. Stir-frying (炒) is perhaps the most well-known method, allowing for quick cooking that preserves nutrients and flavors. Steaming (蒸) is used for delicate foods like dim sum and fish. Braising (炖) and stewing (煮) are used for tougher cuts of meat and for creating rich, flavorful broths. Deep-frying (炸) creates crispy textures, while roasting (烤) and grilling (烧烤) add smoky flavors. These techniques are often combined in complex dishes that balance flavors, textures, and colors.</p>
-                <ul class="feature-list">
-                    <li>Stir-frying - Quick cooking over high heat</li>
-                    <li>Steaming - Preserving nutrients and delicate flavors</li>
-                    <li>Braising - Slow cooking in flavorful liquids</li>
-                    <li>Deep-frying - Creating crispy textures</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Festival Foods</h3>
-                <p>Special foods are prepared for Chinese festivals, each with symbolic meanings. During the Spring Festival, families make dumplings (饺子) to symbolize wealth and prosperity. Mooncakes (月饼) are eaten during the Mid-Autumn Festival, representing family reunion. Zongzi (粽子), sticky rice dumplings wrapped in bamboo leaves, are enjoyed during the Dragon Boat Festival. These festival foods connect people to their cultural heritage and are often prepared using traditional recipes passed down through generations.</p>
-                <ul class="feature-list">
-                    <li>Spring Festival - Dumplings and fish dishes</li>
-                    <li>Mid-Autumn Festival - Mooncakes and pomelos</li>
-                    <li>Dragon Boat Festival - Zongzi and realgar wine</li>
-                    <li>Lantern Festival - Tangyuan (sweet rice balls)</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Modern Chinese Cuisine</h3>
-                <p>Contemporary Chinese cuisine continues to evolve, blending traditional techniques with modern innovations. Fusion restaurants combine Chinese flavors with international cuisines, creating dishes like Peking duck pizza or Sichuan-spiced tacos. Molecular gastronomy techniques are being applied to traditional dishes, creating new textures and presentations. Health-conscious adaptations focus on reducing oil and salt while maintaining authentic flavors. Chinese cuisine has also influenced global food trends, with items like bubble tea and hot pot gaining popularity worldwide.</p>
-                <ul class="feature-list">
-                    <li>Fusion Cuisine - Chinese flavors meet international dishes</li>
-                    <li>Molecular Gastronomy - Modern techniques in Chinese cooking</li>
-                    <li>Health-Conscious Adaptations - Lighter versions of traditional dishes</li>
-                    <li>Global Influence - Chinese food trends worldwide</li>
-                </ul>
-            </div>
-        </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 ChinaIntro. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
 </body>
 </html> 
