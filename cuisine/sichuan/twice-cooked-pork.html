@@ -10,18 +10,6 @@
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://source.unsplash.com/1600x900/?chinese,pork,cooking') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
         .dish-content {
             max-width: 800px;
             margin: 2rem auto;
@@ -35,6 +23,30 @@
         .dish-section h2 {
             color: var(--primary-color);
             margin-bottom: 1rem;
+        }
+
+        .dish-title {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .dish-title h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .dish-title .chinese-text {
+            font-size: 1.5rem;
+            color: #666;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .dish-description {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2rem;
         }
 
         .ingredients-list, .steps-list {
@@ -65,6 +77,33 @@
             justify-content: center;
             font-size: 0.9rem;
         }
+
+        .responsive-image {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .responsive-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .responsive-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -93,17 +132,28 @@
         <span>Twice-Cooked Pork</span>
     </div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Twice-Cooked Pork <span class="chinese-text">回锅肉</span></h1>
-            <p>A traditional Sichuan dish where pork belly is first boiled, then stir-fried with vegetables</p>
-        </div>
-    </section>
-
     <main class="dish-content">
+        <div class="dish-title">
+            <h1>Twice-Cooked Pork</h1>
+            <span class="chinese-text">回锅肉</span>
+            <p class="dish-description">A traditional Sichuan dish where pork belly is first boiled, then stir-fried with vegetables</p>
+        </div>
+
         <section class="dish-section">
             <h2>About the Dish</h2>
             <p>Twice-Cooked Pork, or Hui Guo Rou, is a signature dish of Sichuan cuisine. The name comes from the cooking method: the pork is first simmered, then sliced and stir-fried with vegetables and seasonings. This two-step process creates a unique texture and maximizes flavor.</p>
+            
+            <div class="responsive-image">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="../../images/huiguorou/huiguorou-1920.webp">
+                    <source media="(min-width: 768px)" srcset="../../images/huiguorou/huiguorou-1024.webp">
+                    <source media="(min-width: 480px)" srcset="../../images/huiguorou/huiguorou-768.webp">
+                    <img src="../../images/huiguorou/huiguorou-480.webp" alt="Twice-Cooked Pork">
+                </picture>
+                <div class="image-caption">
+                    Traditional Twice-Cooked Pork with crispy pork belly and leeks in a spicy sauce
+                </div>
+            </div>
         </section>
 
         <section class="dish-section">
