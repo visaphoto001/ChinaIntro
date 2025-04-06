@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Festival - ChinaIntro</title>
+    <title>Spring Festival - China Guide</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .festival-hero {
-            height: 60vh;
+            height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                         url('https://source.unsplash.com/1600x900/?chinese,new,year') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .festival-hero .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .festival-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .festival-hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
         .festival-content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -27,6 +49,18 @@
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .festival-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
         
         .festival-image {
@@ -35,6 +69,7 @@
             height: auto;
             border-radius: 10px;
             margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .timeline {
@@ -54,32 +89,189 @@
         }
         
         .back-button {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--primary-color);
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: transparent;
+            color: var(--primary-color);
             text-decoration: none;
-            border-radius: 5px;
-            margin: 1rem;
-            transition: background-color var(--transition-speed) ease;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .back-button span {
+            position: relative;
+            z-index: 1;
         }
         
         .back-button:hover {
-            background-color: #a01830;
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .back-button:hover::before {
+            opacity: 1;
+        }
+        
+        .back-button:active {
+            transform: translateX(-2px);
+        }
+        
+        .festival-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .festival-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .festival-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .festival-card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .festival-card-content {
+            padding: 1.5rem;
+        }
+        
+        .festival-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .festival-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-item {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .highlight-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .festival-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-1 {
+            background-image: url('https://source.unsplash.com/800x600/?chinese,lantern');
+        }
+        
+        .gallery-2 {
+            background-image: url('https://source.unsplash.com/800x600/?chinese,dumpling');
+        }
+        
+        .gallery-3 {
+            background-image: url('https://source.unsplash.com/800x600/?chinese,firework');
+        }
+        
+        .gallery-4 {
+            background-image: url('https://source.unsplash.com/800x600/?chinese,temple');
+        }
+        
+        @media (max-width: 768px) {
+            .festival-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .festival-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .festival-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlight-item {
+                min-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="nav-container">
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#culture">Culture</a></li>
-                <li><a href="../index.html#history">History</a></li>
-                <li><a href="../index.html#geography">Geography</a></li>
-                <li><a href="../index.html#cuisine">Cuisine</a></li>
-                <li><a href="../index.html#language">Language</a></li>
-                <li><a href="../index.html#travel">Travel Guide</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
             </ul>
         </nav>
     </header>
@@ -88,55 +280,289 @@
         <div class="hero-content">
             <h1>Spring Festival (春节)</h1>
             <p>Chinese New Year - The Most Important Festival</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Days of Celebration</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4,000+</span>
+                    <span class="stat-label">Years of History</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1.4B</span>
+                    <span class="stat-label">People Celebrate</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <main class="festival-content">
-        <a href="../index.html#culture" class="back-button">← Back to Culture</a>
+        <a href="../culture.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Culture</span>
+        </a>
 
-        <div class="content-grid">
-            <div class="card">
-                <h3>Overview</h3>
-                <p>The Spring Festival, also known as Chinese New Year, is China's most important traditional festival. It marks the beginning of the lunar new year and is celebrated with family reunions, feasts, and various customs to bring good luck and prosperity. The festival typically falls between January 21 and February 20 on the Gregorian calendar.</p>
+        <section class="festival-section">
+            <h2>About Spring Festival</h2>
+            <p>The Spring Festival, also known as Chinese New Year, is China's most important traditional festival. It marks the beginning of the lunar new year and is celebrated with family reunions, feasts, and various customs to bring good luck and prosperity. The festival typically falls between January 21 and February 20 on the Gregorian calendar.</p>
+            
+            <div class="festival-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="highlight-title">Lunar New Year</div>
+                    <p>Based on the Chinese lunar calendar, the date changes each year</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="highlight-title">Family Reunion</div>
+                    <p>Millions travel home to celebrate with family</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-red-envelope"></i>
+                    </div>
+                    <div class="highlight-title">Red Envelopes</div>
+                    <p>Giving money in red envelopes for good luck</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <div class="highlight-title">Zodiac Animals</div>
+                    <p>Each year is associated with a Chinese zodiac animal</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>History and Significance</h2>
+            <p>The Spring Festival has a history of over 4,000 years. It originated from ancient agricultural society's celebration of the new year and worship of ancestors. The festival combines various customs and traditions that have evolved over centuries, reflecting Chinese values of family unity, respect for elders, and hopes for prosperity.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Ancient Times</div>
+                    <p>The festival began as a celebration of the new year and worship of ancestors in agricultural society.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Han Dynasty (206 BCE - 220 CE)</div>
+                    <p>The festival was officially recognized and many customs were established.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Tang Dynasty (618 - 907)</div>
+                    <p>The festival became more elaborate with lantern displays and performances.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Modern Era</div>
+                    <p>The festival has evolved to include modern elements while preserving traditional customs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Traditional Customs</h2>
+            <p>Key customs include cleaning the house to sweep away bad luck, decorating with red lanterns and couplets, giving red envelopes (hongbao) with money to children, family reunion dinners, setting off fireworks, and visiting relatives and friends. Each day of the 15-day celebration has specific traditions and meanings.</p>
+            
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Preparation</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <p>Clean the house thoroughly to sweep away bad luck from the previous year. Decorate with red lanterns, couplets, and paper cuttings.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Reunion Dinner</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <p>Family members gather for a lavish feast on New Year's Eve, featuring dishes with symbolic meanings for prosperity and good fortune.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Red Envelopes</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-red-envelope"></i>
+                        </div>
+                        <p>Adults give red envelopes (hongbao) containing money to children and unmarried adults to transfer good fortune and blessings.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Fireworks</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <p>Setting off fireworks and firecrackers at midnight on New Year's Eve to drive away evil spirits and welcome the new year.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Traditional Foods</h2>
+            <p>The Spring Festival feast includes various symbolic dishes. Dumplings (饺子) represent wealth, fish (鱼) symbolizes abundance, spring rolls (春卷) represent wealth, and niangao (年糕) promises a higher position in the coming year. Families also enjoy various sweets, fruits, and traditional snacks during the celebration.</p>
+            
+            <div class="festival-gallery">
+                <div class="gallery-item gallery-1"></div>
+                <div class="gallery-item gallery-2"></div>
+                <div class="gallery-item gallery-3"></div>
+                <div class="gallery-item gallery-4"></div>
             </div>
             
-            <div class="card">
-                <h3>History and Significance</h3>
-                <p>The Spring Festival has a history of over 4,000 years. It originated from ancient agricultural society's celebration of the new year and worship of ancestors. The festival combines various customs and traditions that have evolved over centuries, reflecting Chinese values of family unity, respect for elders, and hopes for prosperity.</p>
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Dumplings (饺子)</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>Shaped like ancient Chinese gold ingots, dumplings symbolize wealth and prosperity. Making dumplings together is also a family activity.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Fish (鱼)</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>The word for fish (鱼) sounds like "surplus" in Chinese. Eating fish symbolizes abundance and prosperity for the coming year.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Spring Rolls (春卷)</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>Named for the Spring Festival, these crispy rolls are filled with vegetables and meat, symbolizing wealth and good fortune.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Niangao (年糕)</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>A sticky rice cake that symbolizes a higher position or status in the coming year. The name sounds like "year high" in Chinese.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Modern Celebrations</h2>
+            <p>Today's Spring Festival celebrations blend traditional customs with modern elements. Cities host grand lantern festivals, cultural performances, and temple fairs. Many people travel home using modern transportation, and digital red envelopes have become popular. The festival has also gained international recognition, with celebrations in many countries worldwide.</p>
             
-            <div class="card">
-                <h3>Traditional Customs</h3>
-                <p>Key customs include cleaning the house to sweep away bad luck, decorating with red lanterns and couplets, giving red envelopes (hongbao) with money to children, family reunion dinners, setting off fireworks, and visiting relatives and friends. Each day of the 15-day celebration has specific traditions and meanings.</p>
+            <div class="festival-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="highlight-title">Travel Rush</div>
+                    <p>China's largest annual migration as people return home</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="highlight-title">Digital Red Envelopes</div>
+                    <p>WeChat and Alipay offer digital versions of traditional red envelopes</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="highlight-title">Global Celebration</div>
+                    <p>Celebrated in Chinatowns and cities worldwide</p>
+                </div>
             </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Travel Tips</h2>
+            <p>If you're visiting China during the Spring Festival, be prepared for large crowds and higher prices. Book transportation and accommodations well in advance. Experience temple fairs, lantern festivals, and traditional performances in major cities. Visit local families to experience authentic celebrations, but remember to bring appropriate gifts. Many businesses close during the festival, so plan accordingly.</p>
             
-            <div class="card">
-                <h3>Traditional Foods</h3>
-                <p>The Spring Festival feast includes various symbolic dishes. Dumplings (饺子) represent wealth, fish (鱼) symbolizes abundance, spring rolls (春卷) represent wealth, and niangao (年糕) promises a higher position in the coming year. Families also enjoy various sweets, fruits, and traditional snacks during the celebration.</p>
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Planning</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <p>Book flights and hotels at least 3-4 months in advance. Expect higher prices and limited availability.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Experiences</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <p>Visit temple fairs, lantern festivals, and cultural performances in major cities like Beijing, Shanghai, and Guangzhou.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Etiquette</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <p>If invited to a family celebration, bring appropriate gifts like fruit, tea, or red envelopes for children.</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h3>Modern Celebrations</h3>
-                <p>Today's Spring Festival celebrations blend traditional customs with modern elements. Cities host grand lantern festivals, cultural performances, and temple fairs. Many people travel home using modern transportation, and digital red envelopes have become popular. The festival has also gained international recognition, with celebrations in many countries worldwide.</p>
-            </div>
-            
-            <div class="card">
-                <h3>Travel Tips</h3>
-                <p>If you're visiting China during the Spring Festival, be prepared for large crowds and higher prices. Book transportation and accommodations well in advance. Experience temple fairs, lantern festivals, and traditional performances in major cities. Visit local families to experience authentic celebrations, but remember to bring appropriate gifts. Many businesses close during the festival, so plan accordingly.</p>
-            </div>
-        </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 ChinaIntro. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+    <script src="../script.js"></script>
 </body>
 </html> 
