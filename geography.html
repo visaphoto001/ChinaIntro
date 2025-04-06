@@ -6,59 +6,42 @@
     <title>Chinese Geography - China Guide</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <span class="logo-text">China Guide</span>
-                <span class="logo-tagline">Discover the Middle Kingdom</span>
-            </a>
-            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="culture.html">Culture</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="geography.html">Geography</a></li>
-                <li><a href="cuisine.html">Cuisine</a></li>
-                <li><a href="language.html">Language</a></li>
-                <li><a href="travel.html">Travel Guide</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="separator">/</span>
-        <span>Geography</span>
-    </div>
-
-    <section class="hero geography-hero">
-        <div class="hero-content">
-            <h1>Geography of China</h1>
-            <p>Discover the diverse landscapes of the world's third-largest country</p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">9.6M</span>
-                    <span class="stat-label">Square Kilometers</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">14</span>
-                    <span class="stat-label">Countries Bordered</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">22,117km</span>
-                    <span class="stat-label">Coastline Length</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <style>
         .geography-hero {
+            height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                         url('https://source.unsplash.com/1600x900/?china,mountains,landscape') center/cover;
-            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-stats {
@@ -95,103 +78,412 @@
             text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
         }
 
+        .geography-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .geography-section {
+            margin-bottom: 3rem;
+        }
+
+        .geography-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .geography-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .geography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .geography-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .geography-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .geography-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .geography-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .geography-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .geography-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
+            .geography-hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
             .hero-stats {
                 gap: 1rem;
             }
+
             .stat-item {
                 min-width: 100px;
                 padding: 0.75rem;
             }
+
             .stat-number {
-                font-size: 1.5rem;
+                font-size: 1.75rem;
             }
+
             .stat-label {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .geography-hero {
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
             }
         }
     </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" aria-label="Return to homepage">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="geography.html">Geography</a></li>
+                <li><a href="cuisine.html">Cuisine</a></li>
+                <li><a href="language.html">Language</a></li>
+                <li><a href="travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main class="festival-content">
-        <div class="content-grid">
-            <div class="card">
-                <h3>Landscapes</h3>
-                <p>China's geography is incredibly diverse, ranging from the world's highest mountains to vast deserts and fertile plains. The Himalayas in the southwest include Mount Everest, the world's highest peak. The Yangtze and Yellow Rivers are the country's most important waterways, supporting agriculture and transportation. The Gobi Desert in the north and the tropical rainforests in the south showcase the extreme climatic variations across this vast country.</p>
-                <ul class="feature-list">
-                    <li>Mountains - Himalayas, Kunlun, and Tianshan ranges</li>
-                    <li>Rivers - Yangtze, Yellow, and Pearl Rivers</li>
-                    <li>Deserts - Gobi and Taklamakan</li>
-                    <li>Coastal Areas - 14,500 km of coastline</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Modern Cities</h3>
-                <p>China's rapid urbanization has created some of the world's most impressive modern cities. Shanghai, with its iconic skyline featuring the Oriental Pearl Tower, represents China's economic power. Beijing, the capital, blends ancient architecture like the Forbidden City with modern structures like the Bird's Nest Stadium. Shenzhen, once a small fishing village, has transformed into a tech hub known as China's Silicon Valley. These cities showcase the country's ability to preserve its heritage while embracing modernity.</p>
-                <ul class="feature-list">
-                    <li>Shanghai - Financial and commercial center</li>
-                    <li>Beijing - Political and cultural capital</li>
-                    <li>Guangzhou - Historic port and trading city</li>
-                    <li>Shenzhen - Innovation and technology hub</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Natural Resources</h3>
-                <p>China is rich in natural resources, which have played a crucial role in its development. The country is the world's largest producer of rare earth elements, essential for modern technology. Its vast coal reserves have fueled industrial growth, though with environmental consequences. China's agricultural regions produce rice, wheat, and tea, while its forests provide timber and medicinal plants. The Three Gorges Dam on the Yangtze River is the world's largest hydroelectric power station, symbolizing China's efforts to harness its natural resources.</p>
-                <ul class="feature-list">
-                    <li>Minerals - Coal, iron ore, and rare earth elements</li>
-                    <li>Agriculture - Rice, wheat, and tea production</li>
-                    <li>Forests - Timber and medicinal plants</li>
-                    <li>Water Resources - Rivers and hydroelectric power</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Climate Zones</h3>
-                <p>China's vast size and diverse topography create a wide range of climate zones. The north experiences harsh winters and hot summers, with a continental climate. The south has a subtropical climate with high humidity and abundant rainfall. The Tibetan Plateau has an alpine climate with cold temperatures year-round. The northwest has an arid climate with little rainfall. These climate variations influence agriculture, architecture, and daily life across different regions of China.</p>
-                <ul class="feature-list">
-                    <li>North - Continental climate with four seasons</li>
-                    <li>South - Subtropical climate with monsoon rains</li>
-                    <li>Tibetan Plateau - Alpine climate</li>
-                    <li>Northwest - Arid desert climate</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Environmental Challenges</h3>
-                <p>China faces significant environmental challenges as it continues to develop economically. Air pollution in major cities has been a serious health concern, though recent efforts have improved air quality. Water scarcity and pollution affect many regions, particularly in the north. Desertification is spreading in some areas, while deforestation has reduced forest cover. The government has implemented various environmental policies, including ambitious renewable energy targets and reforestation programs, to address these challenges.</p>
-                <ul class="feature-list">
-                    <li>Air Pollution - Urban air quality issues</li>
-                    <li>Water Resources - Scarcity and pollution</li>
-                    <li>Desertification - Land degradation</li>
-                    <li>Conservation Efforts - Environmental policies</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Regional Diversity</h3>
-                <p>China's regional diversity is reflected in its landscapes, climates, and cultures. The north is characterized by wheat fields, grasslands, and the Great Wall. The south features rice paddies, tea plantations, and water towns. The west includes the Tibetan Plateau, deserts, and the Silk Road. The east has fertile plains, coastal cities, and economic development zones. This regional diversity has contributed to the rich cultural heritage and varied cuisines found throughout China.</p>
-                <ul class="feature-list">
-                    <li>North - Wheat fields and grasslands</li>
-                    <li>South - Rice paddies and water towns</li>
-                    <li>West - Tibetan Plateau and deserts</li>
-                    <li>East - Coastal plains and economic zones</li>
-                </ul>
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <span>Geography</span>
+    </div>
+
+    <section class="hero geography-hero">
+        <div class="hero-content">
+            <h1>Geography of China</h1>
+            <p>Discover the diverse landscapes of the world's third-largest country</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">9.6M</span>
+                    <span class="stat-label">Square Kilometers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Countries Bordered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">22,117</span>
+                    <span class="stat-label">KM Coastline</span>
+                </div>
             </div>
         </div>
+    </section>
+
+    <main class="geography-content">
+        <section class="geography-section">
+            <h2>Diverse Landscapes</h2>
+            <div class="geography-grid">
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Mountains</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <p>Home to some of the world's highest peaks, including parts of the Himalayas, Kunlun, and Tianshan ranges. Mount Everest stands at the Tibet-Nepal border.</p>
+                        <ul class="feature-list">
+                            <li>Himalayas - World's highest mountain range</li>
+                            <li>Kunlun Mountains - 3,000 km range</li>
+                            <li>Tianshan - "Heavenly Mountains"</li>
+                            <li>Mount Everest - 8,848m peak</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Rivers</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <p>Major rivers have shaped Chinese civilization, providing water for agriculture, transportation, and energy. The Yangtze and Yellow Rivers are the most significant.</p>
+                        <ul class="feature-list">
+                            <li>Yangtze River - Longest in Asia</li>
+                            <li>Yellow River - Cradle of Chinese civilization</li>
+                            <li>Pearl River - Southern economic hub</li>
+                            <li>Three Gorges Dam - World's largest</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Deserts</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <p>Vast desert regions cover parts of northern and northwestern China, including the Gobi and Taklamakan deserts, creating unique ecosystems and challenges.</p>
+                        <ul class="feature-list">
+                            <li>Gobi Desert - Cold desert climate</li>
+                            <li>Taklamakan - "Sea of Death"</li>
+                            <li>Ordos Desert - Inner Mongolia</li>
+                            <li>Desert expansion challenges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="geography-section">
+            <h2>Climate Zones</h2>
+            <div class="geography-grid">
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Northern Region</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <p>Continental climate with distinct seasons, characterized by cold winters and warm summers. Home to major agricultural regions and historic sites.</p>
+                        <ul class="feature-list">
+                            <li>Four distinct seasons</li>
+                            <li>Cold, dry winters</li>
+                            <li>Warm, humid summers</li>
+                            <li>Major wheat production</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Southern Region</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-cloud-rain"></i>
+                        </div>
+                        <p>Subtropical climate with abundant rainfall and high humidity. Perfect for rice cultivation and tea plantations. Home to diverse flora and fauna.</p>
+                        <ul class="feature-list">
+                            <li>Monsoon influence</li>
+                            <li>High rainfall</li>
+                            <li>Rice cultivation</li>
+                            <li>Tropical forests</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Western Region</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <p>Home to the Tibetan Plateau, featuring high altitude and arid conditions. Includes vast deserts and mountain ranges with unique ecosystems.</p>
+                        <ul class="feature-list">
+                            <li>High altitude climate</li>
+                            <li>Arid conditions</li>
+                            <li>Extreme temperatures</li>
+                            <li>Unique wildlife</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="geography-section">
+            <h2>Environmental Challenges</h2>
+            <div class="geography-grid">
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Air Quality</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-smog"></i>
+                        </div>
+                        <p>Major cities face air pollution challenges, with ongoing efforts to improve air quality through emissions control and green energy initiatives.</p>
+                        <ul class="feature-list">
+                            <li>Urban air pollution monitoring</li>
+                            <li>Emissions reduction targets</li>
+                            <li>Clean energy transition</li>
+                            <li>Public health impacts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Water Resources</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <p>Water scarcity affects northern regions, while pollution impacts water quality. Conservation efforts and infrastructure projects address these challenges.</p>
+                        <ul class="feature-list">
+                            <li>Water scarcity management</li>
+                            <li>Pollution control measures</li>
+                            <li>Infrastructure development</li>
+                            <li>Conservation programs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="geography-card">
+                    <div class="geography-card-header">
+                        <h3>Conservation</h3>
+                    </div>
+                    <div class="geography-card-content">
+                        <div class="geography-card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <p>National efforts to protect biodiversity and restore ecosystems through protected areas, reforestation, and sustainable development practices.</p>
+                        <ul class="feature-list">
+                            <li>Protected areas network</li>
+                            <li>Species conservation</li>
+                            <li>Reforestation projects</li>
+                            <li>Sustainable development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 ChinaIntro. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
 </body>
 </html> 
