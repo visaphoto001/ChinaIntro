@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Traditional Medicine - China Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?chinese,medicine');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            padding: 4rem 2rem;
+        }
+
+        .content-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .feature-card-content {
+            padding: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-section {
+            background: linear-gradient(145deg, #f5f5f5, #e5e5e5);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo" aria-label="Return to homepage">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Traditional Medicine</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chinese Traditional Medicine <span class="chinese-text">中医</span></h1>
+            <p>Ancient Wisdom for Modern Wellness</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">3,000+</span>
+                    <span class="stat-label">Years of History</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Core Elements</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Meridians</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="content-section">
+            <h2>Fundamental Concepts</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Basic Principles</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <ul class="feature-list">
+                            <li>Yin-Yang Balance (阴阳平衡)</li>
+                            <li>Five Elements (五行)</li>
+                            <li>Qi Flow (气)</li>
+                            <li>Meridian System (经络)</li>
+                            <li>Holistic Approach (整体观念)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Diagnostic Methods</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <ul class="feature-list">
+                            <li>Observation (望)</li>
+                            <li>Listening (闻)</li>
+                            <li>Inquiry (问)</li>
+                            <li>Palpation (切)</li>
+                            <li>Tongue Reading (舌诊)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Treatment Methods</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <ul class="feature-list">
+                            <li>Acupuncture (针灸)</li>
+                            <li>Herbal Medicine (中药)</li>
+                            <li>Cupping (拔罐)</li>
+                            <li>Massage (推拿)</li>
+                            <li>Qigong (气功)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Modern Practice</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Integration</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <ul class="feature-list">
+                            <li>Modern Research</li>
+                            <li>Clinical Studies</li>
+                            <li>Standardization</li>
+                            <li>Quality Control</li>
+                            <li>International Recognition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Applications</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <ul class="feature-list">
+                            <li>Preventive Care</li>
+                            <li>Chronic Conditions</li>
+                            <li>Pain Management</li>
+                            <li>Stress Relief</li>
+                            <li>Wellness Programs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Future Development</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <ul class="feature-list">
+                            <li>Digital Integration</li>
+                            <li>Research Innovation</li>
+                            <li>Global Expansion</li>
+                            <li>Education Systems</li>
+                            <li>Cultural Exchange</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <p class="quote-text">"上医治未病，中医治欲病，下医治已病"</p>
+            <p class="quote-text english">"The superior physician treats disease before it occurs, the mediocre physician treats disease when it is about to occur, and the inferior physician treats disease after it has occurred."</p>
+            <p class="quote-author">- The Yellow Emperor's Classic of Medicine</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>China Guide</h3>
+                <p>Discover the beauty and richness of Chinese culture</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../culture.html">Culture</a></li>
+                    <li><a href="../history.html">History</a></li>
+                    <li><a href="../travel.html">Travel</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 China Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+</body>
+</html> 
