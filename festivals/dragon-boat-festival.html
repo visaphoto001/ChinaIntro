@@ -187,33 +187,56 @@
         }
         
         .festival-card {
-            background: white;
-            border-radius: 10px;
+            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .festival-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .festival-card-header {
-            background-color: var(--primary-color);
+            background: #dc3545;
             color: white;
-            padding: 1rem;
-            text-align: center;
+            padding: 1.25rem;
+            text-align: left;
+        }
+        
+        .festival-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
         }
         
         .festival-card-content {
             padding: 1.5rem;
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
         
         .festival-card-icon {
             font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            color: #dc3545;
             text-align: center;
+            margin: 0.5rem 0;
+        }
+        
+        .festival-card p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1rem;
         }
         
         .festival-highlights {
@@ -569,7 +592,9 @@
         </section>
 
         <section class="festival-section">
-            <h3>Traditional Foods</h3>
+            <h2>Traditional Foods</h2>
+            <p>The Dragon Boat Festival features several traditional foods that carry deep cultural significance. Each dish has its own symbolic meaning and is an essential part of the festival celebrations.</p>
+            
             <div class="festival-grid">
                 <div class="festival-card">
                     <div class="festival-card-header">
@@ -579,7 +604,7 @@
                         <div class="festival-card-icon">
                             <i class="fas fa-leaf"></i>
                         </div>
-                        <p>Sticky rice dumplings wrapped in bamboo leaves, filled with various ingredients like pork, red beans, or dates. They honor Qu Yuan's sacrifice.</p>
+                        <p>Sticky rice dumplings wrapped in bamboo leaves, filled with various ingredients like pork, red beans, or dates. They honor Qu Yuan's sacrifice and are the festival's most iconic food.</p>
                     </div>
                 </div>
 
@@ -591,60 +616,19 @@
                         <div class="festival-card-icon">
                             <i class="fas fa-wine-glass"></i>
                         </div>
-                        <p>A traditional alcoholic drink believed to ward off evil spirits and bring good luck. It's made with Chinese herbs and realgar powder.</p>
+                        <p>A traditional alcoholic drink believed to ward off evil spirits and bring good luck. It's made with Chinese herbs and realgar powder, traditionally consumed during the festival.</p>
                     </div>
                 </div>
 
                 <div class="festival-card">
                     <div class="festival-card-header">
-                        <h3>Sweet Rice Dumplings</h3>
+                        <h3>Rice Dumplings (咸肉粽)</h3>
                     </div>
                     <div class="festival-card-content">
                         <div class="festival-card-icon">
-                            <i class="fas fa-cookie-bite"></i>
+                            <i class="fas fa-utensils"></i>
                         </div>
-                        <p>Small, sweet glutinous rice balls often served in soup or with syrup. They represent harmony and family togetherness during the festival.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="festival-section">
-            <h2>Traditional Foods</h2>
-            <p>The most iconic food of the Dragon Boat Festival is zongzi (粽子), sticky rice dumplings wrapped in bamboo leaves. These pyramid-shaped dumplings come in various flavors, including savory options with pork, chicken, or salted egg yolk, and sweet versions with red bean paste or dates. Other traditional foods include realgar wine and seasonal fruits.</p>
-            
-            <div class="festival-gallery">
-                <div class="gallery-item gallery-1"></div>
-                <div class="gallery-item gallery-2"></div>
-                <div class="gallery-item gallery-3"></div>
-                <div class="gallery-item gallery-4"></div>
-            </div>
-            
-            <div class="festival-grid">
-                <div class="festival-card">
-                    <div class="festival-card-header">
-                        <h3>Zongzi (粽子)</h3>
-                    </div>
-                    <div class="festival-card-content">
-                        <p>Sticky rice dumplings wrapped in bamboo leaves, available in savory flavors (pork, chicken) and sweet varieties (red bean, dates).</p>
-                    </div>
-                </div>
-                
-                <div class="festival-card">
-                    <div class="festival-card-header">
-                        <h3>Realgar Wine</h3>
-                    </div>
-                    <div class="festival-card-content">
-                        <p>Traditional wine mixed with realgar (a mineral) is consumed in small amounts to ward off evil spirits and insects.</p>
-                    </div>
-                </div>
-                
-                <div class="festival-card">
-                    <div class="festival-card-header">
-                        <h3>Seasonal Fruits</h3>
-                    </div>
-                    <div class="festival-card-content">
-                        <p>Fresh seasonal fruits like lychees, longans, and plums are enjoyed during the festival for their cooling properties.</p>
+                        <p>Savory glutinous rice dumplings filled with salted pork and other ingredients. These hearty dumplings provide energy for the dragon boat races and festivities.</p>
                     </div>
                 </div>
             </div>
