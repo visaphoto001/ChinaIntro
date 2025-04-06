@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twice-Cooked Pork - Sichuan Cuisine Guide</title>
+    <!-- Place this code on every page across your site and Google will automatically show ads in all the best places for you -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8267949394096715"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,pork,cooking') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .dish-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dish-section {
+            margin-bottom: 2rem;
+        }
+
+        .dish-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .ingredients-list, .steps-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ingredients-list li, .steps-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            margin-right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Explore & Experience</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../culture.html">Culture</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../geography.html">Geography</a></li>
+                <li><a href="../../cuisine.html">Cuisine</a></li>
+                <li><a href="../../language.html">Language</a></li>
+                <li><a href="../../travel.html">Travel Guide</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <span>Twice-Cooked Pork</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Twice-Cooked Pork <span class="chinese-text">回锅肉</span></h1>
+            <p>A traditional Sichuan dish where pork belly is first boiled, then stir-fried with vegetables</p>
+        </div>
+    </section>
+
+    <main class="dish-content">
+        <section class="dish-section">
+            <h2>About the Dish</h2>
+            <p>Twice-Cooked Pork, or Hui Guo Rou, is a signature dish of Sichuan cuisine. The name comes from the cooking method: the pork is first simmered, then sliced and stir-fried with vegetables and seasonings. This two-step process creates a unique texture and maximizes flavor.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Key Ingredients</h2>
+            <ul class="ingredients-list">
+                <li>Pork belly</li>
+                <li>Leeks or green garlic</li>
+                <li>Doubanjiang (fermented broad bean paste)</li>
+                <li>Black bean sauce</li>
+                <li>Sichuan peppercorns</li>
+                <li>Ginger and garlic</li>
+                <li>Sweet bean sauce</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Flavor Profile</h2>
+            <p>The dish offers a perfect balance of spicy, savory, and aromatic flavors. The twice-cooking method gives the pork a crispy exterior while maintaining tenderness inside. The combination with leeks adds a fresh, sharp contrast to the rich meat.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Cultural Significance</h2>
+            <p>Twice-Cooked Pork exemplifies the Sichuan cooking philosophy of transforming simple ingredients through sophisticated cooking techniques. It's a staple in Sichuan households and is often served at important gatherings and festivals.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
