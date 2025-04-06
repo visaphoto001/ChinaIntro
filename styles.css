@@ -33,9 +33,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    min-height: 70px;
-    display: flex;
-    align-items: center;
+    height: 70px;
 }
 
 nav {
@@ -45,8 +43,8 @@ nav {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0.5rem 2rem;
-    position: relative;
+    padding: 0 2rem;
+    height: 100%;
 }
 
 .logo {
@@ -55,14 +53,10 @@ nav {
     color: var(--primary-color);
     text-decoration: none;
     padding: 0.5rem;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
-}
-
-.logo:hover {
-    color: var(--primary-color);
-    text-decoration: none;
+    display: inline-block;
+    min-height: unset !important;
+    min-width: unset !important;
+    line-height: 1.2;
 }
 
 .nav-links {
@@ -70,15 +64,15 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
+    height: 100%;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: nowrap;
 }
 
 .nav-links li {
-    padding: 0;
-    margin: 0 0.5rem;
-    position: relative;
+    margin: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
@@ -86,9 +80,10 @@ nav {
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem;
-    display: block;
-    white-space: nowrap;
-    transition: color 0.3s ease;
+    height: auto;
+    min-height: unset !important;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a:hover {
@@ -107,7 +102,6 @@ nav {
 
 /* Hero Section */
 .hero {
-    padding-top: 70px;
     min-height: 60vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                 url('https://source.unsplash.com/1600x900/?china,landscape') center/cover;
@@ -541,14 +535,60 @@ footer {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .nav-links {
-        display: none;
+    /* Header and Navigation */
+    header {
+        padding: 5px 0;
     }
-    
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+    }
+
     .menu-toggle {
         display: block;
     }
 
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 70%;
+        height: auto;
+        background-color: var(--primary-color);
+        padding: 10px 0;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        border-radius: 10px;
+        flex-direction: column;
+    }
+
+    .nav-links.active {
+        right: 15px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-links a {
+        color: white;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        display: block;
+    }
+
+    .nav-links a:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .menu-toggle:hover {
+        color: var(--secondary-color);
+    }
+
+    /* Hero Section */
     .hero {
         height: 60vh;
     }
@@ -565,6 +605,7 @@ footer {
         font-size: 1rem;
     }
 
+    /* Intro Section */
     .intro-section {
         padding: 40px 0;
     }
@@ -579,6 +620,7 @@ footer {
         margin: 0;
     }
 
+    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -597,6 +639,7 @@ footer {
         margin-bottom: 10px;
     }
 
+    /* Back to Top Button */
     #back-to-top {
         bottom: 10px;
         right: 10px;
