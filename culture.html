@@ -167,19 +167,51 @@
                 line-height: 1.2;
             }
         }
+
+        /* Add breadcrumb styles */
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #e63946;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #c1121f;
+        }
+
+        .breadcrumb .separator {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Return to homepage">
                 <span class="logo-text">China Guide</span>
                 <span class="logo-tagline">Discover the Middle Kingdom</span>
             </a>
             <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#culture">Culture</a></li>
+                <li><a href="#culture" aria-current="page">Culture</a></li>
                 <li><a href="history.html">History</a></li>
                 <li><a href="geography.html">Geography</a></li>
                 <li><a href="cuisine.html">Cuisine</a></li>
@@ -188,6 +220,12 @@
             </ul>
         </nav>
     </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <span>Culture</span>
+    </div>
 
     <section class="hero culture-hero">
         <div class="hero-content">
@@ -211,11 +249,6 @@
     </section>
 
     <main class="main-content">
-        <a href="index.html" class="back-button">
-            <i class="fas fa-arrow-left"></i>
-            <span>Back to Home</span>
-        </a>
-
         <section class="featured-festivals">
             <h2>Featured Festivals</h2>
             <div class="festival-carousel">

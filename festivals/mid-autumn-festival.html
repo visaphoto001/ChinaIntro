@@ -369,12 +369,44 @@
                 line-height: 1.2;
             }
         }
+
+        /* Add breadcrumb styles */
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #e63946;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #c1121f;
+        }
+
+        .breadcrumb .separator {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="../index.html" class="logo">
+            <a href="../index.html" class="logo" aria-label="Return to homepage">
                 <span class="logo-text">China Guide</span>
                 <span class="logo-tagline">Discover the Middle Kingdom</span>
             </a>
@@ -390,6 +422,14 @@
             </ul>
         </nav>
     </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Mid-Autumn Festival</span>
+    </div>
 
     <section class="hero festival-hero">
         <div class="hero-content">
@@ -413,11 +453,6 @@
     </section>
 
     <main class="festival-content">
-        <a href="../culture.html" class="back-button">
-            <i class="fas fa-arrow-left"></i>
-            <span>Back to Culture</span>
-        </a>
-
         <section class="festival-section">
             <h2>About Mid-Autumn Festival</h2>
             <p>The Mid-Autumn Festival, also known as the Moon Festival, is celebrated on the 15th day of the 8th lunar month when the moon is at its fullest and brightest. It's a time for family reunions, moon appreciation, and sharing mooncakes. The festival has a history of over 3,000 years and is one of China's most important traditional holidays.</p>
