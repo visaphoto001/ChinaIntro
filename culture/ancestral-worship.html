@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancestral Worship in Chinese Culture - China Guide</title>
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,temple,altar') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .practice-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .practice-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .practice-card .chinese-name {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .ritual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .ritual-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ritual-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .ritual-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .ritual-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .ritual-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .ritual-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .content-conclusion {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            text-align: center;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .festival-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -0.8rem;
+            top: 0;
+            bottom: -2rem;
+            width: 2px;
+            background: var(--primary-color);
+            opacity: 0.3;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Ancestral Worship</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ancestral Worship <span class="chinese-text">祭祖</span></h1>
+            <p>Honoring the Past, Connecting Generations</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">4,000+</span>
+                    <span class="stat-label">Years of Tradition</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Major Festivals</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">365</span>
+                    <span class="stat-label">Days of Reverence</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Understanding Ancestral Worship</h2>
+            <p>Ancestral worship (祭祖, jì zǔ) is a fundamental aspect of Chinese culture that connects the living with their ancestors through ritual practices and spiritual beliefs. This tradition, dating back over 4,000 years, reflects the Chinese value of filial piety and the belief that deceased family members continue to influence the lives of their descendants.</p>
+            
+            <div class="ritual-grid">
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Home Altars</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <p>Many Chinese families maintain ancestral altars in their homes, creating a sacred space for daily offerings and prayers.</p>
+                        <ul class="feature-list">
+                            <li>Ancestral tablets with names</li>
+                            <li>Incense offerings</li>
+                            <li>Fresh fruit and flowers</li>
+                            <li>Daily prayers and respect</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Temple Rituals</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-place-of-worship"></i>
+                        </div>
+                        <p>Ancestral temples serve as communal spaces for larger ceremonies and maintaining genealogical records.</p>
+                        <ul class="feature-list">
+                            <li>Clan gatherings</li>
+                            <li>Festival celebrations</li>
+                            <li>Genealogy preservation</li>
+                            <li>Community bonds</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Grave Sweeping</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <p>The Qingming Festival focuses on visiting and maintaining ancestral graves, showing continued care for departed family members.</p>
+                        <ul class="feature-list">
+                            <li>Tomb cleaning</li>
+                            <li>Food offerings</li>
+                            <li>Paper money burning</li>
+                            <li>Family reunions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "To forget one's ancestors is to be a brook without a source, a tree without a root."
+                <div class="quote-author">- Chinese Proverb</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Festival Calendar</h2>
+            <div class="festival-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Qingming Festival (清明节)</div>
+                    <p>Usually falling in early April, this is the primary festival for ancestral worship. Families visit graves, clean burial sites, and make offerings to ancestors.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Ghost Festival (中元节)</div>
+                    <p>Occurring on the 15th day of the seventh lunar month, this festival involves making offerings to both ancestors and wandering spirits.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Winter Solstice (冬至)</div>
+                    <p>An important time for family gatherings and ancestral worship, marking the shortest day of the year with special offerings.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Chinese New Year (春节)</div>
+                    <p>The most important festival includes paying respects to ancestors as part of the celebration of family and renewal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Ritual Objects and Offerings</h2>
+            <div class="ritual-grid">
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Sacred Items</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-scroll"></i>
+                        </div>
+                        <p>Traditional objects used in ancestral worship carry deep symbolic meaning.</p>
+                        <ul class="feature-list">
+                            <li>Ancestral tablets (神主牌)</li>
+                            <li>Incense burners</li>
+                            <li>Ceremonial vessels</li>
+                            <li>Prayer scrolls</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Food Offerings</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <p>Specific foods are prepared and offered to ancestors during ceremonies.</p>
+                        <ul class="feature-list">
+                            <li>Fresh fruits</li>
+                            <li>Rice wine</li>
+                            <li>Traditional dishes</li>
+                            <li>Tea ceremonies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Paper Offerings</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-money-bill"></i>
+                        </div>
+                        <p>Special paper items are burned to send material comfort to ancestors in the afterlife.</p>
+                        <ul class="feature-list">
+                            <li>Joss paper (金纸)</li>
+                            <li>Paper houses</li>
+                            <li>Paper clothing</li>
+                            <li>Modern luxuries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Modern Practice</h2>
+            <div class="ritual-grid">
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Digital Innovation</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <p>Technology is transforming how younger generations maintain ancestral worship traditions.</p>
+                        <ul class="feature-list">
+                            <li>Virtual ancestral tablets</li>
+                            <li>Online memorial halls</li>
+                            <li>Digital offering apps</li>
+                            <li>Remote ceremony streaming</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Urban Adaptation</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <p>City dwellers are finding new ways to maintain traditions in modern settings.</p>
+                        <ul class="feature-list">
+                            <li>Apartment altars</li>
+                            <li>Community centers</li>
+                            <li>Scheduled visits</li>
+                            <li>Modern memorial services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ritual-card">
+                    <div class="ritual-card-header">
+                        <h3>Environmental Awareness</h3>
+                    </div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <p>Contemporary practices are evolving to be more environmentally conscious.</p>
+                        <ul class="feature-list">
+                            <li>Eco-friendly offerings</li>
+                            <li>Electronic incense</li>
+                            <li>Sustainable materials</li>
+                            <li>Green burial practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p class="content-conclusion">While the forms of ancestral worship continue to evolve with modern times, its essential purpose remains unchanged: maintaining the connection between past and present generations, preserving family history, and expressing gratitude to those who came before us.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
