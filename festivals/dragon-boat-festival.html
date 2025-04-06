@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragon Boat Festival - ChinaIntro</title>
+    <title>Dragon Boat Festival - China Guide</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .festival-hero {
-            height: 60vh;
+            height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                         url('https://source.unsplash.com/1600x900/?dragon,boat,race') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .festival-hero .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .festival-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .festival-hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
         .festival-content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -27,6 +49,18 @@
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .festival-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
         
         .festival-image {
@@ -35,6 +69,7 @@
             height: auto;
             border-radius: 10px;
             margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .timeline {
@@ -54,32 +89,189 @@
         }
         
         .back-button {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--primary-color);
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: transparent;
+            color: var(--primary-color);
             text-decoration: none;
-            border-radius: 5px;
-            margin: 1rem;
-            transition: background-color var(--transition-speed) ease;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .back-button span {
+            position: relative;
+            z-index: 1;
         }
         
         .back-button:hover {
-            background-color: #a01830;
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .back-button:hover::before {
+            opacity: 1;
+        }
+        
+        .back-button:active {
+            transform: translateX(-2px);
+        }
+        
+        .festival-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .festival-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .festival-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .festival-card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .festival-card-content {
+            padding: 1.5rem;
+        }
+        
+        .festival-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .festival-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-item {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .highlight-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .festival-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-1 {
+            background-image: url('https://source.unsplash.com/800x600/?dragon,boat,race');
+        }
+        
+        .gallery-2 {
+            background-image: url('https://source.unsplash.com/800x600/?zongzi,rice,dumpling');
+        }
+        
+        .gallery-3 {
+            background-image: url('https://source.unsplash.com/800x600/?chinese,herbs');
+        }
+        
+        .gallery-4 {
+            background-image: url('https://source.unsplash.com/800x600/?chinese,qu,yuan');
+        }
+        
+        @media (max-width: 768px) {
+            .festival-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .festival-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .festival-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlight-item {
+                min-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="nav-container">
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#culture">Culture</a></li>
-                <li><a href="../index.html#history">History</a></li>
-                <li><a href="../index.html#geography">Geography</a></li>
-                <li><a href="../index.html#cuisine">Cuisine</a></li>
-                <li><a href="../index.html#language">Language</a></li>
-                <li><a href="../index.html#travel">Travel Guide</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
             </ul>
         </nav>
     </header>
@@ -87,56 +279,281 @@
     <section class="hero festival-hero">
         <div class="hero-content">
             <h1>Dragon Boat Festival (端午节)</h1>
-            <p>The Festival of Dragon Boats and Zongzi</p>
+            <p>Celebrating the Legend of Qu Yuan</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">5th</span>
+                    <span class="stat-label">Day of 5th Month</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2,300+</span>
+                    <span class="stat-label">Years of History</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Millions</span>
+                    <span class="stat-label">Of Zongzi Eaten</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <main class="festival-content">
-        <a href="../index.html#culture" class="back-button">← Back to Culture</a>
+        <a href="../culture.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Culture</span>
+        </a>
 
-        <div class="content-grid">
-            <div class="card">
-                <h3>Overview</h3>
-                <p>The Dragon Boat Festival, also known as Duanwu Festival, is celebrated on the 5th day of the 5th lunar month. It commemorates the patriotic poet Qu Yuan and features dragon boat races, eating zongzi (sticky rice dumplings wrapped in bamboo leaves), and various customs to ward off evil spirits.</p>
+        <section class="festival-section">
+            <h2>About Dragon Boat Festival</h2>
+            <p>The Dragon Boat Festival, also known as Duanwu Festival, is celebrated on the 5th day of the 5th lunar month. It commemorates the patriotic poet Qu Yuan, who drowned himself in the Miluo River in 278 BCE. The festival is marked by dragon boat races, eating zongzi (sticky rice dumplings), and hanging aromatic pouches to ward off evil spirits.</p>
+            
+            <div class="festival-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="highlight-title">Dragon Boat Races</div>
+                    <p>Teams compete in colorful dragon-shaped boats to the beat of drums</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="highlight-title">Zongzi</div>
+                    <p>Sticky rice dumplings wrapped in bamboo leaves</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="highlight-title">Qu Yuan</div>
+                    <p>Commemorating the patriotic poet's sacrifice</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <div class="highlight-title">Aromatic Pouches</div>
+                    <p>Hanging pouches with herbs to ward off evil spirits</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>History and Significance</h2>
+            <p>The Dragon Boat Festival has a history of over 2,300 years. It originated from the commemoration of Qu Yuan, a patriotic poet and statesman of the Chu Kingdom during the Warring States period. After being exiled and learning of his kingdom's defeat, Qu Yuan drowned himself in the Miluo River. Local people raced their boats to search for his body and threw rice dumplings into the water to prevent fish from eating his remains.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">278 BCE</div>
+                    <p>Qu Yuan drowned himself in the Miluo River after learning of his kingdom's defeat.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Han Dynasty (206 BCE - 220 CE)</div>
+                    <p>The festival became an official holiday with dragon boat races and zongzi eating.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Tang Dynasty (618 - 907)</div>
+                    <p>The festival gained popularity with royal celebrations and poetry competitions.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Modern Era</div>
+                    <p>The festival is celebrated worldwide with dragon boat races, cultural performances, and traditional foods.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Traditional Customs</h2>
+            <p>The Dragon Boat Festival is celebrated with various customs and activities. Dragon boat races are the most exciting event, with teams paddling to the beat of drums. People eat zongzi (sticky rice dumplings wrapped in bamboo leaves), hang aromatic pouches, and wear colorful silk threads to ward off evil spirits. Some also drink realgar wine and take herbal baths for health benefits.</p>
+            
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Dragon Boat Races</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <p>Teams compete in colorful dragon-shaped boats, paddling to the rhythm of drums. The races symbolize the search for Qu Yuan's body.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Zongzi Making</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <p>Families gather to make zongzi, sticky rice dumplings wrapped in bamboo leaves with various fillings like meat, beans, or dates.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Aromatic Pouches</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <p>Colorful pouches filled with aromatic herbs are hung around the neck or in homes to ward off evil spirits and bring good health.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Herbal Baths</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-hot-tub"></i>
+                        </div>
+                        <p>Taking baths with herbs like mugwort and calamus is believed to protect against diseases and evil spirits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Traditional Foods</h2>
+            <p>The most iconic food of the Dragon Boat Festival is zongzi (粽子), sticky rice dumplings wrapped in bamboo leaves. These pyramid-shaped dumplings come in various flavors, including savory options with pork, chicken, or salted egg yolk, and sweet versions with red bean paste or dates. Other traditional foods include realgar wine and seasonal fruits.</p>
+            
+            <div class="festival-gallery">
+                <div class="gallery-item gallery-1"></div>
+                <div class="gallery-item gallery-2"></div>
+                <div class="gallery-item gallery-3"></div>
+                <div class="gallery-item gallery-4"></div>
             </div>
             
-            <div class="card">
-                <h3>History and Significance</h3>
-                <p>The festival originated over 2,000 years ago during the Warring States period. It commemorates Qu Yuan, a loyal minister who drowned himself in the Miluo River after being exiled by the king. Local people raced their boats to save him and threw rice dumplings into the water to prevent fish from eating his body.</p>
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Zongzi (粽子)</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>Sticky rice dumplings wrapped in bamboo leaves, available in savory flavors (pork, chicken) and sweet varieties (red bean, dates).</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Realgar Wine</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>Traditional wine mixed with realgar (a mineral) is consumed in small amounts to ward off evil spirits and insects.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Seasonal Fruits</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>Fresh seasonal fruits like lychees, longans, and plums are enjoyed during the festival for their cooling properties.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Modern Celebrations</h2>
+            <p>Today's Dragon Boat Festival celebrations combine traditional customs with modern sports and entertainment. International dragon boat racing competitions attract teams from around the world. Cities host cultural festivals featuring traditional performances, food stalls, and craft demonstrations. The festival has also become a popular tourist attraction, with many people traveling to experience the races and cultural activities.</p>
             
-            <div class="card">
-                <h3>Traditional Customs</h3>
-                <p>Dragon boat racing is the most iconic activity of the festival. Teams paddle in long, narrow boats decorated with dragon heads and tails. Other customs include hanging pouches of herbs, wearing colorful silk threads, and displaying images of Zhong Kui (a mythical figure who drives away evil spirits).</p>
+            <div class="festival-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="highlight-title">International Races</div>
+                    <p>Teams from around the world compete in dragon boat racing competitions</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="highlight-title">Food Festivals</div>
+                    <p>Cultural festivals featuring traditional foods and cooking demonstrations</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="highlight-title">Tourist Attraction</div>
+                    <p>The festival has become a major tourist attraction in many cities</p>
+                </div>
             </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Travel Tips</h2>
+            <p>If you're visiting China during the Dragon Boat Festival, you'll find celebrations in most cities, with the largest events in major metropolitan areas. The best places to experience the festival include Hong Kong, Guangzhou, and Suzhou, which are known for their spectacular dragon boat races. Book accommodations early as hotels fill up quickly during this period.</p>
             
-            <div class="card">
-                <h3>Traditional Foods</h3>
-                <p>Zongzi (粽子) is the traditional food of the Dragon Boat Festival. These pyramid-shaped dumplings are made of glutinous rice wrapped in bamboo leaves and filled with various ingredients like meat, beans, or nuts. They are steamed or boiled and enjoyed by families during the festival.</p>
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Best Locations</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p>Visit cities like Hong Kong, Guangzhou, and Suzhou for the most spectacular dragon boat races and celebrations.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Planning</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <p>Book accommodations and transportation well in advance. The festival attracts large crowds, especially for the races.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Experiences</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <p>Don't forget your camera! The dragon boat races and colorful celebrations create stunning photo opportunities.</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h3>Modern Celebrations</h3>
-                <p>Today, the Dragon Boat Festival is celebrated with international dragon boat racing competitions, cultural performances, and food festivals. Many cities host large-scale events with multiple races, music performances, and food stalls. The festival has also gained popularity outside China, with dragon boat races held in many countries.</p>
-            </div>
-            
-            <div class="card">
-                <h3>Travel Tips</h3>
-                <p>If you're visiting China during the Dragon Boat Festival (usually in June), head to cities with strong dragon boat racing traditions like Hong Kong, Guangzhou, or Suzhou. The races are most exciting in the morning. Many riverside parks and venues host special events and performances. Don't miss trying different varieties of zongzi from local vendors.</p>
-            </div>
-        </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 ChinaIntro. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+    <script src="../script.js"></script>
 </body>
 </html> 
