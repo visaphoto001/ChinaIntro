@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Family Structure in Chinese Culture - China Guide</title>
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,family,generations') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .family-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .family-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .family-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .family-card .chinese-name {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .family-role-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .family-role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .role-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .role-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .role-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .role-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Extended Family Structure</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Extended Family Structure <span class="chinese-text">大家庭</span></h1>
+            <p>The Foundation of Chinese Society</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Generations Together</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Family Roles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">千年</span>
+                    <span class="stat-label">Years of Tradition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Understanding Chinese Family Structure</h2>
+            <p>The Chinese extended family structure, known as 大家庭 (dà jiā tíng), represents a complex social system that has been the cornerstone of Chinese society for thousands of years. This traditional family model extends beyond the nuclear family to include multiple generations living under one roof or maintaining close ties.</p>
+            
+            <div class="family-grid">
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Traditional Structure</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <p>The traditional Chinese family structure follows a hierarchical system based on age and relationship.</p>
+                        <ul class="feature-list">
+                            <li>Patriarchal leadership</li>
+                            <li>Generational respect</li>
+                            <li>Clear role definitions</li>
+                            <li>Collective decision-making</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Family Roles</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>Each family member has specific roles and responsibilities within the family unit.</p>
+                        <ul class="feature-list">
+                            <li>Grandparents as advisors</li>
+                            <li>Parents as providers</li>
+                            <li>Children's obligations</li>
+                            <li>Extended relatives' support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Support System</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <p>The extended family serves as a comprehensive support network for all members.</p>
+                        <ul class="feature-list">
+                            <li>Childcare assistance</li>
+                            <li>Financial support</li>
+                            <li>Emotional guidance</li>
+                            <li>Shared resources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "家和万事兴" (If the family lives in harmony, all affairs will prosper)
+                <div class="quote-author">- Chinese Proverb</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Modern Adaptations</h2>
+            <div class="family-grid">
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Urban Evolution</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <p>Modern urban life has led to adaptations in the traditional extended family structure.</p>
+                        <ul class="feature-list">
+                            <li>Separate households</li>
+                            <li>Digital communication</li>
+                            <li>Weekend gatherings</li>
+                            <li>Shared responsibilities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Contemporary Challenges</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <p>Modern families face unique challenges while maintaining traditional values.</p>
+                        <ul class="feature-list">
+                            <li>Work-life balance</li>
+                            <li>Geographic separation</li>
+                            <li>Changing dynamics</li>
+                            <li>Cultural preservation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Future Outlook</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <p>The extended family structure continues to evolve while maintaining its core values.</p>
+                        <ul class="feature-list">
+                            <li>Digital integration</li>
+                            <li>Flexible arrangements</li>
+                            <li>Value preservation</li>
+                            <li>Global adaptation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Benefits and Values</h2>
+            <div class="family-grid">
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Social Benefits</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <p>Extended families provide numerous social advantages for all members.</p>
+                        <ul class="feature-list">
+                            <li>Strong support network</li>
+                            <li>Cultural transmission</li>
+                            <li>Shared wisdom</li>
+                            <li>Community connections</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Economic Advantages</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <p>The extended family structure offers practical economic benefits.</p>
+                        <ul class="feature-list">
+                            <li>Shared resources</li>
+                            <li>Cost efficiency</li>
+                            <li>Financial security</li>
+                            <li>Collective investments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="family-role-card">
+                    <div class="role-card-header">
+                        <h3>Cultural Heritage</h3>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <p>Extended families play a crucial role in preserving cultural heritage.</p>
+                        <ul class="feature-list">
+                            <li>Tradition preservation</li>
+                            <li>Language transmission</li>
+                            <li>Cultural practices</li>
+                            <li>Family history</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
