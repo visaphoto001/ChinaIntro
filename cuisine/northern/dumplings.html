@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumplings - Northern Cuisine Guide</title>
+    <!-- Place this code on every page across your site and Google will automatically show ads in all the best places for you -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8267949394096715"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?dumplings,chinese,food') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .dish-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dish-section {
+            margin-bottom: 2rem;
+        }
+
+        .dish-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .ingredients-list, .steps-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ingredients-list li, .steps-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            margin-right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Explore & Experience</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../culture.html">Culture</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../geography.html">Geography</a></li>
+                <li><a href="../../cuisine.html">Cuisine</a></li>
+                <li><a href="../../language.html">Language</a></li>
+                <li><a href="../../travel.html">Travel Guide</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <span>Dumplings</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dumplings <span class="chinese-text">饺子</span></h1>
+            <p>A beloved Chinese dish that brings families together</p>
+        </div>
+    </section>
+
+    <main class="dish-content">
+        <section class="dish-section">
+            <h2>About Dumplings</h2>
+            <p>Chinese dumplings (饺子) are small parcels of dough filled with various ingredients, typically meat and vegetables. They are a staple of Northern Chinese cuisine and hold special significance in Chinese culture, particularly during the Chinese New Year celebrations.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Common Fillings</h2>
+            <ul class="ingredients-list">
+                <li>Pork and Cabbage (猪肉白菜)</li>
+                <li>Pork and Chives (猪肉韭菜)</li>
+                <li>Beef and Onion (牛肉洋葱)</li>
+                <li>Lamb and Carrot (羊肉胡萝卜)</li>
+                <li>Vegetarian (素馅)</li>
+                <li>Seafood (海鲜馅)</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Making Process</h2>
+            <ol class="steps-list">
+                <li>Preparing the dough with flour and water</li>
+                <li>Making the filling with minced meat and vegetables</li>
+                <li>Rolling out thin, circular wrappers</li>
+                <li>Adding filling and pleating the edges</li>
+                <li>Cooking by boiling, steaming, or pan-frying</li>
+            </ol>
+        </section>
+
+        <section class="dish-section">
+            <h2>Cultural Significance</h2>
+            <p>Dumplings are deeply embedded in Chinese culture, especially during the Chinese New Year. Making dumplings together is a family activity that brings people together. The shape of dumplings resembles ancient Chinese gold ingots, symbolizing wealth and prosperity. It's believed that eating dumplings during the New Year brings good fortune.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Cooking Methods</h2>
+            <ul class="ingredients-list">
+                <li>Boiled (水饺)</li>
+                <li>Steamed (蒸饺)</li>
+                <li>Pan-fried (煎饺)</li>
+                <li>Deep-fried (炸饺)</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Serving and Eating</h2>
+            <p>Dumplings are typically served with a dipping sauce made from vinegar, soy sauce, and sometimes chili oil. They can be enjoyed as a main dish, appetizer, or part of a larger meal. The proper way to eat dumplings is to hold them with chopsticks, dip them in sauce, and eat them in one bite to experience the burst of flavors.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Regional Variations</h2>
+            <p>While dumplings are popular throughout China, each region has its own style. Northern dumplings tend to be larger with thicker wrappers, while Southern versions are often smaller and more delicate. Some famous regional variations include:</p>
+            <ul class="ingredients-list">
+                <li>Beijing Dumplings (北京饺子)</li>
+                <li>Shanghai Soup Dumplings (小笼包)</li>
+                <li>Shandong Dumplings (山东饺子)</li>
+                <li>Northeastern Dumplings (东北饺子)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peking Duck - Northern Cuisine Guide</title>
+    <!-- Place this code on every page across your site and Google will automatically show ads in all the best places for you -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8267949394096715"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?peking,duck,chinese') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .dish-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dish-section {
+            margin-bottom: 2rem;
+        }
+
+        .dish-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .ingredients-list, .steps-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ingredients-list li, .steps-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            margin-right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Explore & Experience</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../culture.html">Culture</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../geography.html">Geography</a></li>
+                <li><a href="../../cuisine.html">Cuisine</a></li>
+                <li><a href="../../language.html">Language</a></li>
+                <li><a href="../../travel.html">Travel Guide</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <span>Peking Duck</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Peking Duck <span class="chinese-text">北京烤鸭</span></h1>
+            <p>A legendary dish from Beijing featuring crispy skin and tender meat</p>
+        </div>
+    </section>
+
+    <main class="dish-content">
+        <section class="dish-section">
+            <h2>About Peking Duck</h2>
+            <p>Peking Duck is one of China's most famous dishes, originating from Beijing (formerly Peking). This iconic dish is known for its thin, crispy skin and tender meat, traditionally served with thin pancakes, spring onions, cucumber, and sweet bean sauce. The preparation process is an art form that has been perfected over centuries.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Preparation Process</h2>
+            <ol class="steps-list">
+                <li>Air-drying the duck for several hours</li>
+                <li>Glazing with maltose syrup</li>
+                <li>Hanging in a special oven</li>
+                <li>Roasting until the skin is crispy</li>
+                <li>Carving tableside by a skilled chef</li>
+            </ol>
+        </section>
+
+        <section class="dish-section">
+            <h2>Traditional Accompaniments</h2>
+            <ul class="ingredients-list">
+                <li>Thin wheat pancakes (春饼)</li>
+                <li>Spring onions (葱)</li>
+                <li>Cucumber strips (黄瓜)</li>
+                <li>Sweet bean sauce (甜面酱)</li>
+                <li>Garlic paste (optional)</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Cultural Significance</h2>
+            <p>Peking Duck has a history dating back to the Ming Dynasty (1368-1644) and was originally a dish served in the imperial court. Today, it's considered a symbol of Chinese cuisine and is often served at important banquets and celebrations. The dish represents the pinnacle of Chinese culinary artistry and is a must-try for visitors to Beijing.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Dining Experience</h2>
+            <p>The serving of Peking Duck is a theatrical experience. A skilled chef carves the duck tableside, separating the crispy skin from the meat with precise cuts. The skin is served first, followed by the meat. Diners assemble their own wraps by spreading sauce on a pancake, adding duck, spring onions, and cucumber, then rolling it up.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Where to Try</h2>
+            <p>While Peking Duck can be found in Chinese restaurants worldwide, the most authentic experience is in Beijing. Famous restaurants include Quanjude (全聚德) and Da Dong (大董), which have been serving this dish for generations. These establishments maintain traditional preparation methods and offer the complete dining experience.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
