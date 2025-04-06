@@ -472,54 +472,6 @@ main {
     color: var(--primary-color);
 }
 
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: transparent;
-    color: var(--primary-color);
-    text-decoration: none;
-    border: 2px solid var(--primary-color);
-    border-radius: 30px;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.back-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-color);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 0;
-}
-
-.back-button span {
-    position: relative;
-    z-index: 1;
-}
-
-.back-button:hover {
-    color: white;
-    transform: translateX(-5px);
-}
-
-.back-button:hover::before {
-    opacity: 1;
-}
-
-.back-button:active {
-    transform: translateX(-2px);
-}
-
 /* Footer */
 footer {
     background-color: var(--text-color);
@@ -1171,4 +1123,12 @@ main,
     .festival-card {
         min-width: 100%;
     }
+}
+
+/* Remove back button styles */
+.back-button,
+.back-button::before,
+.back-button:hover,
+.back-button:active {
+    display: none;
 } 
