@@ -6,6 +6,168 @@
     <title>Chinese History - China Guide</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .history-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,history,palace') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .history-hero .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .history-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        
+        .history-hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .history-hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 4rem 0;
+            }
+            
+            .history-hero .hero-content {
+                padding: 1.5rem;
+            }
+            
+            .history-hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .history-hero p {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+                flex: 1;
+                max-width: 150px;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .history-hero {
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+            
+            .history-hero .hero-content {
+                padding: 1rem;
+            }
+            
+            .history-hero h1 {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .history-hero p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                padding: 0;
+            }
+
+            .hero-stats {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.75rem;
+                margin-top: 1rem;
+            }
+
+            .stat-item {
+                width: calc(50% - 0.75rem);
+                min-width: auto;
+                max-width: none;
+                padding: 0.75rem 0.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+                line-height: 1.2;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -35,8 +197,22 @@
 
     <section class="hero history-hero">
         <div class="hero-content">
-            <h1>Chinese History</h1>
+            <h1>Chinese History (中国历史)</h1>
             <p>A Journey Through 5,000 Years of Civilization</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">5,000+</span>
+                    <span class="stat-label">Years of History</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Major Dynasties</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">55</span>
+                    <span class="stat-label">UNESCO Sites</span>
+                </div>
+            </div>
         </div>
     </section>
 
