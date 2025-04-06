@@ -6,11 +6,258 @@
     <title>Chinese Language - China Guide</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .language-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,calligraphy') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .language-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .language-section {
+            margin-bottom: 3rem;
+        }
+
+        .language-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .language-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .language-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .language-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .language-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .language-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .language-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .language-hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .language-hero {
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        .dark-mode .language-card {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .language-card-content {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .language-card p,
+        .dark-mode .feature-list li {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .feature-list li {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Return to homepage">
                 <span class="logo-text">China Guide</span>
                 <span class="logo-tagline">Discover the Middle Kingdom</span>
             </a>
@@ -54,110 +301,206 @@
         </div>
     </section>
 
-    <style>
-        .language-hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://source.unsplash.com/1600x900/?chinese,calligraphy') center/cover;
-            height: 70vh;
-        }
+    <main class="language-content">
+        <section class="language-section">
+            <h2>Writing System</h2>
+            <div class="language-grid">
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Characters</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <p>Chinese characters (汉字) are logograms, with each character representing a syllable and meaning. The system has evolved from oracle bone inscriptions to modern simplified characters.</p>
+                        <ul class="feature-list">
+                            <li>Oracle Bone Script - Ancient writing</li>
+                            <li>Evolution of Characters</li>
+                            <li>Simplified vs Traditional</li>
+                            <li>Basic Strokes and Radicals</li>
+                        </ul>
+                    </div>
+                </div>
 
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-            padding: 0 1rem;
-        }
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Calligraphy</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <p>The art of writing Chinese characters beautifully is highly valued in Chinese culture, combining aesthetics with meaning in a unique art form.</p>
+                        <ul class="feature-list">
+                            <li>Five Major Styles</li>
+                            <li>Traditional Tools</li>
+                            <li>Artistic Principles</li>
+                            <li>Modern Applications</li>
+                        </ul>
+                    </div>
+                </div>
 
-        .stat-item {
-            text-align: center;
-            min-width: 120px;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .stat-label {
-            display: block;
-            font-size: 0.9rem;
-            opacity: 0.9;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-        }
-
-        @media (max-width: 768px) {
-            .hero-stats {
-                gap: 1rem;
-            }
-            .stat-item {
-                min-width: 100px;
-                padding: 0.75rem;
-            }
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            .stat-label {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
-
-    <main class="festival-content">
-        <div class="content-grid">
-            <div class="card">
-                <h3>Writing System</h3>
-                <p>The Chinese writing system is one of the oldest continuously used writing systems in the world. Chinese characters (汉字) are logograms, with each character representing a syllable and a meaning. The system has evolved over thousands of years, from oracle bone inscriptions to the simplified characters used today in mainland China. Calligraphy, the art of writing characters beautifully, is highly valued in Chinese culture. The complexity and beauty of Chinese characters have influenced other East Asian writing systems, including Japanese kanji and Korean hanja.</p>
-                <ul class="feature-list">
-                    <li>Character Evolution - From oracle bones to modern script</li>
-                    <li>Simplified vs. Traditional - Regional variations</li>
-                    <li>Calligraphy - The art of beautiful writing</li>
-                    <li>Influence on Other Languages - Japanese and Korean writing</li>
-                </ul>
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Cultural Impact</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>Chinese writing has influenced many East Asian writing systems and continues to be a symbol of cultural identity and artistic expression.</p>
+                        <ul class="feature-list">
+                            <li>Japanese Kanji Adoption</li>
+                            <li>Korean Hanja Usage</li>
+                            <li>Vietnamese Chữ Nôm</li>
+                            <li>Modern Digital Impact</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h3>Spoken Chinese</h3>
-                <p>Chinese is not a single language but a family of languages, with Mandarin (普通话) being the official language of China. Other major varieties include Cantonese (粤语), spoken in Guangdong and Hong Kong; Hokkien (闽南语), common in Fujian and Taiwan; and Hakka (客家话), used by the Hakka people. These varieties are often mutually unintelligible but share the same writing system. Mandarin has four tones that change the meaning of words, making pronunciation challenging for learners. Pinyin, the romanization system for Chinese characters, helps foreigners learn pronunciation.</p>
-                <ul class="feature-list">
-                    <li>Mandarin - The official language</li>
-                    <li>Regional Dialects - Cantonese, Hokkien, and Hakka</li>
-                    <li>Tones - The four tones of Mandarin</li>
-                    <li>Pinyin - Romanization system for learning Chinese</li>
-                </ul>
+        </section>
+
+        <section class="language-section">
+            <h2>Spoken Language</h2>
+            <div class="language-grid">
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Mandarin</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <p>Mandarin (普通话) is China's official language, featuring four tones that change word meanings. It's the most widely spoken form of Chinese.</p>
+                        <ul class="feature-list">
+                            <li>Four Tones System</li>
+                            <li>Standard Pronunciation</li>
+                            <li>Grammar Structure</li>
+                            <li>Modern Vocabulary</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Dialects</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <p>Chinese includes many regional varieties like Cantonese, Hokkien, and Hakka, each with distinct pronunciation and vocabulary.</p>
+                        <ul class="feature-list">
+                            <li>Cantonese - Hong Kong & Guangdong</li>
+                            <li>Hokkien - Fujian & Taiwan</li>
+                            <li>Hakka - Dispersed Communities</li>
+                            <li>Regional Variations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Learning Tools</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <p>Modern tools and systems help learners master Chinese pronunciation and character recognition, making learning more accessible.</p>
+                        <ul class="feature-list">
+                            <li>Pinyin System</li>
+                            <li>Character Recognition Apps</li>
+                            <li>Online Learning Platforms</li>
+                            <li>Practice Resources</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h3>Literature</h3>
-                <p>Chinese literature has a rich history spanning thousands of years. Classical Chinese poetry, particularly from the Tang Dynasty, is celebrated for its brevity and imagery. The Four Great Classical Novels—Journey to the West, Water Margin, Romance of the Three Kingdoms, and Dream of the Red Chamber—are masterpieces that have influenced literature throughout East Asia. Modern Chinese literature has produced Nobel laureates like Mo Yan and explores themes of tradition, change, and identity in contemporary China.</p>
-                <ul class="feature-list">
-                    <li>Classical Poetry - Tang and Song dynasty verses</li>
-                    <li>Four Great Novels - Masterpieces of Chinese fiction</li>
-                    <li>Modern Literature - Contemporary authors and themes</li>
-                    <li>Literary Forms - Poetry, prose, and drama</li>
-                </ul>
+        </section>
+
+        <section class="language-section">
+            <h2>Literature & Culture</h2>
+            <div class="language-grid">
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Classical Literature</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <p>Chinese literature spans thousands of years, from ancient poetry to the Four Great Classical Novels, showcasing the language's expressive power.</p>
+                        <ul class="feature-list">
+                            <li>Tang Dynasty Poetry</li>
+                            <li>Four Great Classical Novels</li>
+                            <li>Ancient Philosophy Texts</li>
+                            <li>Historical Records</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Modern Literature</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <p>Contemporary Chinese literature explores modern themes while maintaining connections to traditional language and culture.</p>
+                        <ul class="feature-list">
+                            <li>Nobel Prize Winners</li>
+                            <li>Contemporary Authors</li>
+                            <li>Modern Poetry</li>
+                            <li>Digital Literature</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="language-card">
+                    <div class="language-card-header">
+                        <h3>Cultural Expression</h3>
+                    </div>
+                    <div class="language-card-content">
+                        <div class="language-card-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <p>The Chinese language plays a vital role in cultural expressions from traditional opera to modern media and entertainment.</p>
+                        <ul class="feature-list">
+                            <li>Opera & Theater</li>
+                            <li>Film & Television</li>
+                            <li>Social Media</li>
+                            <li>Pop Culture</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 ChinaIntro. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
 </body>
 </html> 
