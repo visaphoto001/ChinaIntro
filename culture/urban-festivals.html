@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Festivals in China - China Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,city,festival') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .feature-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-text.english {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #e63946;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #c1121f;
+        }
+
+        .breadcrumb .separator {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo" aria-label="Return to homepage">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Urban Festivals</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Urban Festivals <span class="chinese-text">城市节日</span></h1>
+            <p>Celebrating Modern Chinese Culture in Urban Spaces</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Annual Events</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50M+</span>
+                    <span class="stat-label">Attendees</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Major Cities</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="section">
+            <h2>Modern Urban Celebrations</h2>
+            <p>Urban festivals in China represent a fusion of traditional cultural elements with contemporary urban lifestyle. These events showcase the dynamic nature of Chinese cities and their vibrant cultural scenes.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Music Festivals</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <p>Modern music festivals have become a significant part of urban culture, featuring both international and local artists.</p>
+                        <ul class="feature-list">
+                            <li>Strawberry Music Festival</li>
+                            <li>Modern Sky Festival</li>
+                            <li>Midi Music Festival</li>
+                            <li>JZ Festival</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Art Fairs</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <p>Contemporary art fairs bring together artists, galleries, and collectors in major urban centers.</p>
+                        <ul class="feature-list">
+                            <li>Art Beijing</li>
+                            <li>West Bund Art & Design</li>
+                            <li>Art021 Shanghai Contemporary</li>
+                            <li>Guangzhou Art Fair</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Design Weeks</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <p>Design weeks showcase innovation in architecture, fashion, and product design across Chinese cities.</p>
+                        <ul class="feature-list">
+                            <li>Beijing Design Week</li>
+                            <li>Shanghai Design Week</li>
+                            <li>Shenzhen Design Week</li>
+                            <li>Guangzhou Design Week</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Cultural Impact</h2>
+            <p>Urban festivals play a crucial role in shaping contemporary Chinese culture and identity, creating spaces for creative expression and cultural exchange.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Youth Culture</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>Urban festivals are particularly popular among young people, offering opportunities for self-expression and community building.</p>
+                        <ul class="feature-list">
+                            <li>Social Media Integration</li>
+                            <li>Youth Fashion Trends</li>
+                            <li>Digital Communities</li>
+                            <li>Creative Expression</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Economic Impact</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <p>These events contribute significantly to local economies through tourism, retail, and creative industries.</p>
+                        <ul class="feature-list">
+                            <li>Tourism Revenue</li>
+                            <li>Local Business Growth</li>
+                            <li>Creative Industry Development</li>
+                            <li>International Investment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Global Exchange</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>Urban festivals facilitate cultural exchange between China and the rest of the world, promoting cross-cultural understanding.</p>
+                        <ul class="feature-list">
+                            <li>International Collaborations</li>
+                            <li>Global Artists Participation</li>
+                            <li>Cross-Cultural Dialogues</li>
+                            <li>Cultural Diplomacy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <p class="quote-text">"城市节日是当代中国文化活力的体现，是传统与现代交融的舞台。"</p>
+            <p class="quote-text english">"Urban festivals are a manifestation of contemporary Chinese cultural vitality, a stage where tradition and modernity converge."</p>
+            <p class="quote-author">- Cultural Studies Scholar</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 

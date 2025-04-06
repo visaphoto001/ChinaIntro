@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Festivals in China - China Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,food,festival') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .feature-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-text.english {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #e63946;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #c1121f;
+        }
+
+        .breadcrumb .separator {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo" aria-label="Return to homepage">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Food Festivals</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Food Festivals <span class="chinese-text">美食节</span></h1>
+            <p>Celebrating China's Culinary Heritage Through Festivals</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Annual Festivals</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5M+</span>
+                    <span class="stat-label">Visitors</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Cities</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="section">
+            <h2>Types of Food Festivals</h2>
+            <p>Food festivals in China showcase the diversity and richness of Chinese cuisine, from regional specialties to modern fusion dishes.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Regional Festivals</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <p>Festivals celebrating the unique culinary traditions of different regions.</p>
+                        <ul class="feature-list">
+                            <li>Sichuan Food Festival</li>
+                            <li>Canton Food Festival</li>
+                            <li>Hunan Spice Festival</li>
+                            <li>Northern Cuisine Fair</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Ingredient Festivals</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-carrot"></i>
+                        </div>
+                        <p>Events focused on specific ingredients or food categories.</p>
+                        <ul class="feature-list">
+                            <li>Tea and Dim Sum Festival</li>
+                            <li>Seafood Festival</li>
+                            <li>Hot Pot Festival</li>
+                            <li>Street Food Festival</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Culinary Competitions</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <p>Events showcasing culinary skills and innovation.</p>
+                        <ul class="feature-list">
+                            <li>Master Chef Competition</li>
+                            <li>Street Food Challenge</li>
+                            <li>Traditional Recipe Contest</li>
+                            <li>Innovation Food Show</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Cultural Impact</h2>
+            <p>Food festivals play a crucial role in preserving culinary traditions, promoting cultural exchange, and supporting local communities.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Heritage Preservation</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <p>Events dedicated to preserving traditional cooking methods and recipes.</p>
+                        <ul class="feature-list">
+                            <li>Traditional Cooking Demonstrations</li>
+                            <li>Recipe Preservation Workshops</li>
+                            <li>Cultural Heritage Displays</li>
+                            <li>Master Chef Apprenticeships</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Community Impact</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>Festivals that benefit local communities and promote sustainable practices.</p>
+                        <ul class="feature-list">
+                            <li>Local Vendor Support</li>
+                            <li>Community Gatherings</li>
+                            <li>Sustainable Food Practices</li>
+                            <li>Cultural Tourism</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-header">
+                        <h3>Cultural Exchange</h3>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>Events promoting cross-cultural understanding through food.</p>
+                        <ul class="feature-list">
+                            <li>International Food Exchange</li>
+                            <li>Fusion Food Showcases</li>
+                            <li>Culinary Tourism</li>
+                            <li>Global Food Dialogues</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <p class="quote-text">"美食节不仅是味蕾的盛宴，更是文化的传承与交流。"</p>
+            <p class="quote-text english">"Food festivals are not just feasts for the taste buds, but also platforms for cultural inheritance and exchange."</p>
+            <p class="quote-author">- Culinary Heritage Expert</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
