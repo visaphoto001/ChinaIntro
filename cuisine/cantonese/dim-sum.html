@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dim Sum - Cantonese Cuisine Guide</title>
+    <!-- Place this code on every page across your site and Google will automatically show ads in all the best places for you -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8267949394096715"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?dimsum,chinese,food') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .dish-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dish-section {
+            margin-bottom: 2rem;
+        }
+
+        .dish-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .ingredients-list, .steps-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ingredients-list li, .steps-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            margin-right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Explore & Experience</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../culture.html">Culture</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../geography.html">Geography</a></li>
+                <li><a href="../../cuisine.html">Cuisine</a></li>
+                <li><a href="../../language.html">Language</a></li>
+                <li><a href="../../travel.html">Travel Guide</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <span>Dim Sum</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dim Sum <span class="chinese-text">点心</span></h1>
+            <p>A traditional Cantonese brunch featuring a variety of small dishes served in bamboo steamers</p>
+        </div>
+    </section>
+
+    <main class="dish-content">
+        <section class="dish-section">
+            <h2>About Dim Sum</h2>
+            <p>Dim Sum is a style of Chinese cuisine that involves small portions of food, traditionally served in bamboo steamers alongside Chinese tea. The term "dim sum" literally means "touch the heart" in Cantonese, and the tradition began in teahouses along the Silk Road.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Popular Dim Sum Dishes</h2>
+            <ul class="ingredients-list">
+                <li>Har Gow (蝦餃) - Shrimp Dumplings</li>
+                <li>Siu Mai (燒賣) - Pork and Shrimp Dumplings</li>
+                <li>Char Siu Bao (叉燒包) - BBQ Pork Buns</li>
+                <li>Cheung Fun (腸粉) - Rice Noodle Rolls</li>
+                <li>Lo Mai Gai (糯米雞) - Sticky Rice in Lotus Leaf</li>
+                <li>Egg Tarts (蛋撻) - Custard Tarts</li>
+                <li>Fung Zao (鳳爪) - Phoenix Claws (Chicken Feet)</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Dining Experience</h2>
+            <p>Dim Sum is traditionally enjoyed as a brunch meal with family and friends. Small portions are shared among diners, allowing everyone to taste a variety of dishes. Tea is an essential part of the experience, and the phrase "yum cha" (drinking tea) is synonymous with eating dim sum.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Cultural Significance</h2>
+            <p>Dim Sum represents the Cantonese culinary art of creating delicate, bite-sized portions that showcase the chef's skill in different cooking techniques. It's a social dining experience that brings people together and has become popular worldwide as a representation of Chinese cuisine.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Etiquette</h2>
+            <p>There are several customs associated with dim sum dining, such as tapping fingers on the table to thank someone for pouring tea, leaving the teapot lid open when it needs a refill, and sharing dishes communally. These practices reflect the social and communal nature of the dining experience.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
