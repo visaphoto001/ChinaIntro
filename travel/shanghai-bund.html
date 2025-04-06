@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanghai - The Bund - China Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?shanghai,bund') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .breadcrumb {
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #FFD700;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .feature-content {
+            padding: 20px;
+        }
+
+        .feature-content h3 {
+            color: #C8102E;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .feature-content p {
+            color: #333333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .quote-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.5em;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-section .translation {
+            font-size: 1.2em;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        .external-links {
+            background: #f5f5f5;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .external-links h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .link-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .link-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> &gt; <a href="../travel.html">Travel</a> &gt; Shanghai - The Bund
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Shanghai - The Bund <span class="chinese-text">上海外滩</span></h1>
+            <p>Where East meets West in architectural splendor</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">1.5km</span>
+                    <span class="stat-label">Length of the Bund</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">52</span>
+                    <span class="stat-label">Historic Buildings</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1844</span>
+                    <span class="stat-label">Year Established</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="section">
+            <h2>Historical Significance</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Colonial Heritage</h3>
+                        <p>The Bund's architecture reflects Shanghai's history as a major trading port and international settlement, featuring buildings from various European styles.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Modern Transformation</h3>
+                        <p>Today's Bund represents the perfect blend of historical preservation and modern development, symbolizing Shanghai's rise as a global financial center.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Cultural Hub</h3>
+                        <p>The area serves as a cultural crossroads, hosting museums, art galleries, and performance venues that showcase both local and international arts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Must-See Attractions</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Peace Hotel (和平饭店)</h3>
+                        <p>An iconic Art Deco building that has hosted numerous historical figures and continues to be a symbol of Shanghai's glamorous past.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Customs House (海关大楼)</h3>
+                        <p>Famous for its clock tower, this building represents the architectural grandeur of the early 20th century in Shanghai.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Pudong Skyline (浦东天际线)</h3>
+                        <p>The view across the Huangpu River offers a stunning contrast between historic architecture and modern skyscrapers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <blockquote>
+                "Shanghai is not just a city, it's a living museum of China's modern history."
+            </blockquote>
+            <div class="translation">
+                "上海不仅仅是一座城市，它是中国现代历史的活博物馆。"
+            </div>
+        </section>
+
+        <section class="external-links">
+            <h3>Further Reading</h3>
+            <div class="links-grid">
+                <div class="link-card">
+                    <h4>Official Tourism</h4>
+                    <p>Visit the official Shanghai Tourism website for comprehensive travel information.</p>
+                    <a href="https://www.meet-in-shanghai.net" target="_blank">Shanghai Tourism</a>
+                </div>
+                <div class="link-card">
+                    <h4>Cultural Guide</h4>
+                    <p>Explore Shanghai's cultural heritage through Time Out's detailed guide.</p>
+                    <a href="https://www.timeout.com/shanghai" target="_blank">Time Out Shanghai</a>
+                </div>
+                <div class="link-card">
+                    <h4>Architecture</h4>
+                    <p>Learn about the architectural history of the Bund from ArchDaily.</p>
+                    <a href="https://www.archdaily.com/search/projects/cities/shanghai" target="_blank">ArchDaily Shanghai</a>
+                </div>
+                <div class="link-card">
+                    <h4>Local Life</h4>
+                    <p>Discover authentic Shanghai experiences through That's Shanghai.</p>
+                    <a href="https://www.thatsmags.com/shanghai" target="_blank">That's Shanghai</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../culture.html">Culture</a></li>
+                    <li><a href="../travel.html">Travel</a></li>
+                    <li><a href="../food.html">Food</a></li>
+                    <li><a href="../history.html">History</a></li>
+                    <li><a href="../language.html">Language</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fab fa-weibo"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 China Guide. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

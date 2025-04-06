@@ -179,17 +179,29 @@
         }
 
         .feature-list li {
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            color: #333;
         }
 
         .feature-list li::before {
             content: '•';
-            color: var(--primary-color);
+            color: #C8102E;
             font-weight: bold;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .feature-list li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .feature-list li a:hover {
+            color: #C8102E;
         }
 
         @media (max-width: 768px) {
@@ -428,12 +440,12 @@
                         <div class="travel-card-icon">
                             <i class="fas fa-city"></i>
                         </div>
-                        <p>Experience China's rapid development through its modern metropolises and urban innovations.</p>
+                        <p>Modern cities showcase China's rapid development and urban culture.</p>
                         <ul class="feature-list">
-                            <li>Shanghai - The Bund</li>
-                            <li>Hong Kong - Victoria Peak</li>
-                            <li>Shenzhen - Tech Hub</li>
-                            <li>Chengdu - Modern Culture</li>
+                            <li><a href="travel/shanghai-bund.html">Shanghai - The Bund (上海外滩)</a></li>
+                            <li>Beijing - Forbidden City</li>
+                            <li>Guangzhou - Canton Tower</li>
+                            <li>Shenzhen - Modern Innovation</li>
                         </ul>
                     </div>
                 </div>
