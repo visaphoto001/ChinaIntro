@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Spirit in Chinese Culture - China Guide</title>
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,community,unity') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .community-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Community Spirit</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Community Spirit <span class="chinese-text">社区精神</span></h1>
+            <p>The Heartbeat of Chinese Society</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">团结</span>
+                    <span class="stat-label">Unity</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">互助</span>
+                    <span class="stat-label">Mutual Aid</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">共享</span>
+                    <span class="stat-label">Sharing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Core Values</h2>
+            <p>Community spirit in Chinese culture emphasizes collective identity, mutual support, and shared responsibility for the well-being of the group.</p>
+            
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Collective Identity</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>The sense of belonging to a larger community and shared cultural identity.</p>
+                        <ul class="feature-list">
+                            <li>Group Orientation</li>
+                            <li>Shared Heritage</li>
+                            <li>Common Values</li>
+                            <li>Collective Memory</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Mutual Support</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <p>The practice of helping others within the community in times of need.</p>
+                        <ul class="feature-list">
+                            <li>Reciprocal Aid</li>
+                            <li>Resource Sharing</li>
+                            <li>Emotional Support</li>
+                            <li>Community Networks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Shared Responsibility</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <p>The collective approach to addressing community challenges and opportunities.</p>
+                        <ul class="feature-list">
+                            <li>Group Decision-Making</li>
+                            <li>Common Goals</li>
+                            <li>Shared Resources</li>
+                            <li>Collective Action</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "远亲不如近邻" (A close neighbor is better than a distant relative)
+                <div class="quote-author">- Chinese Proverb</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Traditional Expressions</h2>
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Village Life</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <p>Community spirit in traditional rural settings.</p>
+                        <ul class="feature-list">
+                            <li>Village Gatherings</li>
+                            <li>Collective Farming</li>
+                            <li>Shared Resources</li>
+                            <li>Community Events</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Festivals and Celebrations</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <p>Community bonding through shared cultural celebrations.</p>
+                        <ul class="feature-list">
+                            <li>Spring Festival</li>
+                            <li>Mid-Autumn Festival</li>
+                            <li>Dragon Boat Festival</li>
+                            <li>Local Temple Fairs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Religious and Spiritual Communities</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-pray"></i>
+                        </div>
+                        <p>Communities formed around shared spiritual beliefs.</p>
+                        <ul class="feature-list">
+                            <li>Temple Communities</li>
+                            <li>Ancestral Worship</li>
+                            <li>Religious Festivals</li>
+                            <li>Spiritual Practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Modern Manifestations</h2>
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Urban Communities</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <p>How community spirit adapts to urban environments.</p>
+                        <ul class="feature-list">
+                            <li>Residential Compounds</li>
+                            <li>Community Centers</li>
+                            <li>Public Spaces</li>
+                            <li>Neighborhood Associations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Online Communities</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <p>Digital spaces fostering community connections.</p>
+                        <ul class="feature-list">
+                            <li>Social Media Groups</li>
+                            <li>Online Forums</li>
+                            <li>Virtual Events</li>
+                            <li>Digital Support Networks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Professional Communities</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <p>Communities formed around shared professional interests.</p>
+                        <ul class="feature-list">
+                            <li>Industry Associations</li>
+                            <li>Professional Networks</li>
+                            <li>Business Communities</li>
+                            <li>Skill-Sharing Groups</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Community Initiatives</h2>
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Environmental Projects</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <p>Community efforts to protect and improve the environment.</p>
+                        <ul class="feature-list">
+                            <li>Clean-up Campaigns</li>
+                            <li>Green Initiatives</li>
+                            <li>Recycling Programs</li>
+                            <li>Conservation Projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Social Services</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <p>Community-based support for those in need.</p>
+                        <ul class="feature-list">
+                            <li>Elderly Care</li>
+                            <li>Youth Programs</li>
+                            <li>Disaster Relief</li>
+                            <li>Charitable Activities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Cultural Preservation</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <p>Efforts to maintain and celebrate cultural heritage.</p>
+                        <ul class="feature-list">
+                            <li>Traditional Arts</li>
+                            <li>Cultural Festivals</li>
+                            <li>Heritage Sites</li>
+                            <li>Educational Programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Future of Community Spirit</h2>
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Sustainable Communities</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <p>Building resilient and sustainable community structures.</p>
+                        <ul class="feature-list">
+                            <li>Green Living</li>
+                            <li>Resource Efficiency</li>
+                            <li>Local Production</li>
+                            <li>Community Resilience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Global Connections</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>Expanding community spirit beyond local boundaries.</p>
+                        <ul class="feature-list">
+                            <li>International Exchange</li>
+                            <li>Global Networks</li>
+                            <li>Cross-Cultural Projects</li>
+                            <li>Worldwide Initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="community-card">
+                    <div class="card-header">
+                        <h3>Innovation in Community</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <p>New approaches to fostering community spirit.</p>
+                        <ul class="feature-list">
+                            <li>Technology Integration</li>
+                            <li>Creative Solutions</li>
+                            <li>Emerging Models</li>
+                            <li>Future Adaptations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
