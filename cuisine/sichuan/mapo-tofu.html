@@ -65,6 +65,85 @@
             justify-content: center;
             font-size: 0.9rem;
         }
+
+        /* Responsive Image Styles */
+        .responsive-image-container {
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .responsive-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .responsive-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            text-align: center;
+            padding: 0.75rem;
+            background-color: #f8f9fa;
+            font-style: italic;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        /* Resolution-specific styles */
+        .resolution-info {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .resolution-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .resolution-item:hover {
+            background-color: #e9ecef;
+        }
+
+        .resolution-label {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .resolution-size {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .resolution-info {
+                flex-wrap: wrap;
+            }
+            
+            .resolution-item {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resolution-item {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -104,6 +183,26 @@
         <section class="dish-section">
             <h2>About the Dish</h2>
             <p>Mapo Tofu is one of the most famous dishes in Sichuan cuisine. The name literally means "Pockmarked Grandma's Tofu," named after its creator. This dish perfectly represents the málà (numbing and spicy) flavor profile that Sichuan cuisine is famous for.</p>
+        </section>
+
+        <!-- Responsive Image Section -->
+        <section class="dish-section">
+            <h2>Mapo Tofu</h2>
+            <div class="responsive-image-container">
+                <picture>
+                    <!-- High resolution for large screens -->
+                    <source media="(min-width: 1024px)" srcset="../../images/mapo-tofu/mapo-1920.webp">
+                    <!-- Medium resolution for tablets and smaller desktops -->
+                    <source media="(min-width: 768px)" srcset="../../images/mapo-tofu/mapo-1024.webp">
+                    <!-- Low resolution for mobile devices -->
+                    <source media="(min-width: 480px)" srcset="../../images/mapo-tofu/mapo-768.webp">
+                    <!-- Fallback for very small screens -->
+                    <img src="../../images/mapo-tofu/mapo-480.webp" alt="Mapo Tofu - Traditional Sichuan Dish" class="responsive-image">
+                </picture>
+                <div class="image-caption">
+                    Traditional Mapo Tofu with silky tofu and minced pork in a spicy, numbing sauce
+                </div>
+            </div>
         </section>
 
         <section class="dish-section">
