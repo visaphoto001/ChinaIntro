@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Char Siu - Cantonese Cuisine Guide</title>
+    <!-- Place this code on every page across your site and Google will automatically show ads in all the best places for you -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8267949394096715"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?bbq,pork,chinese') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .dish-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dish-section {
+            margin-bottom: 2rem;
+        }
+
+        .dish-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .ingredients-list, .steps-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ingredients-list li, .steps-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            margin-right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Explore & Experience</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../culture.html">Culture</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../geography.html">Geography</a></li>
+                <li><a href="../../cuisine.html">Cuisine</a></li>
+                <li><a href="../../language.html">Language</a></li>
+                <li><a href="../../travel.html">Travel Guide</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <span>Char Siu</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Char Siu <span class="chinese-text">叉烧</span></h1>
+            <p>Cantonese-style barbecued pork with a sweet and savory glaze</p>
+        </div>
+    </section>
+
+    <main class="dish-content">
+        <section class="dish-section">
+            <h2>About Char Siu</h2>
+            <p>Char Siu, literally meaning "fork roasted" (叉烧), is a type of Cantonese roast meat. The pork is marinated in a sweet and savory sauce, giving it its characteristic red color and shiny glaze. This iconic dish is a staple in Cantonese restaurants and is used in various other dishes, from noodles to buns.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Key Ingredients</h2>
+            <ul class="ingredients-list">
+                <li>Pork (usually shoulder or belly)</li>
+                <li>Hoisin sauce</li>
+                <li>Five-spice powder</li>
+                <li>Red fermented bean curd</li>
+                <li>Soy sauce</li>
+                <li>Chinese cooking wine</li>
+                <li>Honey</li>
+                <li>Maltose (for glazing)</li>
+                <li>White pepper</li>
+            </ul>
+        </section>
+
+        <section class="dish-section">
+            <h2>Preparation Method</h2>
+            <ol class="steps-list">
+                <li>Cut pork into long strips</li>
+                <li>Mix marinade ingredients thoroughly</li>
+                <li>Marinate pork for at least 4 hours or overnight</li>
+                <li>Prepare oven and line baking tray with foil</li>
+                <li>Place pork on a rack above the tray</li>
+                <li>Roast while basting with marinade</li>
+                <li>Finish with honey glaze</li>
+            </ol>
+        </section>
+
+        <section class="dish-section">
+            <h2>Cultural Significance</h2>
+            <p>Char Siu is one of the most recognizable items in Cantonese cuisine. It's commonly displayed in the windows of Chinese BBQ shops and restaurants, hanging alongside roast duck and other meats. The preparation technique has been passed down through generations and requires considerable skill to achieve the perfect balance of tenderness and caramelization.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Serving Suggestions</h2>
+            <p>Char Siu can be enjoyed in many ways: served over rice (Char Siu Fan), in noodle soups, as filling for baked or steamed buns (Char Siu Bao), or simply sliced and eaten on its own. The meat is typically cut into thin slices and served with a drizzle of sauce and some blanched vegetables.</p>
+        </section>
+
+        <section class="dish-section">
+            <h2>Modern Variations</h2>
+            <p>While traditionally made with pork, modern variations include chicken and tofu versions for those who don't eat pork. The cooking method has also been adapted for home ovens, making it accessible to home cooks while maintaining the authentic flavors of the dish.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
