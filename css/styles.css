@@ -1,0 +1,56 @@
+/* ... existing CSS ... */
+
+/* Mobile-friendly navigation */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        position: relative;
+    }
+    
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 2;
+    }
+    
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+    
+    /* Increase tap target sizes for mobile */
+    .nav-menu a {
+        padding: 12px 16px;
+        display: block;
+    }
+    
+    /* Adjust content spacing for mobile */
+    .section {
+        padding: 40px 20px;
+    }
+    
+    /* Make images responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ... rest of CSS ... */
