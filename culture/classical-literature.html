@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classical Literature in Chinese Culture - China Guide</title>
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,literature,books') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .literature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .literature-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .literature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Classical Literature</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Classical Literature <span class="chinese-text">古典文学</span></h1>
+            <p>The Timeless Treasures of Chinese Literary Heritage</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">文</span>
+                    <span class="stat-label">Literature</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">诗</span>
+                    <span class="stat-label">Poetry</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">史</span>
+                    <span class="stat-label">History</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Foundational Texts</h2>
+            <p>Chinese classical literature encompasses a vast collection of texts that have shaped Chinese thought, culture, and society for thousands of years.</p>
+            
+            <div class="literature-grid">
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>The Four Books and Five Classics</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <p>The core texts of Confucianism that formed the basis of traditional Chinese education.</p>
+                        <ul class="feature-list">
+                            <li>The Analects of Confucius</li>
+                            <li>The Book of Mencius</li>
+                            <li>The Great Learning</li>
+                            <li>The Doctrine of the Mean</li>
+                            <li>The Book of Songs</li>
+                            <li>The Book of Documents</li>
+                            <li>The Book of Rites</li>
+                            <li>The Book of Changes</li>
+                            <li>The Spring and Autumn Annals</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Historical Records</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-scroll"></i>
+                        </div>
+                        <p>Comprehensive historical works that documented China's past.</p>
+                        <ul class="feature-list">
+                            <li>Records of the Grand Historian</li>
+                            <li>Book of Han</li>
+                            <li>Book of Later Han</li>
+                            <li>Comprehensive Mirror for Aid in Government</li>
+                            <li>Twenty-Four Histories</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Daoist Classics</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-yin-yang"></i>
+                        </div>
+                        <p>Foundational texts of Daoist philosophy and practice.</p>
+                        <ul class="feature-list">
+                            <li>Dao De Jing</li>
+                            <li>Zhuangzi</li>
+                            <li>Liezi</li>
+                            <li>Huainanzi</li>
+                            <li>Baopuzi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "学而时习之，不亦说乎" (Is it not a pleasure to learn and to practice what one has learned?)
+                <div class="quote-author">- Confucius, The Analects</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Poetry and Prose</h2>
+            <div class="literature-grid">
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Classical Poetry</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                        <p>The rich tradition of Chinese poetry with its distinctive forms and themes.</p>
+                        <ul class="feature-list">
+                            <li>Shi (诗) Poetry</li>
+                            <li>Ci (词) Poetry</li>
+                            <li>Qu (曲) Poetry</li>
+                            <li>Tang Dynasty Poetry</li>
+                            <li>Song Dynasty Poetry</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Prose Literature</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <p>Various forms of prose writing in classical Chinese literature.</p>
+                        <ul class="feature-list">
+                            <li>Historical Prose</li>
+                            <li>Philosophical Essays</li>
+                            <li>Travel Writing</li>
+                            <li>Biographical Sketches</li>
+                            <li>Literary Criticism</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Fiction</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <p>Classical Chinese novels and short stories.</p>
+                        <ul class="feature-list">
+                            <li>Journey to the West</li>
+                            <li>Romance of the Three Kingdoms</li>
+                            <li>Water Margin</li>
+                            <li>Dream of the Red Chamber</li>
+                            <li>Strange Tales from a Chinese Studio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Literary Forms and Genres</h2>
+            <div class="literature-grid">
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Poetic Forms</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-align-left"></i>
+                        </div>
+                        <p>Distinctive structures and patterns in Chinese poetry.</p>
+                        <ul class="feature-list">
+                            <li>Five-Character Quatrain</li>
+                            <li>Seven-Character Octave</li>
+                            <li>Fu (赋) Rhapsody</li>
+                            <li>Parallel Prose</li>
+                            <li>Regulated Verse</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Literary Devices</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <p>Techniques and elements used in classical Chinese writing.</p>
+                        <ul class="feature-list">
+                            <li>Allusion</li>
+                            <li>Metaphor</li>
+                            <li>Symbolism</li>
+                            <li>Parallelism</li>
+                            <li>Imagery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Writing Styles</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <p>Different approaches to writing in classical Chinese literature.</p>
+                        <ul class="feature-list">
+                            <li>Classical Chinese (文言文)</li>
+                            <li>Literary Chinese</li>
+                            <li>Vernacular Chinese</li>
+                            <li>Mixed Styles</li>
+                            <li>Regional Variations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Cultural Significance</h2>
+            <div class="literature-grid">
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Educational Value</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <p>The role of classical literature in traditional Chinese education.</p>
+                        <ul class="feature-list">
+                            <li>Moral Instruction</li>
+                            <li>Cultural Literacy</li>
+                            <li>Language Mastery</li>
+                            <li>Intellectual Development</li>
+                            <li>Civil Service Examination</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Social Impact</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>How classical literature shaped Chinese society and values.</p>
+                        <ul class="feature-list">
+                            <li>Social Norms</li>
+                            <li>Ethical Values</li>
+                            <li>Political Thought</li>
+                            <li>Cultural Identity</li>
+                            <li>Social Commentary</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Artistic Expression</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <p>The aesthetic qualities and artistic achievements of classical literature.</p>
+                        <ul class="feature-list">
+                            <li>Calligraphy</li>
+                            <li>Visual Arts</li>
+                            <li>Performing Arts</li>
+                            <li>Garden Design</li>
+                            <li>Architectural Elements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Preservation and Transmission</h2>
+            <div class="literature-grid">
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Textual Preservation</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-archive"></i>
+                        </div>
+                        <p>Methods and institutions for preserving classical texts.</p>
+                        <ul class="feature-list">
+                            <li>Imperial Libraries</li>
+                            <li>Private Collections</li>
+                            <li>Monastic Archives</li>
+                            <li>Printing Technology</li>
+                            <li>Digital Preservation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Commentary Tradition</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <p>The practice of interpreting and explaining classical texts.</p>
+                        <ul class="feature-list">
+                            <li>Scholarly Commentaries</li>
+                            <li>Textual Criticism</li>
+                            <li>Interpretive Schools</li>
+                            <li>Pedagogical Approaches</li>
+                            <li>Modern Interpretations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Contemporary Relevance</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <p>How classical literature continues to influence modern Chinese culture.</p>
+                        <ul class="feature-list">
+                            <li>Modern Adaptations</li>
+                            <li>Cultural References</li>
+                            <li>Educational Curriculum</li>
+                            <li>Popular Culture</li>
+                            <li>Global Influence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Notable Authors and Works</h2>
+            <div class="literature-grid">
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Early Masters</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <p>Influential writers from China's early literary history.</p>
+                        <ul class="feature-list">
+                            <li>Confucius (孔子)</li>
+                            <li>Laozi (老子)</li>
+                            <li>Zhuangzi (庄子)</li>
+                            <li>Mencius (孟子)</li>
+                            <li>Xunzi (荀子)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Tang and Song Dynasty</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <p>Renowned poets and writers from China's golden age of literature.</p>
+                        <ul class="feature-list">
+                            <li>Li Bai (李白)</li>
+                            <li>Du Fu (杜甫)</li>
+                            <li>Wang Wei (王维)</li>
+                            <li>Su Shi (苏轼)</li>
+                            <li>Li Qingzhao (李清照)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="literature-card">
+                    <div class="card-header">
+                        <h3>Ming and Qing Dynasty</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-feather"></i>
+                        </div>
+                        <p>Authors who contributed to China's novelistic tradition.</p>
+                        <ul class="feature-list">
+                            <li>Cao Xueqin (曹雪芹)</li>
+                            <li>Wu Cheng'en (吴承恩)</li>
+                            <li>Luo Guanzhong (罗贯中)</li>
+                            <li>Shi Nai'an (施耐庵)</li>
+                            <li>Pu Songling (蒲松龄)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

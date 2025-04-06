@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moral Education in Chinese Culture - China Guide</title>
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,education,ethics') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .moral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .moral-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .moral-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Moral Education</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Moral Education <span class="chinese-text">德育</span></h1>
+            <p>The Foundation of Character and Ethical Development</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">德</span>
+                    <span class="stat-label">Virtue</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">仁</span>
+                    <span class="stat-label">Benevolence</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">义</span>
+                    <span class="stat-label">Righteousness</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Foundational Principles</h2>
+            <p>Moral education in Chinese culture is deeply rooted in traditional values and ethical teachings that have shaped society for thousands of years.</p>
+            
+            <div class="moral-grid">
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Confucian Values</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <p>Core ethical principles that guide moral education.</p>
+                        <ul class="feature-list">
+                            <li>Ren (仁) - Benevolence</li>
+                            <li>Yi (义) - Righteousness</li>
+                            <li>Li (礼) - Propriety</li>
+                            <li>Zhi (智) - Wisdom</li>
+                            <li>Xin (信) - Trustworthiness</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Family Values</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <p>Moral teachings within the family context.</p>
+                        <ul class="feature-list">
+                            <li>Filial Piety</li>
+                            <li>Family Harmony</li>
+                            <li>Respect for Elders</li>
+                            <li>Family Responsibility</li>
+                            <li>Intergenerational Bonds</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Social Ethics</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>Ethical principles for social interaction.</p>
+                        <ul class="feature-list">
+                            <li>Social Harmony</li>
+                            <li>Collective Well-being</li>
+                            <li>Social Responsibility</li>
+                            <li>Community Spirit</li>
+                            <li>Public Service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "己所不欲，勿施于人" (Do not do to others what you would not want done to yourself)
+                <div class="quote-author">- Confucius, The Analects</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Educational Methods</h2>
+            <div class="moral-grid">
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Traditional Approaches</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <p>Time-honored methods of moral education.</p>
+                        <ul class="feature-list">
+                            <li>Classical Text Study</li>
+                            <li>Role Modeling</li>
+                            <li>Storytelling</li>
+                            <li>Ritual Practice</li>
+                            <li>Moral Exemplars</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Modern Methods</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <p>Contemporary approaches to moral education.</p>
+                        <ul class="feature-list">
+                            <li>Interactive Learning</li>
+                            <li>Case Studies</li>
+                            <li>Group Discussions</li>
+                            <li>Service Learning</li>
+                            <li>Digital Resources</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Practical Application</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <p>Ways to apply moral teachings in daily life.</p>
+                        <ul class="feature-list">
+                            <li>Community Service</li>
+                            <li>Social Projects</li>
+                            <li>Environmental Care</li>
+                            <li>Cultural Activities</li>
+                            <li>Volunteer Work</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Institutional Framework</h2>
+            <div class="moral-grid">
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Educational System</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <p>How moral education is integrated into formal education.</p>
+                        <ul class="feature-list">
+                            <li>Curriculum Design</li>
+                            <li>Teacher Training</li>
+                            <li>Assessment Methods</li>
+                            <li>School Culture</li>
+                            <li>Parent Involvement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Community Role</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <p>The community's role in moral education.</p>
+                        <ul class="feature-list">
+                            <li>Community Centers</li>
+                            <li>Cultural Institutions</li>
+                            <li>Religious Organizations</li>
+                            <li>Social Groups</li>
+                            <li>Youth Programs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Government Support</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <p>Policy and support for moral education.</p>
+                        <ul class="feature-list">
+                            <li>Educational Policy</li>
+                            <li>Resource Allocation</li>
+                            <li>Program Development</li>
+                            <li>Quality Standards</li>
+                            <li>Research Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Contemporary Challenges</h2>
+            <div class="moral-grid">
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Modern Society</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <p>Challenges in modern moral education.</p>
+                        <ul class="feature-list">
+                            <li>Digital Influence</li>
+                            <li>Global Values</li>
+                            <li>Social Media Impact</li>
+                            <li>Changing Family Structures</li>
+                            <li>Cultural Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Educational Issues</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <p>Current challenges in moral education.</p>
+                        <ul class="feature-list">
+                            <li>Curriculum Balance</li>
+                            <li>Teaching Methods</li>
+                            <li>Student Engagement</li>
+                            <li>Assessment Challenges</li>
+                            <li>Resource Limitations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Future Directions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <p>Evolving approaches to moral education.</p>
+                        <ul class="feature-list">
+                            <li>Technology Integration</li>
+                            <li>Global Perspectives</li>
+                            <li>Innovative Methods</li>
+                            <li>Research Development</li>
+                            <li>Policy Evolution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Success Stories</h2>
+            <div class="moral-grid">
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>School Programs</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Successful moral education programs in schools.</p>
+                        <ul class="feature-list">
+                            <li>Character Education</li>
+                            <li>Service Learning</li>
+                            <li>Cultural Heritage</li>
+                            <li>Community Projects</li>
+                            <li>Student Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Community Initiatives</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <p>Successful community-based moral education.</p>
+                        <ul class="feature-list">
+                            <li>Youth Programs</li>
+                            <li>Cultural Centers</li>
+                            <li>Volunteer Networks</li>
+                            <li>Social Projects</li>
+                            <li>Environmental Programs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="moral-card">
+                    <div class="card-header">
+                        <h3>Individual Impact</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <p>Stories of personal growth through moral education.</p>
+                        <ul class="feature-list">
+                            <li>Student Development</li>
+                            <li>Community Leaders</li>
+                            <li>Social Innovators</li>
+                            <li>Cultural Ambassadors</li>
+                            <li>Role Models</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
