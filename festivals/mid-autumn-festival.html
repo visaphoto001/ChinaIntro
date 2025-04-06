@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mid-Autumn Festival - ChinaIntro</title>
+    <title>Mid-Autumn Festival - China Guide</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .festival-hero {
-            height: 60vh;
+            height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('https://source.unsplash.com/1600x900/?moon,festival') center/cover;
+                        url('https://source.unsplash.com/1600x900/?moon,cake,lantern') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .festival-hero .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .festival-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .festival-hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
         .festival-content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -27,6 +49,18 @@
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .festival-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
         
         .festival-image {
@@ -35,6 +69,7 @@
             height: auto;
             border-radius: 10px;
             margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .timeline {
@@ -54,32 +89,189 @@
         }
         
         .back-button {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--primary-color);
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: transparent;
+            color: var(--primary-color);
             text-decoration: none;
-            border-radius: 5px;
-            margin: 1rem;
-            transition: background-color var(--transition-speed) ease;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .back-button span {
+            position: relative;
+            z-index: 1;
         }
         
         .back-button:hover {
-            background-color: #a01830;
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .back-button:hover::before {
+            opacity: 1;
+        }
+        
+        .back-button:active {
+            transform: translateX(-2px);
+        }
+        
+        .festival-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .festival-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .festival-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .festival-card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .festival-card-content {
+            padding: 1.5rem;
+        }
+        
+        .festival-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .festival-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-item {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .highlight-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .festival-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-1 {
+            background-image: url('https://source.unsplash.com/800x600/?moon,cake,lantern');
+        }
+        
+        .gallery-2 {
+            background-image: url('https://source.unsplash.com/800x600/?mooncake,chinese,food');
+        }
+        
+        .gallery-3 {
+            background-image: url('https://source.unsplash.com/800x600/?chinese,lantern');
+        }
+        
+        .gallery-4 {
+            background-image: url('https://source.unsplash.com/800x600/?family,gathering');
+        }
+        
+        @media (max-width: 768px) {
+            .festival-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .festival-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .festival-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlight-item {
+                min-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="nav-container">
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#culture">Culture</a></li>
-                <li><a href="../index.html#history">History</a></li>
-                <li><a href="../index.html#geography">Geography</a></li>
-                <li><a href="../index.html#cuisine">Cuisine</a></li>
-                <li><a href="../index.html#language">Language</a></li>
-                <li><a href="../index.html#travel">Travel Guide</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
             </ul>
         </nav>
     </header>
@@ -87,56 +279,281 @@
     <section class="hero festival-hero">
         <div class="hero-content">
             <h1>Mid-Autumn Festival (中秋节)</h1>
-            <p>The Festival of Mooncakes and Family Reunion</p>
+            <p>Celebrating Family Reunion Under the Full Moon</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">15th</span>
+                    <span class="stat-label">Day of 8th Month</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3,000+</span>
+                    <span class="stat-label">Years of History</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Millions</span>
+                    <span class="stat-label">Of Mooncakes Shared</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <main class="festival-content">
-        <a href="../index.html#culture" class="back-button">← Back to Culture</a>
+        <a href="../culture.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Culture</span>
+        </a>
 
-        <div class="content-grid">
-            <div class="card">
-                <h3>Overview</h3>
-                <p>The Mid-Autumn Festival, also known as the Moon Festival, is celebrated on the 15th day of the 8th lunar month. It's a time for family reunions, moon appreciation, and enjoying mooncakes. The festival celebrates the harvest and the full moon, symbolizing completeness and unity.</p>
+        <section class="festival-section">
+            <h2>About Mid-Autumn Festival</h2>
+            <p>The Mid-Autumn Festival, also known as the Moon Festival, is celebrated on the 15th day of the 8th lunar month when the moon is at its fullest and brightest. It's a time for family reunions, moon appreciation, and sharing mooncakes. The festival has a history of over 3,000 years and is one of China's most important traditional holidays.</p>
+            
+            <div class="festival-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="highlight-title">Moon Appreciation</div>
+                    <p>Families gather to admire the full moon and celebrate its beauty</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <div class="highlight-title">Mooncakes</div>
+                    <p>Traditional pastries with various fillings shared among family and friends</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="highlight-title">Family Reunion</div>
+                    <p>A time for families to gather and celebrate together</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-lantern"></i>
+                    </div>
+                    <div class="highlight-title">Lanterns</div>
+                    <p>Colorful lanterns are displayed and carried during celebrations</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>History and Significance</h2>
+            <p>The Mid-Autumn Festival has its origins in ancient China's moon worship traditions. It became a major festival during the Tang Dynasty (618-907) and reached its peak of popularity during the Song Dynasty (960-1279). The festival is associated with the legend of Chang'e, the moon goddess, and her husband Hou Yi, who shot down nine suns to save the Earth.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Shang Dynasty (1600-1046 BCE)</div>
+                    <p>Early moon worship ceremonies and harvest celebrations.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Tang Dynasty (618-907)</div>
+                    <p>The festival became a major celebration with moon viewing parties and poetry competitions.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Song Dynasty (960-1279)</div>
+                    <p>Mooncakes became a traditional food, and lantern displays became popular.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Modern Era</div>
+                    <p>The festival is celebrated worldwide by Chinese communities with modern variations of traditional customs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Traditional Customs</h2>
+            <p>The Mid-Autumn Festival is celebrated with various customs and activities. Families gather for a reunion dinner, share mooncakes, and admire the full moon together. Children carry colorful lanterns, and communities organize lantern displays and cultural performances. The festival is also a time for expressing gratitude and strengthening family bonds.</p>
+            
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Moon Appreciation</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <p>Families gather outdoors to admire the full moon, which symbolizes completeness and reunion.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Mooncake Sharing</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-cookie"></i>
+                        </div>
+                        <p>Mooncakes are shared among family members and given as gifts to friends and relatives.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Lantern Displays</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-lantern"></i>
+                        </div>
+                        <p>Colorful lanterns are displayed in homes and public spaces, and children carry lanterns in parades.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Family Reunion</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>Families gather for a special dinner and spend time together, strengthening bonds.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Traditional Foods</h2>
+            <p>The most iconic food of the Mid-Autumn Festival is the mooncake (月饼), a rich pastry traditionally filled with lotus seed paste, red bean paste, or salted egg yolks. Other traditional foods include pomelos (a type of citrus fruit), taro, and various seasonal fruits. These foods are enjoyed while admiring the moon and celebrating with family.</p>
+            
+            <div class="festival-gallery">
+                <div class="gallery-item gallery-1"></div>
+                <div class="gallery-item gallery-2"></div>
+                <div class="gallery-item gallery-3"></div>
+                <div class="gallery-item gallery-4"></div>
             </div>
             
-            <div class="card">
-                <h3>History and Significance</h3>
-                <p>The Mid-Autumn Festival has been celebrated for over 3,000 years. It originated from the ancient practice of moon worship and harvest celebrations. The festival gained particular significance during the Tang Dynasty and became a major celebration during the Song Dynasty. It symbolizes family reunion and harmony.</p>
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Mooncakes (月饼)</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>Traditional pastries with various fillings like lotus seed paste, red bean paste, or salted egg yolks, often with intricate designs on top.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Pomelos</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>A large citrus fruit that is round like the moon and has a sweet, refreshing taste. Its name in Chinese (柚子) sounds like "blessing."</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Seasonal Fruits</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <p>Fresh seasonal fruits like pears, apples, and grapes are enjoyed during the festival for their sweetness and symbolism of abundance.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Modern Celebrations</h2>
+            <p>Today's Mid-Autumn Festival celebrations combine traditional customs with modern elements. While families still gather to share mooncakes and admire the moon, cities host large-scale lantern festivals, cultural performances, and food fairs. The festival has also become a popular tourist attraction, with many people traveling to experience the celebrations in different regions of China.</p>
             
-            <div class="card">
-                <h3>Traditional Customs</h3>
-                <p>Families gather to appreciate the full moon, share mooncakes, and light lanterns. Children often carry colorful lanterns in parades. Many people also visit temples to pray for good fortune and family harmony. The festival is also a time for poetry and music, with many traditional songs and poems about the moon.</p>
+            <div class="festival-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div class="highlight-title">Urban Celebrations</div>
+                    <p>Cities host large-scale lantern displays and cultural performances</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="highlight-title">Food Festivals</div>
+                    <p>Modern variations of mooncakes and traditional foods are showcased</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="highlight-title">Global Celebration</div>
+                    <p>The festival is celebrated by Chinese communities worldwide</p>
+                </div>
             </div>
+        </section>
+
+        <section class="festival-section">
+            <h2>Travel Tips</h2>
+            <p>If you're visiting China during the Mid-Autumn Festival, you'll find celebrations in most cities, with the largest events in major metropolitan areas. The best places to experience the festival include Hangzhou's West Lake, Suzhou's classical gardens, and Hong Kong's Victoria Harbour, which are known for their spectacular moon views and lantern displays. Book accommodations early as hotels fill up quickly during this period.</p>
             
-            <div class="card">
-                <h3>Traditional Foods</h3>
-                <p>Mooncakes (月饼) are the signature food of the Mid-Autumn Festival. These round pastries are filled with various sweet or savory ingredients like lotus seed paste, red bean paste, or salted egg yolks. Other traditional foods include pomelos, star fruit, and various seasonal fruits. Families often enjoy tea while eating mooncakes.</p>
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Best Locations</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p>Visit cities like Hangzhou, Suzhou, and Hong Kong for the most spectacular moon views and lantern displays.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Planning</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <p>Book accommodations and transportation well in advance. The festival attracts large crowds, especially for lantern displays.</p>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-card-header">
+                        <h3>Experiences</h3>
+                    </div>
+                    <div class="festival-card-content">
+                        <div class="festival-card-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <p>Don't forget your camera! The moon, lanterns, and celebrations create stunning photo opportunities.</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h3>Modern Celebrations</h3>
-                <p>Today, the Mid-Autumn Festival is celebrated with modern twists while maintaining traditional elements. Cities host lantern festivals, cultural performances, and mooncake tasting events. Many companies gift mooncakes to employees and clients. The festival has also become popular in other Asian countries and Chinese communities worldwide.</p>
-            </div>
-            
-            <div class="card">
-                <h3>Travel Tips</h3>
-                <p>If you're visiting China during the Mid-Autumn Festival (usually in September or October), look for lantern displays in city parks and squares. Many hotels and restaurants offer special mooncake tasting menus. Visit traditional gardens or lakeside areas for the best moon viewing spots. Don't miss the opportunity to try different varieties of mooncakes from local bakeries.</p>
-            </div>
-        </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 ChinaIntro. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+    <script src="../script.js"></script>
 </body>
 </html> 
