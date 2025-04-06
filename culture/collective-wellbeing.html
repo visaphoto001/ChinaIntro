@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collective Well-being in Chinese Culture - China Guide</title>
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,community,harmony') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .wellbeing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .wellbeing-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wellbeing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Collective Well-being</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Collective Well-being <span class="chinese-text">集体福祉</span></h1>
+            <p>Prioritizing Community Prosperity and Harmony</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">共同</span>
+                    <span class="stat-label">Shared Goals</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">互助</span>
+                    <span class="stat-label">Mutual Support</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">和谐</span>
+                    <span class="stat-label">Social Harmony</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Core Concepts</h2>
+            <p>Collective well-being in Chinese culture emphasizes the interconnectedness of individual and community prosperity, promoting harmony and mutual support within society.</p>
+            
+            <div class="wellbeing-grid">
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Shared Values</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <p>Fundamental principles that guide collective well-being in Chinese society.</p>
+                        <ul class="feature-list">
+                            <li>Common Good</li>
+                            <li>Social Responsibility</li>
+                            <li>Mutual Support</li>
+                            <li>Collective Growth</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Community Bonds</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <p>The importance of strong community relationships and support networks.</p>
+                        <ul class="feature-list">
+                            <li>Neighborhood Unity</li>
+                            <li>Shared Resources</li>
+                            <li>Group Activities</li>
+                            <li>Social Networks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Social Responsibility</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>Individual roles in contributing to collective prosperity.</p>
+                        <ul class="feature-list">
+                            <li>Civic Duty</li>
+                            <li>Environmental Care</li>
+                            <li>Public Service</li>
+                            <li>Community Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "众人拾柴火焰高" (When everyone adds firewood, the flames rise high)
+                <div class="quote-author">- Chinese Proverb</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Modern Applications</h2>
+            <div class="wellbeing-grid">
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Urban Communities</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <p>Collective well-being in modern urban settings.</p>
+                        <ul class="feature-list">
+                            <li>Community Centers</li>
+                            <li>Public Spaces</li>
+                            <li>Shared Facilities</li>
+                            <li>Group Activities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Digital Age</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <p>Technology's role in fostering collective well-being.</p>
+                        <ul class="feature-list">
+                            <li>Online Communities</li>
+                            <li>Digital Support</li>
+                            <li>Resource Sharing</li>
+                            <li>Virtual Networks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Social Innovation</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <p>New approaches to promoting collective prosperity.</p>
+                        <ul class="feature-list">
+                            <li>Shared Economy</li>
+                            <li>Social Enterprises</li>
+                            <li>Community Projects</li>
+                            <li>Collaborative Solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Future Development</h2>
+            <div class="wellbeing-grid">
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Sustainable Growth</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <p>Balancing development with collective well-being.</p>
+                        <ul class="feature-list">
+                            <li>Green Initiatives</li>
+                            <li>Shared Resources</li>
+                            <li>Community Planning</li>
+                            <li>Social Impact</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Global Integration</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>Connecting local well-being with global community.</p>
+                        <ul class="feature-list">
+                            <li>Cultural Exchange</li>
+                            <li>International Cooperation</li>
+                            <li>Shared Learning</li>
+                            <li>Global Networks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wellbeing-card">
+                    <div class="card-header">
+                        <h3>Social Evolution</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <p>Adapting collective well-being for future generations.</p>
+                        <ul class="feature-list">
+                            <li>New Social Models</li>
+                            <li>Adaptive Systems</li>
+                            <li>Future Planning</li>
+                            <li>Youth Engagement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
