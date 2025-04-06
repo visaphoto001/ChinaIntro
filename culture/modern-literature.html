@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Modern Literature - China Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,books,literature') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .content-section {
+            padding: 60px 20px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Modern Literature</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Modern Literature <span class="chinese-text">现代文学</span></h1>
+            <p>Evolution and Innovation in Chinese Writing</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Years of History</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Published Works</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Contemporary Authors</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Literary Evolution</h2>
+            <p>Chinese modern literature has undergone significant transformation, reflecting social changes and cultural shifts while maintaining its unique identity.</p>
+            
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>May Fourth Movement</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <p>Literary revolution.</p>
+                        <ul class="feature-list">
+                            <li>Vernacular Chinese</li>
+                            <li>New Culture Movement</li>
+                            <li>Social Criticism</li>
+                            <li>Western Influence</li>
+                            <li>Literary Reform</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Contemporary Trends</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <p>Modern developments.</p>
+                        <ul class="feature-list">
+                            <li>Urban Literature</li>
+                            <li>Online Writing</li>
+                            <li>Experimental Forms</li>
+                            <li>Global Themes</li>
+                            <li>Digital Publishing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "文学是时代的镜子" (Literature is the mirror of the times)
+                <div class="quote-author">- Lu Xun</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Major Literary Movements</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Early Modern</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                        <p>1910s-1930s.</p>
+                        <ul class="feature-list">
+                            <li>New Literature</li>
+                            <li>Progressive Writers</li>
+                            <li>Leftist Literature</li>
+                            <li>Literary Societies</li>
+                            <li>Literary Magazines</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Mid-Century</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <p>1940s-1960s.</p>
+                        <ul class="feature-list">
+                            <li>Socialist Realism</li>
+                            <li>Revolutionary Literature</li>
+                            <li>Worker-Peasant Literature</li>
+                            <li>Political Writing</li>
+                            <li>Cultural Revolution</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Contemporary Era</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <p>1970s-present.</p>
+                        <ul class="feature-list">
+                            <li>Scar Literature</li>
+                            <li>Root-Seeking Literature</li>
+                            <li>Avant-garde Writing</li>
+                            <li>Urban Fiction</li>
+                            <li>Online Literature</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Global Influence</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>International impact.</p>
+                        <ul class="feature-list">
+                            <li>Literary Translation</li>
+                            <li>Global Recognition</li>
+                            <li>Cross-Cultural Exchange</li>
+                            <li>Literary Awards</li>
+                            <li>International Publishing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Notable Authors</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Modern Masters</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <p>Influential writers.</p>
+                        <ul class="feature-list">
+                            <li>Lu Xun (鲁迅)</li>
+                            <li>Ba Jin (巴金)</li>
+                            <li>Mao Dun (茅盾)</li>
+                            <li>Ding Ling (丁玲)</li>
+                            <li>Lao She (老舍)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Contemporary Voices</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>Modern authors.</p>
+                        <ul class="feature-list">
+                            <li>Mo Yan (莫言)</li>
+                            <li>Yu Hua (余华)</li>
+                            <li>Wang Anyi (王安忆)</li>
+                            <li>Han Han (韩寒)</li>
+                            <li>Guo Jingming (郭敬明)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Literary Forms</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Traditional Forms</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-scroll"></i>
+                        </div>
+                        <p>Classic genres.</p>
+                        <ul class="feature-list">
+                            <li>Novels</li>
+                            <li>Short Stories</li>
+                            <li>Poetry</li>
+                            <li>Essays</li>
+                            <li>Drama</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Modern Forms</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <p>Contemporary genres.</p>
+                        <ul class="feature-list">
+                            <li>Web Novels</li>
+                            <li>Micro Fiction</li>
+                            <li>Blog Writing</li>
+                            <li>Social Media</li>
+                            <li>Digital Poetry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Future of Literature</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Digital Transformation</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <p>Technology in literature.</p>
+                        <ul class="feature-list">
+                            <li>Online Publishing</li>
+                            <li>Digital Platforms</li>
+                            <li>Interactive Fiction</li>
+                            <li>AI Writing</li>
+                            <li>Virtual Reality</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Cultural Impact</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <p>Literature's role.</p>
+                        <ul class="feature-list">
+                            <li>Social Commentary</li>
+                            <li>Cultural Identity</li>
+                            <li>Global Dialogue</li>
+                            <li>Education</li>
+                            <li>Cultural Heritage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

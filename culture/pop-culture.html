@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Pop Culture - China Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,pop,culture') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .content-section {
+            padding: 60px 20px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Pop Culture</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pop Culture <span class="chinese-text">流行文化</span></h1>
+            <p>The Dynamic World of Chinese Entertainment</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">1.4B</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">$200B+</span>
+                    <span class="stat-label">Entertainment Market</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50M+</span>
+                    <span class="stat-label">Content Creators</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Entertainment Industry</h2>
+            <p>China's entertainment industry has grown into a global powerhouse, influencing trends and setting new standards in digital content creation.</p>
+            
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Film & Television</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <p>Screen entertainment.</p>
+                        <ul class="feature-list">
+                            <li>Blockbuster Movies</li>
+                            <li>TV Dramas</li>
+                            <li>Reality Shows</li>
+                            <li>Web Series</li>
+                            <li>Streaming Content</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Music Industry</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <p>Musical trends.</p>
+                        <ul class="feature-list">
+                            <li>Pop Music</li>
+                            <li>Hip Hop</li>
+                            <li>Rock Bands</li>
+                            <li>Idol Groups</li>
+                            <li>Digital Music</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "文化自信是一个国家、一个民族发展中最基本、最深沉、最持久的力量" (Cultural confidence is the most basic, profound, and enduring force in a country's and nation's development)
+                <div class="quote-author">- Xi Jinping</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Digital Entertainment</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Social Media</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <p>Online platforms.</p>
+                        <ul class="feature-list">
+                            <li>WeChat</li>
+                            <li>Weibo</li>
+                            <li>Douyin</li>
+                            <li>Kuaishou</li>
+                            <li>Xiaohongshu</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Gaming</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <p>Gaming industry.</p>
+                        <ul class="feature-list">
+                            <li>Mobile Games</li>
+                            <li>E-Sports</li>
+                            <li>Game Streaming</li>
+                            <li>Virtual Reality</li>
+                            <li>Cloud Gaming</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Digital Content</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <p>Online content.</p>
+                        <ul class="feature-list">
+                            <li>Short Videos</li>
+                            <li>Live Streaming</li>
+                            <li>Vlogs</li>
+                            <li>Web Series</li>
+                            <li>Digital Art</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Fashion & Beauty</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <p>Style trends.</p>
+                        <ul class="feature-list">
+                            <li>Street Fashion</li>
+                            <li>Beauty Trends</li>
+                            <li>Cosplay</li>
+                            <li>Influencer Style</li>
+                            <li>Digital Fashion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Celebrity Culture</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Entertainment Stars</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Famous personalities.</p>
+                        <ul class="feature-list">
+                            <li>Movie Stars</li>
+                            <li>Pop Singers</li>
+                            <li>TV Hosts</li>
+                            <li>Internet Celebrities</li>
+                            <li>Influencers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Fan Culture</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <p>Fan engagement.</p>
+                        <ul class="feature-list">
+                            <li>Fan Groups</li>
+                            <li>Fan Meetings</li>
+                            <li>Fan Art</li>
+                            <li>Fan Fiction</li>
+                            <li>Fan Events</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Global Impact</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>International Influence</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>Global reach.</p>
+                        <ul class="feature-list">
+                            <li>Film Exports</li>
+                            <li>Music Industry</li>
+                            <li>Fashion Trends</li>
+                            <li>Digital Platforms</li>
+                            <li>Cultural Exchange</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Future Trends</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <p>Emerging developments.</p>
+                        <ul class="feature-list">
+                            <li>Virtual Reality</li>
+                            <li>AI Entertainment</li>
+                            <li>Digital Innovation</li>
+                            <li>Cross-Cultural Content</li>
+                            <li>Global Collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

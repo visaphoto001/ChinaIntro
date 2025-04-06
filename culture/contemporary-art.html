@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Contemporary Art - China Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,art,contemporary') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+
+        .content-section {
+            padding: 60px 20px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .quote-section {
+            background: #f9f3f3;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../culture.html">Culture</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../geography.html">Geography</a></li>
+                <li><a href="../cuisine.html">Cuisine</a></li>
+                <li><a href="../language.html">Language</a></li>
+                <li><a href="../travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../culture.html">Culture</a>
+        <span class="separator">/</span>
+        <span>Contemporary Art</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Contemporary Art <span class="chinese-text">当代艺术</span></h1>
+            <p>Innovation and Expression in Modern Chinese Art</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Years of Evolution</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Art Galleries</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Major Movements</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Artistic Evolution</h2>
+            <p>Chinese contemporary art has emerged as a powerful force in the global art scene, blending traditional elements with modern expressions and innovative techniques.</p>
+            
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Historical Context</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <p>Development of contemporary art.</p>
+                        <ul class="feature-list">
+                            <li>Post-Cultural Revolution</li>
+                            <li>85 New Wave Movement</li>
+                            <li>Political Pop Art</li>
+                            <li>Cynical Realism</li>
+                            <li>Global Recognition</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Contemporary Trends</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <p>Modern artistic developments.</p>
+                        <ul class="feature-list">
+                            <li>Digital Art</li>
+                            <li>Installation Art</li>
+                            <li>Performance Art</li>
+                            <li>Mixed Media</li>
+                            <li>Conceptual Art</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                "艺术是生活的镜子" (Art is the mirror of life)
+                <div class="quote-author">- Ai Weiwei</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Major Movements</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Early Contemporary</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <p>1970s-1980s art movements.</p>
+                        <ul class="feature-list">
+                            <li>Stars Group (星星画会)</li>
+                            <li>Scar Art</li>
+                            <li>Roots-Seeking Painting</li>
+                            <li>New Wave Art</li>
+                            <li>Experimental Art</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Modern Era</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-brush"></i>
+                        </div>
+                        <p>Contemporary movements.</p>
+                        <ul class="feature-list">
+                            <li>Political Pop</li>
+                            <li>Cynical Realism</li>
+                            <li>Gaudy Art</li>
+                            <li>New Media Art</li>
+                            <li>Urban Art</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Digital Age</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <p>Technology in art.</p>
+                        <ul class="feature-list">
+                            <li>Digital Installations</li>
+                            <li>Virtual Reality Art</li>
+                            <li>Interactive Media</li>
+                            <li>NFT Art</li>
+                            <li>AI-Generated Art</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Global Impact</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>International influence.</p>
+                        <ul class="feature-list">
+                            <li>Art Fairs</li>
+                            <li>Museum Exhibitions</li>
+                            <li>Artist Residencies</li>
+                            <li>Cross-Cultural Projects</li>
+                            <li>Global Collections</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Notable Artists</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Pioneering Artists</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <p>Influential figures.</p>
+                        <ul class="feature-list">
+                            <li>Ai Weiwei (艾未未)</li>
+                            <li>Zhang Xiaogang (张晓刚)</li>
+                            <li>Yue Minjun (岳敏君)</li>
+                            <li>Fang Lijun (方力钧)</li>
+                            <li>Wang Guangyi (王广义)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Contemporary Voices</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>Modern artists.</p>
+                        <ul class="feature-list">
+                            <li>Cao Fei (曹斐)</li>
+                            <li>Xu Bing (徐冰)</li>
+                            <li>Zhang Huan (张洹)</li>
+                            <li>Liu Xiaodong (刘小东)</li>
+                            <li>Yang Fudong (杨福东)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Art Spaces</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Museums</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <p>Major art institutions.</p>
+                        <ul class="feature-list">
+                            <li>M+ Museum</li>
+                            <li>Ullens Center</li>
+                            <li>Power Station of Art</li>
+                            <li>Today Art Museum</li>
+                            <li>OCAT Museums</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Art Districts</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <p>Creative hubs.</p>
+                        <ul class="feature-list">
+                            <li>798 Art District</li>
+                            <li>M50 Creative Park</li>
+                            <li>Caochangdi Art Village</li>
+                            <li>Red Town</li>
+                            <li>Art Basel Hong Kong</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Future of Art</h2>
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Emerging Trends</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <p>Future developments.</p>
+                        <ul class="feature-list">
+                            <li>Digital Innovation</li>
+                            <li>Sustainable Art</li>
+                            <li>Community Art</li>
+                            <li>Cross-Disciplinary Works</li>
+                            <li>Global Collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header">
+                        <h3>Cultural Impact</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <p>Art's role in society.</p>
+                        <ul class="feature-list">
+                            <li>Social Commentary</li>
+                            <li>Cultural Identity</li>
+                            <li>Urban Development</li>
+                            <li>Education</li>
+                            <li>Public Engagement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About China Guide</h3>
+                    <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2024 China Guide. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
