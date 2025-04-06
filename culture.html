@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .culture-hero {
-            height: 70vh;
+        .hero {
+            height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('images/culture-hero.jpg') center/cover;
+                        url('https://source.unsplash.com/1600x900/?china,culture,tradition') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -20,7 +20,7 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             padding: 2rem;
             width: 100%;
             position: relative;
@@ -28,18 +28,32 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
         }
 
-        .hero-subtitle {
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             line-height: 1.4;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -218,17 +232,23 @@
         }
 
         @media (max-width: 768px) {
-            .culture-hero {
+            .hero {
                 height: auto;
-                min-height: 60vh;
+                min-height: 70vh;
                 padding: 4rem 0;
             }
 
             .hero-content h1 {
                 font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
             }
 
-            .hero-subtitle {
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
                 font-size: 1.2rem;
             }
 
@@ -256,8 +276,8 @@
         }
 
         @media (max-width: 480px) {
-            .culture-hero {
-                min-height: 50vh;
+            .hero {
+                min-height: 60vh;
                 padding: 3rem 0;
             }
 
@@ -265,7 +285,7 @@
                 font-size: 2rem;
             }
 
-            .hero-subtitle {
+            .hero-content p {
                 font-size: 1rem;
             }
 
@@ -324,10 +344,10 @@
         <span>Culture</span>
     </div>
 
-    <section class="hero culture-hero">
+    <section class="hero">
         <div class="hero-content">
-            <h1>Chinese Culture (中国文化)</h1>
-            <p class="hero-subtitle">A Tapestry of Traditions, Arts, and Modern Life</p>
+            <h1>Chinese Culture <span class="chinese-text">中国文化</span></h1>
+            <p>Discover the Rich Traditions and Heritage of China</p>
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number">5,000+</span>
