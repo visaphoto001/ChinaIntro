@@ -1,3 +1,15 @@
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /culture/
+Allow: /travel/
+Allow: /cuisine/
+Allow: /festivals/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /.git/
+Disallow: /.github/
+
+# Crawl-delay: 10
 Sitemap: https://visaphoto001.github.io/ChinaIntro/sitemap.xml 
