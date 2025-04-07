@@ -293,6 +293,151 @@
         .dark-mode .feature-list li {
             border-bottom-color: rgba(255, 255, 255, 0.1);
         }
+
+        .video-container {
+            margin: 2rem 0;
+            background: #f9f9f9;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .video-description {
+            padding: 1.5rem;
+            background: white;
+        }
+        
+        .video-description p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .video-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #ff0000;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .video-link:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+        }
+        
+        .dark-mode .video-container {
+            background: #2d2d2d;
+        }
+        
+        .dark-mode .video-description {
+            background: #1a1a1a;
+            color: #f5f5f5;
+        }
+        
+        @media (max-width: 768px) {
+            .video-wrapper {
+                padding-bottom: 75%; /* Slightly taller on mobile */
+            }
+            
+            .video-description {
+                padding: 1rem;
+            }
+        }
+
+        .video-list {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: 8px;
+        }
+
+        .video-list h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .video-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .video-list li {
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .dark-mode .video-list {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .video-list li {
+            background: #2d2d2d;
+            color: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            .video-list ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-link-item {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: color 0.3s ease;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .video-link-item:hover {
+            color: var(--primary-color);
+        }
+
+        .video-list li.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .video-list li.active .video-link-item {
+            color: white;
+        }
+
+        .dark-mode .video-list li.active {
+            background: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -519,6 +664,41 @@
                 </div>
             </div>
         </section>
+
+        <section class="cuisine-section">
+            <h2>Chinese Cooking Videos</h2>
+            <p>Watch authentic Chinese cooking demonstrations and learn traditional techniques from expert chefs.</p>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        width="100%" 
+                        height="500" 
+                        src="https://www.youtube.com/embed/videoseries?list=PLwXMmy5fUrVzwMRtDLzUnqTn2rdC27yDF" 
+                        title="Chinese Cooking Videos Playlist" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-description">
+                    <p>Featured Chinese cooking videos showcasing various recipes and techniques.</p>
+                    <div class="video-list">
+                        <h3>Videos in this Playlist:</h3>
+                        <ul>
+                            <li data-video-id="dumplings"><a href="#" class="video-link-item">01</a></li>
+                            <li data-video-id="kungpao"><a href="#" class="video-link-item">02</a></li>
+                            <li data-video-id="mapo"><a href="#" class="video-link-item">03</a></li>
+                            <li data-video-id="stirfry"><a href="#" class="video-link-item">04</a></li>
+                            <li data-video-id="noodles"><a href="#" class="video-link-item">05</a></li>
+                            <li data-video-id="friedrice"><a href="#" class="video-link-item">06</a></li>
+                            <li data-video-id="buns"><a href="#" class="video-link-item">07</a></li>
+                            <li data-video-id="hotpot"><a href="#" class="video-link-item">08</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -543,5 +723,43 @@
     </footer>
 
     <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoList = document.querySelectorAll('.video-list li');
+            const iframe = document.querySelector('.video-wrapper iframe');
+            const playlistId = 'PLwXMmy5fUrVzwMRtDLzUnqTn2rdC27yDF';
+            
+            // Video IDs mapping with actual video IDs from the playlist
+            const videoIds = {
+                'dumplings': '9efpLqzjvCw',
+                'kungpao': 'hVfBTUF4cHM',
+                'mapo': 'zRx82X5S5rY',
+                'stirfry': 'xm0LOeAybBI',
+                'noodles': 'yhnKlKcn3_M',
+                'friedrice': 'q0FGi5OeRCc',
+                'buns': 'BM4-ePw1bEY',
+                'hotpot': 'cevV0nKKm1U'
+            };
+
+            videoList.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const videoId = this.dataset.videoId;
+                    
+                    // Remove active class from all items
+                    videoList.forEach(li => li.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Update iframe src to play the selected video
+                    if (videoIds[videoId]) {
+                        iframe.src = `https://www.youtube.com/embed/${videoIds[videoId]}?autoplay=1`;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
