@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tianshan - Heavenly Mountains - China Guide</title>
+    <meta name="description" content="Explore the majestic Tianshan Mountains, known as the 'Heavenly Mountains', a stunning range in Central Asia.">
+    <meta name="keywords" content="Tianshan Mountains, Heavenly Mountains, China mountains, Central Asia mountains">
+    <meta property="og:title" content="Tianshan - Heavenly Mountains">
+    <meta property="og:description" content="Explore the majestic Tianshan Mountains, known as the 'Heavenly Mountains', a stunning range in Central Asia.">
+    <meta property="og:image" content="https://visaphoto001.github.io/ChinaIntro/images/tianshan.jpg">
+    <meta property="og:url" content="https://visaphoto001.github.io/ChinaIntro/geography/tianshan.html">
+    <link rel="canonical" href="https://visaphoto001.github.io/ChinaIntro/geography/tianshan.html">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7JV1YB8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CB7JV1YB8T');
+    </script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Place",
+      "name": "Tianshan Mountains",
+      "description": "The Tianshan Mountains, meaning 'Heavenly Mountains' in Chinese, form one of the largest mountain ranges in Central Asia. This majestic range stretches across multiple countries and is known for its stunning landscapes and diverse ecosystems.",
+      "image": "https://visaphoto001.github.io/ChinaIntro/images/tianshan.jpg",
+      "url": "https://visaphoto001.github.io/ChinaIntro/geography/tianshan.html",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "42.0000",
+        "longitude": "80.0000"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Length",
+          "value": "2,800 km"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Highest Peak",
+          "value": "Jengish Chokusu (7,439m)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Location",
+          "value": "Central Asia"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Countries",
+          "value": "China, Kazakhstan, Kyrgyzstan"
+        }
+      ]
+    }
+    </script>
+    <style>
+        .mountain-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/tianshan.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .mountain-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .mountain-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Hyperlink styling to match culture.html */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .feature-list li a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .feature-list li a:hover {
+            color: var(--primary-color);
+        }
+
+        .dark-mode .feature-list li a:hover {
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #e63946;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #c1121f;
+        }
+
+        .breadcrumb .separator {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">China Guide</a>
+            </div>
+            <div class="nav-links">
+                <a href="../culture.html">Culture</a>
+                <a href="../history.html">History</a>
+                <a href="../geography.html">Geography</a>
+                <a href="../cuisine.html">Cuisine</a>
+                <a href="../travel.html">Travel</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> &gt; 
+            <a href="../geography.html">Geography</a> &gt; 
+            <span>Tianshan Mountains</span>
+        </div>
+
+        <section class="mountain-hero">
+            <div class="hero-content">
+                <h1>Tianshan Mountains</h1>
+                <p>The Heavenly Mountains</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="mountain-stats">
+                <div class="stat-item">
+                    <h3>Length</h3>
+                    <p>2,800 km</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Highest Peak</h3>
+                    <p>Jengish Chokusu (7,439m)</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Location</h3>
+                    <p>Central Asia</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Countries</h3>
+                    <p>China, Kazakhstan, Kyrgyzstan</p>
+                </div>
+            </div>
+
+            <div class="content-text">
+                <h2>About the Tianshan Mountains</h2>
+                <p>The Tianshan Mountains, meaning "Heavenly Mountains" in Chinese, form one of the largest mountain ranges in Central Asia. This majestic range stretches across multiple countries and is known for its stunning landscapes and diverse ecosystems.</p>
+
+                <h3>Geological Features</h3>
+                <p>The Tianshan range consists of several parallel mountain chains separated by valleys and basins. The range includes numerous peaks over 6,000 meters, with Jengish Chokusu (also known as Peak Pobeda) being the highest at 7,439 meters.</p>
+
+                <h3>Climate and Environment</h3>
+                <p>The mountains experience a continental climate with significant seasonal variations. The range is home to diverse ecosystems, from alpine meadows to glaciers, and supports a rich variety of plant and animal life.</p>
+
+                <h3>Cultural Significance</h3>
+                <p>The Tianshan Mountains have been an important part of the Silk Road and have played a crucial role in the cultural exchange between East and West. The range is also significant in local folklore and traditions.</p>
+            </div>
+
+            <div class="mountain-gallery">
+                <div class="gallery-item">
+                    <img src="../images/tianshan-peak.jpg" alt="Tianshan Peak">
+                    <div class="gallery-caption">
+                        <h4>Snow-Capped Peaks</h4>
+                        <p>The majestic peaks of the Tianshan Mountains</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/tianshan-valley.jpg" alt="Tianshan Valley">
+                    <div class="gallery-caption">
+                        <h4>Mountain Valleys</h4>
+                        <p>Beautiful valleys of the Tianshan range</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/tianshan-lake.jpg" alt="Tianshan Lake">
+                    <div class="gallery-caption">
+                        <h4>Alpine Lakes</h4>
+                        <p>Crystal clear lakes in the Tianshan Mountains</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, history, and travel.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../culture.html">Culture</a></li>
+                    <li><a href="../history.html">History</a></li>
+                    <li><a href="../geography.html">Geography</a></li>
+                    <li><a href="../cuisine.html">Cuisine</a></li>
+                    <li><a href="../travel.html">Travel</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 China Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+</body>
+</html> 

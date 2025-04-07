@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mount Everest - 8,848m Peak - China Guide</title>
+    <meta name="description" content="Explore Mount Everest, the world's highest peak at 8,848 meters, located on the China-Nepal border.">
+    <meta name="keywords" content="Mount Everest, Qomolangma, highest peak, Himalayas, China mountains">
+    <meta property="og:title" content="Mount Everest - 8,848m Peak">
+    <meta property="og:description" content="Explore Mount Everest, the world's highest peak at 8,848 meters, located on the China-Nepal border.">
+    <meta property="og:image" content="https://visaphoto001.github.io/ChinaIntro/images/everest.jpg">
+    <meta property="og:url" content="https://visaphoto001.github.io/ChinaIntro/geography/mount-everest.html">
+    <link rel="canonical" href="https://visaphoto001.github.io/ChinaIntro/geography/mount-everest.html">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7JV1YB8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CB7JV1YB8T');
+    </script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Place",
+      "name": "Mount Everest",
+      "description": "Mount Everest, known as Qomolangma in Tibetan and Sagarmatha in Nepali, is the world's highest peak above sea level. Located on the border between China and Nepal, this majestic mountain has captured the imagination of climbers and adventurers for generations.",
+      "image": "https://visaphoto001.github.io/ChinaIntro/images/everest.jpg",
+      "url": "https://visaphoto001.github.io/ChinaIntro/geography/mount-everest.html",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "27.9881",
+        "longitude": "86.9250"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Height",
+          "value": "8,848 meters"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Location",
+          "value": "China-Nepal Border"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "First Ascent",
+          "value": "1953"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Local Name",
+          "value": "Qomolangma"
+        }
+      ]
+    }
+    </script>
+    <style>
+        .mountain-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/everest.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .mountain-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .mountain-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Hyperlink styling to match culture.html */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .feature-list li a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .feature-list li a:hover {
+            color: var(--primary-color);
+        }
+
+        .dark-mode .feature-list li a:hover {
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #e63946;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #c1121f;
+        }
+
+        .breadcrumb .separator {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">China Guide</a>
+            </div>
+            <div class="nav-links">
+                <a href="../culture.html">Culture</a>
+                <a href="../history.html">History</a>
+                <a href="../geography.html">Geography</a>
+                <a href="../cuisine.html">Cuisine</a>
+                <a href="../travel.html">Travel</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> &gt; 
+            <a href="../geography.html">Geography</a> &gt; 
+            <span>Mount Everest</span>
+        </div>
+
+        <section class="mountain-hero">
+            <div class="hero-content">
+                <h1>Mount Everest</h1>
+                <p>World's Highest Peak</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="mountain-stats">
+                <div class="stat-item">
+                    <h3>Height</h3>
+                    <p>8,848 meters</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Location</h3>
+                    <p>China-Nepal Border</p>
+                </div>
+                <div class="stat-item">
+                    <h3>First Ascent</h3>
+                    <p>1953</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Local Name</h3>
+                    <p>Qomolangma</p>
+                </div>
+            </div>
+
+            <div class="content-text">
+                <h2>About Mount Everest</h2>
+                <p>Mount Everest, known as Qomolangma in Tibetan and Sagarmatha in Nepali, is the world's highest peak above sea level. Located on the border between China and Nepal, this majestic mountain has captured the imagination of climbers and adventurers for generations.</p>
+
+                <h3>Geological Formation</h3>
+                <p>Mount Everest was formed by the collision of the Indian and Eurasian tectonic plates. The mountain continues to grow approximately 4mm each year due to ongoing tectonic activity.</p>
+
+                <h3>Climbing History</h3>
+                <p>The first successful ascent was made by Sir Edmund Hillary and Tenzing Norgay in 1953. Since then, thousands of climbers have attempted to reach the summit, facing extreme weather conditions and altitude challenges.</p>
+
+                <h3>Cultural Significance</h3>
+                <p>Mount Everest holds deep spiritual significance for the local Tibetan and Nepali people. The mountain is considered sacred in both Buddhism and Hinduism, and many religious ceremonies are performed in its shadow.</p>
+            </div>
+
+            <div class="mountain-gallery">
+                <div class="gallery-item">
+                    <img src="../images/everest-peak.jpg" alt="Mount Everest Peak">
+                    <div class="gallery-caption">
+                        <h4>The Summit</h4>
+                        <p>The world's highest point at 8,848 meters</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/everest-base.jpg" alt="Everest Base Camp">
+                    <div class="gallery-caption">
+                        <h4>Base Camp</h4>
+                        <p>Starting point for summit attempts</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/everest-sunrise.jpg" alt="Everest Sunrise">
+                    <div class="gallery-caption">
+                        <h4>Sunrise View</h4>
+                        <p>Breathtaking sunrise over Mount Everest</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, history, and travel.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../culture.html">Culture</a></li>
+                    <li><a href="../history.html">History</a></li>
+                    <li><a href="../geography.html">Geography</a></li>
+                    <li><a href="../cuisine.html">Cuisine</a></li>
+                    <li><a href="../travel.html">Travel</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 China Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+</body>
+</html> 

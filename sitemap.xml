@@ -67,6 +67,31 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <!-- Mountain Pages -->
+    <url>
+        <loc>https://visaphoto001.github.io/ChinaIntro/geography/himalayas.html</loc>
+        <lastmod>2024-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://visaphoto001.github.io/ChinaIntro/geography/kunlun.html</loc>
+        <lastmod>2024-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://visaphoto001.github.io/ChinaIntro/geography/tianshan.html</loc>
+        <lastmod>2024-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://visaphoto001.github.io/ChinaIntro/geography/mount-everest.html</loc>
+        <lastmod>2024-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <!-- Culture Pages -->
     <url>
         <loc>https://visaphoto001.github.io/ChinaIntro/culture/confucian-values.html</loc>
