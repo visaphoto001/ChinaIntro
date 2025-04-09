@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directions and Transport in Chinese - China Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7JV1YB8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CB7JV1YB8T');
+    </script>
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?china,transport,subway') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .directions-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .directions-section {
+            margin-bottom: 3rem;
+        }
+
+        .directions-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .directions-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .directions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .direction-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .direction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .direction-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .direction-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .direction-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .direction-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .direction-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .direction-table th, .direction-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .direction-table th {
+            background-color: rgba(200, 16, 46, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .direction-table tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .chinese-text {
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .pinyin {
+            color: #666;
+            font-style: italic;
+        }
+
+        .direction-example {
+            background-color: rgba(200, 16, 46, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .direction-example h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .direction-example ul {
+            padding-left: 1.5rem;
+        }
+
+        .direction-example li {
+            margin-bottom: 0.5rem;
+        }
+
+        .audio-example {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.02);
+            border-radius: 8px;
+        }
+
+        .audio-example button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .audio-example button:hover {
+            background-color: #a00c24;
+        }
+
+        .audio-example span {
+            font-weight: 500;
+        }
+
+        .direction-context {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .direction-visual {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }
+
+        .direction-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(200, 16, 46, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .direction-symbol {
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .direction-value {
+            font-weight: bold;
+        }
+
+        .dark-mode .direction-card {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .direction-card-content {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .direction-card p,
+        .dark-mode .direction-table td {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .direction-table th {
+            background-color: rgba(200, 16, 46, 0.2);
+        }
+
+        .dark-mode .direction-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .chinese-text {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .pinyin {
+            color: #aaa;
+        }
+
+        .dark-mode .direction-example {
+            background-color: rgba(200, 16, 46, 0.15);
+        }
+
+        .dark-mode .audio-example {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .direction-item {
+            background: rgba(200, 16, 46, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .direction-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 40vh;
+                padding: 2rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" aria-label="Return to homepage">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="geography.html">Geography</a></li>
+                <li><a href="cuisine.html">Cuisine</a></li>
+                <li><a href="language.html">Language</a></li>
+                <li><a href="travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="travel.html">Travel Guide</a>
+        <span class="separator">/</span>
+        <span>Directions and Transport</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Directions & Transport <span class="chinese-text">方向与交通</span></h1>
+            <p>Navigate China with confidence</p>
+        </div>
+    </section>
+
+    <main class="directions-content">
+        <section class="directions-section">
+            <h2>Why Learn Directions and Transport in Chinese?</h2>
+            <p>Knowing how to ask for directions and navigate transportation systems is essential for any traveler in China. Whether you're taking the subway, hailing a taxi, or asking for help finding a location, these phrases will help you get around more easily.</p>
+            
+            <div class="direction-example">
+                <h4>Quick Facts About Transport in China</h4>
+                <ul>
+                    <li><strong>Public Transport:</strong> Extensive and efficient in most cities</li>
+                    <li><strong>Subway Systems:</strong> Available in most major cities</li>
+                    <li><strong>Taxis:</strong> Readily available but may not speak English</li>
+                    <li><strong>High-Speed Rail:</strong> Connects most major cities</li>
+                    <li><strong>Mobile Apps:</strong> Essential for modern navigation (WeChat, DiDi, etc.)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="directions-section">
+            <h2>Basic Direction Words</h2>
+            <table class="direction-table">
+                <thead>
+                    <tr>
+                        <th>English</th>
+                        <th>Chinese</th>
+                        <th>Pinyin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Left</td>
+                        <td class="chinese-text">左</td>
+                        <td class="pinyin">zuǒ</td>
+                    </tr>
+                    <tr>
+                        <td>Right</td>
+                        <td class="chinese-text">右</td>
+                        <td class="pinyin">yòu</td>
+                    </tr>
+                    <tr>
+                        <td>Straight ahead</td>
+                        <td class="chinese-text">直走</td>
+                        <td class="pinyin">zhí zǒu</td>
+                    </tr>
+                    <tr>
+                        <td>Turn</td>
+                        <td class="chinese-text">转</td>
+                        <td class="pinyin">zhuǎn</td>
+                    </tr>
+                    <tr>
+                        <td>Near</td>
+                        <td class="chinese-text">近</td>
+                        <td class="pinyin">jìn</td>
+                    </tr>
+                    <tr>
+                        <td>Far</td>
+                        <td class="chinese-text">远</td>
+                        <td class="pinyin">yuǎn</td>
+                    </tr>
+                    <tr>
+                        <td>Here</td>
+                        <td class="chinese-text">这里</td>
+                        <td class="pinyin">zhè lǐ</td>
+                    </tr>
+                    <tr>
+                        <td>There</td>
+                        <td class="chinese-text">那里</td>
+                        <td class="pinyin">nà lǐ</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="audio-example">
+                <button aria-label="Play pronunciation"><i class="fas fa-volume-up"></i></button>
+                <span>Listen to pronunciation: 左, 右, 直走 (zuǒ, yòu, zhí zǒu)</span>
+            </div>
+        </section>
+
+        <section class="directions-section">
+            <h2>Asking for Directions</h2>
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <div class="direction-card-header">
+                        <h3>Basic Questions</h3>
+                    </div>
+                    <div class="direction-card-content">
+                        <div class="direction-card-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <p>Essential phrases for asking where things are:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">请问...在哪里？</span> (qǐngwèn... zài nǎlǐ?) - Excuse me, where is...?</li>
+                            <li><span class="chinese-text">怎么去...？</span> (zěnme qù...?) - How do I get to...?</li>
+                            <li><span class="chinese-text">...远吗？</span> (...yuǎn ma?) - Is... far?</li>
+                            <li><span class="chinese-text">...近吗？</span> (...jìn ma?) - Is... nearby?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="direction-card">
+                    <div class="direction-card-header">
+                        <h3>Understanding Directions</h3>
+                    </div>
+                    <div class="direction-card-content">
+                        <div class="direction-card-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <p>Common responses you might hear:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">往左转</span> (wǎng zuǒ zhuǎn) - Turn left</li>
+                            <li><span class="chinese-text">往右转</span> (wǎng yòu zhuǎn) - Turn right</li>
+                            <li><span class="chinese-text">一直走</span> (yīzhí zǒu) - Go straight ahead</li>
+                            <li><span class="chinese-text">在...旁边</span> (zài... pángbiān) - Next to...</li>
+                            <li><span class="chinese-text">在...对面</span> (zài... duìmiàn) - Opposite...</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="direction-card">
+                    <div class="direction-card-header">
+                        <h3>Useful Phrases</h3>
+                    </div>
+                    <div class="direction-card-content">
+                        <div class="direction-card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <p>Additional helpful phrases:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">我不明白</span> (wǒ bù míngbai) - I don't understand</li>
+                            <li><span class="chinese-text">能再说一遍吗？</span> (néng zài shuō yībiàn ma?) - Can you say that again?</li>
+                            <li><span class="chinese-text">请画个地图</span> (qǐng huà gè dìtú) - Please draw a map</li>
+                            <li><span class="chinese-text">谢谢</span> (xièxiè) - Thank you</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="directions-section">
+            <h2>Transportation Vocabulary</h2>
+            <table class="direction-table">
+                <thead>
+                    <tr>
+                        <th>English</th>
+                        <th>Chinese</th>
+                        <th>Pinyin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Subway/Metro</td>
+                        <td class="chinese-text">地铁</td>
+                        <td class="pinyin">dìtiě</td>
+                    </tr>
+                    <tr>
+                        <td>Bus</td>
+                        <td class="chinese-text">公交车</td>
+                        <td class="pinyin">gōngjiāo chē</td>
+                    </tr>
+                    <tr>
+                        <td>Taxi</td>
+                        <td class="chinese-text">出租车</td>
+                        <td class="pinyin">chūzū chē</td>
+                    </tr>
+                    <tr>
+                        <td>Train</td>
+                        <td class="chinese-text">火车</td>
+                        <td class="pinyin">huǒchē</td>
+                    </tr>
+                    <tr>
+                        <td>High-speed train</td>
+                        <td class="chinese-text">高铁</td>
+                        <td class="pinyin">gāotiě</td>
+                    </tr>
+                    <tr>
+                        <td>Airport</td>
+                        <td class="chinese-text">机场</td>
+                        <td class="pinyin">jīchǎng</td>
+                    </tr>
+                    <tr>
+                        <td>Train station</td>
+                        <td class="chinese-text">火车站</td>
+                        <td class="pinyin">huǒchē zhàn</td>
+                    </tr>
+                    <tr>
+                        <td>Bus station</td>
+                        <td class="chinese-text">汽车站</td>
+                        <td class="pinyin">qìchē zhàn</td>
+                    </tr>
+                    <tr>
+                        <td>Subway station</td>
+                        <td class="chinese-text">地铁站</td>
+                        <td class="pinyin">dìtiě zhàn</td>
+                    </tr>
+                    <tr>
+                        <td>Ticket</td>
+                        <td class="chinese-text">票</td>
+                        <td class="pinyin">piào</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="directions-section">
+            <h2>Taking Public Transport</h2>
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <div class="direction-card-header">
+                        <h3>Subway</h3>
+                    </div>
+                    <div class="direction-card-content">
+                        <div class="direction-card-icon">
+                            <i class="fas fa-subway"></i>
+                        </div>
+                        <p>Essential phrases for taking the subway:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">我要去...</span> (wǒ yào qù...) - I want to go to...</li>
+                            <li><span class="chinese-text">到...站</span> (dào... zhàn) - To... station</li>
+                            <li><span class="chinese-text">换乘</span> (huànchéng) - Transfer</li>
+                            <li><span class="chinese-text">出口</span> (chūkǒu) - Exit</li>
+                            <li><span class="chinese-text">入口</span> (rùkǒu) - Entrance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="direction-card">
+                    <div class="direction-card-header">
+                        <h3>Bus</h3>
+                    </div>
+                    <div class="direction-card-content">
+                        <div class="direction-card-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <p>Essential phrases for taking the bus:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">...路公交车</span> (...lù gōngjiāo chē) - Bus route...</li>
+                            <li><span class="chinese-text">到站了</span> (dào zhàn le) - We've arrived at the station</li>
+                            <li><span class="chinese-text">下一站</span> (xià yī zhàn) - Next stop</li>
+                            <li><span class="chinese-text">请让一下</span> (qǐng ràng yīxià) - Please let me through</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="direction-card">
+                    <div class="direction-card-header">
+                        <h3>Taxi</h3>
+                    </div>
+                    <div class="direction-card-content">
+                        <div class="direction-card-icon">
+                            <i class="fas fa-taxi"></i>
+                        </div>
+                        <p>Essential phrases for taking a taxi:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">请带我去...</span> (qǐng dài wǒ qù...) - Please take me to...</li>
+                            <li><span class="chinese-text">多少钱？</span> (duōshao qián?) - How much is it?</li>
+                            <li><span class="chinese-text">请打表</span> (qǐng dǎ biǎo) - Please use the meter</li>
+                            <li><span class="chinese-text">在这里停</span> (zài zhèlǐ tíng) - Stop here</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="directions-section">
+            <h2>Train Travel</h2>
+            <div class="direction-example">
+                <h4>Essential Train Vocabulary</h4>
+                <ul>
+                    <li><strong><span class="chinese-text">高铁</span> (gāotiě):</strong> High-speed train</li>
+                    <li><strong><span class="chinese-text">动车</span> (dòngchē):</strong> Electric multiple unit train</li>
+                    <li><strong><span class="chinese-text">普通列车</span> (pǔtōng lièchē):</strong> Regular train</li>
+                    <li><strong><span class="chinese-text">硬座</span> (yìngzuò):</strong> Hard seat</li>
+                    <li><strong><span class="chinese-text">软卧</span> (ruǎnwò):</strong> Soft sleeper</li>
+                    <li><strong><span class="chinese-text">检票</span> (jiǎnpiào):</strong> Ticket check</li>
+                    <li><strong><span class="chinese-text">站台</span> (zhàntái):</strong> Platform</li>
+                </ul>
+            </div>
+
+            <div class="direction-context">
+                <p>China's high-speed rail network is one of the most extensive in the world. When traveling by train, it's helpful to know the different classes of service and how to find your platform and seat.</p>
+            </div>
+        </section>
+
+        <section class="directions-section">
+            <h2>Practical Tips</h2>
+            <div class="direction-example">
+                <h4>Making the Most of Your Transport Knowledge</h4>
+                <ul>
+                    <li><strong>Download transport apps:</strong> Many Chinese cities have their own subway apps with English interfaces</li>
+                    <li><strong>Have your destination written in Chinese:</strong> Show the Chinese characters to taxi drivers or when asking for directions</li>
+                    <li><strong>Learn to recognize station names:</strong> Many signs include both Chinese and English, but knowing the Chinese characters helps</li>
+                    <li><strong>Use hand gestures:</strong> Pointing and simple gestures can help bridge language gaps</li>
+                    <li><strong>Keep a map handy:</strong> Even a basic understanding of Chinese characters can help you navigate maps</li>
+                </ul>
+            </div>
+
+            <div class="direction-context">
+                <p>Remember that in China, many people may not speak English, especially outside major tourist areas. Having even basic Chinese phrases for directions and transport can make your travels much smoother and more enjoyable.</p>
+            </div>
+        </section>
+
+        <section class="directions-section">
+            <h2>Additional Resources</h2>
+            <ul class="feature-list">
+                <li><a href="language.html">Complete Chinese Language Guide</a> - Expand your vocabulary beyond directions</li>
+                <li><a href="https://www.youtube.com/results?search_query=chinese+directions+pronunciation" target="_blank">Video Tutorials <i class="fas fa-external-link-alt"></i></a> - Visual and audio learning resources</li>
+                <li><a href="https://www.duolingo.com/course/zh/en/Learn-Chinese" target="_blank">Language Learning Apps <i class="fas fa-external-link-alt"></i></a> - Interactive tools for practice</li>
+                <li><a href="travel.html">Back to Travel Guide</a> - Return to the main travel resources</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 

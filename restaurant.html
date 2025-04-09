@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Phrases in Chinese - China Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7JV1YB8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CB7JV1YB8T');
+    </script>
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,food,restaurant') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .restaurant-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .restaurant-section {
+            margin-bottom: 3rem;
+        }
+
+        .restaurant-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .restaurant-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .restaurant-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .restaurant-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .restaurant-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .restaurant-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .restaurant-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .restaurant-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .restaurant-table th, .restaurant-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .restaurant-table th {
+            background-color: rgba(200, 16, 46, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .restaurant-table tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .chinese-text {
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .pinyin {
+            color: #666;
+            font-style: italic;
+        }
+
+        .restaurant-example {
+            background-color: rgba(200, 16, 46, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .restaurant-example h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .restaurant-example ul {
+            padding-left: 1.5rem;
+        }
+
+        .restaurant-example li {
+            margin-bottom: 0.5rem;
+        }
+
+        .audio-example {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.02);
+            border-radius: 8px;
+        }
+
+        .audio-example button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .audio-example button:hover {
+            background-color: #a00c24;
+        }
+
+        .audio-example span {
+            font-weight: 500;
+        }
+
+        .restaurant-context {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .restaurant-visual {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }
+
+        .restaurant-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(200, 16, 46, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .restaurant-symbol {
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-value {
+            font-weight: bold;
+        }
+
+        .dark-mode .restaurant-card {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .restaurant-card-content {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .restaurant-card p,
+        .dark-mode .restaurant-table td {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .restaurant-table th {
+            background-color: rgba(200, 16, 46, 0.2);
+        }
+
+        .dark-mode .restaurant-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .chinese-text {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .pinyin {
+            color: #aaa;
+        }
+
+        .dark-mode .restaurant-example {
+            background-color: rgba(200, 16, 46, 0.15);
+        }
+
+        .dark-mode .audio-example {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .restaurant-item {
+            background: rgba(200, 16, 46, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .restaurant-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 40vh;
+                padding: 2rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" aria-label="Return to homepage">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="geography.html">Geography</a></li>
+                <li><a href="cuisine.html">Cuisine</a></li>
+                <li><a href="language.html">Language</a></li>
+                <li><a href="travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="travel.html">Travel Guide</a>
+        <span class="separator">/</span>
+        <span>Restaurant Phrases</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Restaurant Phrases <span class="chinese-text">餐厅用语</span></h1>
+            <p>Order food and dine with confidence in China</p>
+        </div>
+    </section>
+
+    <main class="restaurant-content">
+        <section class="restaurant-section">
+            <h2>Why Learn Restaurant Phrases in Chinese?</h2>
+            <p>Dining is a central part of Chinese culture, and knowing how to order food and communicate in restaurants will greatly enhance your travel experience. Whether you're ordering from a menu, asking about ingredients, or expressing preferences, these phrases will help you navigate Chinese restaurants with confidence.</p>
+            
+            <div class="restaurant-example">
+                <h4>Quick Facts About Dining in China</h4>
+                <ul>
+                    <li><strong>Shared Dishes:</strong> Chinese meals typically consist of shared dishes</li>
+                    <li><strong>Tea Culture:</strong> Tea is often served automatically and may be refilled</li>
+                    <li><strong>Chopsticks:</strong> The primary eating utensil in China</li>
+                    <li><strong>Spicy Food:</strong> Many regions are known for their spicy cuisine</li>
+                    <li><strong>Street Food:</strong> Abundant and diverse options available</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="restaurant-section">
+            <h2>Basic Restaurant Vocabulary</h2>
+            <table class="restaurant-table">
+                <thead>
+                    <tr>
+                        <th>English</th>
+                        <th>Chinese</th>
+                        <th>Pinyin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Restaurant</td>
+                        <td class="chinese-text">餐厅</td>
+                        <td class="pinyin">cāntīng</td>
+                    </tr>
+                    <tr>
+                        <td>Menu</td>
+                        <td class="chinese-text">菜单</td>
+                        <td class="pinyin">càidān</td>
+                    </tr>
+                    <tr>
+                        <td>Waiter/Waitress</td>
+                        <td class="chinese-text">服务员</td>
+                        <td class="pinyin">fúwùyuán</td>
+                    </tr>
+                    <tr>
+                        <td>Bill/Check</td>
+                        <td class="chinese-text">账单</td>
+                        <td class="pinyin">zhàngdān</td>
+                    </tr>
+                    <tr>
+                        <td>Chopsticks</td>
+                        <td class="chinese-text">筷子</td>
+                        <td class="pinyin">kuàizi</td>
+                    </tr>
+                    <tr>
+                        <td>Tea</td>
+                        <td class="chinese-text">茶</td>
+                        <td class="pinyin">chá</td>
+                    </tr>
+                    <tr>
+                        <td>Water</td>
+                        <td class="chinese-text">水</td>
+                        <td class="pinyin">shuǐ</td>
+                    </tr>
+                    <tr>
+                        <td>Rice</td>
+                        <td class="chinese-text">米饭</td>
+                        <td class="pinyin">mǐfàn</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="audio-example">
+                <button aria-label="Play pronunciation"><i class="fas fa-volume-up"></i></button>
+                <span>Listen to pronunciation: 菜单, 服务员, 筷子 (càidān, fúwùyuán, kuàizi)</span>
+            </div>
+        </section>
+
+        <section class="restaurant-section">
+            <h2>Ordering Food</h2>
+            <div class="restaurant-grid">
+                <div class="restaurant-card">
+                    <div class="restaurant-card-header">
+                        <h3>Basic Phrases</h3>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <div class="restaurant-card-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <p>Essential phrases for ordering food:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">我要...</span> (wǒ yào...) - I want...</li>
+                            <li><span class="chinese-text">请给我...</span> (qǐng gěi wǒ...) - Please give me...</li>
+                            <li><span class="chinese-text">这个</span> (zhège) - This one</li>
+                            <li><span class="chinese-text">那个</span> (nàge) - That one</li>
+                            <li><span class="chinese-text">一份</span> (yī fèn) - One portion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-card-header">
+                        <h3>Special Requests</h3>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <div class="restaurant-card-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <p>Phrases for making special requests:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">不要...</span> (bù yào...) - Don't want...</li>
+                            <li><span class="chinese-text">少放...</span> (shǎo fàng...) - Less...</li>
+                            <li><span class="chinese-text">多放...</span> (duō fàng...) - More...</li>
+                            <li><span class="chinese-text">不要太辣</span> (bù yào tài là) - Not too spicy</li>
+                            <li><span class="chinese-text">不要辣</span> (bù yào là) - No spicy</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-card-header">
+                        <h3>Common Questions</h3>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <div class="restaurant-card-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <p>Questions you might need to ask:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">这是什么？</span> (zhè shì shénme?) - What is this?</li>
+                            <li><span class="chinese-text">有什么推荐？</span> (yǒu shénme tuījiàn?) - What do you recommend?</li>
+                            <li><span class="chinese-text">这个辣吗？</span> (zhège là ma?) - Is this spicy?</li>
+                            <li><span class="chinese-text">有英文菜单吗？</span> (yǒu yīngwén càidān ma?) - Do you have an English menu?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="restaurant-section">
+            <h2>During the Meal</h2>
+            <table class="restaurant-table">
+                <thead>
+                    <tr>
+                        <th>English</th>
+                        <th>Chinese</th>
+                        <th>Pinyin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Delicious</td>
+                        <td class="chinese-text">好吃</td>
+                        <td class="pinyin">hǎochī</td>
+                    </tr>
+                    <tr>
+                        <td>Cheers</td>
+                        <td class="chinese-text">干杯</td>
+                        <td class="pinyin">gānbēi</td>
+                    </tr>
+                    <tr>
+                        <td>More tea, please</td>
+                        <td class="chinese-text">请加茶</td>
+                        <td class="pinyin">qǐng jiā chá</td>
+                    </tr>
+                    <tr>
+                        <td>Water, please</td>
+                        <td class="chinese-text">请给我水</td>
+                        <td class="pinyin">qǐng gěi wǒ shuǐ</td>
+                    </tr>
+                    <tr>
+                        <td>Napkin</td>
+                        <td class="chinese-text">餐巾纸</td>
+                        <td class="pinyin">cānjīnzhǐ</td>
+                    </tr>
+                    <tr>
+                        <td>Bowl</td>
+                        <td class="chinese-text">碗</td>
+                        <td class="pinyin">wǎn</td>
+                    </tr>
+                    <tr>
+                        <td>Plate</td>
+                        <td class="chinese-text">盘子</td>
+                        <td class="pinyin">pánzi</td>
+                    </tr>
+                    <tr>
+                        <td>Fork</td>
+                        <td class="chinese-text">叉子</td>
+                        <td class="pinyin">chāzi</td>
+                    </tr>
+                    <tr>
+                        <td>Spoon</td>
+                        <td class="chinese-text">勺子</td>
+                        <td class="pinyin">sháozi</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="restaurant-section">
+            <h2>Paying the Bill</h2>
+            <div class="restaurant-grid">
+                <div class="restaurant-card">
+                    <div class="restaurant-card-header">
+                        <h3>Requesting the Bill</h3>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <div class="restaurant-card-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <p>Phrases for paying the bill:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">买单</span> (mǎidān) - Check, please</li>
+                            <li><span class="chinese-text">结账</span> (jiézhàng) - Pay the bill</li>
+                            <li><span class="chinese-text">多少钱？</span> (duōshao qián?) - How much is it?</li>
+                            <li><span class="chinese-text">可以刷卡吗？</span> (kěyǐ shuākǎ ma?) - Can I pay by card?</li>
+                            <li><span class="chinese-text">可以微信支付吗？</span> (kěyǐ wēixìn zhīfù ma?) - Can I pay with WeChat?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-card-header">
+                        <h3>Common Responses</h3>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <div class="restaurant-card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <p>Responses you might hear:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">现金</span> (xiànjīn) - Cash</li>
+                            <li><span class="chinese-text">支付宝</span> (zhīfùbǎo) - Alipay</li>
+                            <li><span class="chinese-text">微信</span> (wēixìn) - WeChat</li>
+                            <li><span class="chinese-text">信用卡</span> (xìnyòngkǎ) - Credit card</li>
+                            <li><span class="chinese-text">不收信用卡</span> (bù shōu xìnyòngkǎ) - We don't accept credit cards</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-card-header">
+                        <h3>Thank You</h3>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <div class="restaurant-card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <p>Expressions of gratitude:</p>
+                        <ul class="feature-list">
+                            <li><span class="chinese-text">谢谢</span> (xièxiè) - Thank you</li>
+                            <li><span class="chinese-text">很好吃</span> (hěn hǎochī) - Very delicious</li>
+                            <li><span class="chinese-text">再见</span> (zàijiàn) - Goodbye</li>
+                            <li><span class="chinese-text">欢迎再来</span> (huānyíng zàilái) - Welcome back</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="restaurant-section">
+            <h2>Dietary Restrictions</h2>
+            <div class="restaurant-example">
+                <h4>Communicating Dietary Needs</h4>
+                <ul>
+                    <li><strong><span class="chinese-text">我是素食者</span> (wǒ shì sùshízhě):</strong> I am a vegetarian</li>
+                    <li><strong><span class="chinese-text">我不吃猪肉</span> (wǒ bù chī zhūròu):</strong> I don't eat pork</li>
+                    <li><strong><span class="chinese-text">我不吃牛肉</span> (wǒ bù chī niúròu):</strong> I don't eat beef</li>
+                    <li><strong><span class="chinese-text">我不吃海鲜</span> (wǒ bù chī hǎixiān):</strong> I don't eat seafood</li>
+                    <li><strong><span class="chinese-text">我对...过敏</span> (wǒ duì... guòmǐn):</strong> I am allergic to...</li>
+                    <li><strong><span class="chinese-text">我不吃辣</span> (wǒ bù chī là):</strong> I don't eat spicy food</li>
+                </ul>
+            </div>
+
+            <div class="restaurant-context">
+                <p>In China, dietary restrictions are less common than in some Western countries, so it's important to be clear about your needs. Many restaurants may not be familiar with concepts like vegetarianism or food allergies, so being able to explain your requirements in Chinese is very helpful.</p>
+            </div>
+        </section>
+
+        <section class="restaurant-section">
+            <h2>Practical Tips</h2>
+            <div class="restaurant-example">
+                <h4>Making the Most of Your Restaurant Experience</h4>
+                <ul>
+                    <li><strong>Learn to use chopsticks:</strong> While forks are often available, using chopsticks shows respect for the culture</li>
+                    <li><strong>Know your spice level:</strong> Chinese cuisine can be very spicy, so know how to express your preference</li>
+                    <li><strong>Have your dietary restrictions written down:</strong> If you have allergies or restrictions, have them written in Chinese</li>
+                    <li><strong>Learn to recognize common ingredients:</strong> Knowing basic food vocabulary helps avoid unwanted ingredients</li>
+                    <li><strong>Be prepared for shared dishes:</strong> Chinese meals typically consist of shared dishes, not individual plates</li>
+                </ul>
+            </div>
+
+            <div class="restaurant-context">
+                <p>Remember that dining in China is often a social experience. Don't be surprised if locals are curious about your food preferences or if they want to practice their English with you. Being able to respond in Chinese, even with basic phrases, will be greatly appreciated.</p>
+            </div>
+        </section>
+
+        <section class="restaurant-section">
+            <h2>Additional Resources</h2>
+            <ul class="feature-list">
+                <li><a href="language.html">Complete Chinese Language Guide</a> - Expand your vocabulary beyond restaurant phrases</li>
+                <li><a href="cuisine.html">Chinese Cuisine Guide</a> - Learn about different regional cuisines</li>
+                <li><a href="https://www.youtube.com/results?search_query=chinese+restaurant+phrases" target="_blank">Video Tutorials <i class="fas fa-external-link-alt"></i></a> - Visual and audio learning resources</li>
+                <li><a href="travel.html">Back to Travel Guide</a> - Return to the main travel resources</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
