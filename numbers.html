@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Numbers and Counting - China Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7JV1YB8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CB7JV1YB8T');
+    </script>
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,numbers,counting') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .numbers-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .numbers-section {
+            margin-bottom: 3rem;
+        }
+
+        .numbers-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .numbers-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .number-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .number-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .number-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .number-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .number-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .number-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .number-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .number-table th, .number-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .number-table th {
+            background-color: rgba(200, 16, 46, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .number-table tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .chinese-text {
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .pinyin {
+            color: #666;
+            font-style: italic;
+        }
+
+        .number-example {
+            background-color: rgba(200, 16, 46, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .number-example h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .number-example ul {
+            padding-left: 1.5rem;
+        }
+
+        .number-example li {
+            margin-bottom: 0.5rem;
+        }
+
+        .audio-example {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.02);
+            border-radius: 8px;
+        }
+
+        .audio-example button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .audio-example button:hover {
+            background-color: #a00c24;
+        }
+
+        .audio-example span {
+            font-weight: 500;
+        }
+
+        .number-context {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .number-visual {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }
+
+        .number-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(200, 16, 46, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .number-symbol {
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .number-value {
+            font-weight: bold;
+        }
+
+        .dark-mode .number-card {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .number-card-content {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .number-card p,
+        .dark-mode .number-table td {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .number-table th {
+            background-color: rgba(200, 16, 46, 0.2);
+        }
+
+        .dark-mode .number-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .chinese-text {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .pinyin {
+            color: #aaa;
+        }
+
+        .dark-mode .number-example {
+            background-color: rgba(200, 16, 46, 0.15);
+        }
+
+        .dark-mode .audio-example {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .number-item {
+            background: rgba(200, 16, 46, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .number-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 40vh;
+                padding: 2rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" aria-label="Return to homepage">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="geography.html">Geography</a></li>
+                <li><a href="cuisine.html">Cuisine</a></li>
+                <li><a href="language.html">Language</a></li>
+                <li><a href="travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="travel.html">Travel Guide</a>
+        <span class="separator">/</span>
+        <span>Numbers and Counting</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chinese Numbers <span class="chinese-text">数字</span></h1>
+            <p>Master counting and numbers in Chinese</p>
+        </div>
+    </section>
+
+    <main class="numbers-content">
+        <section class="numbers-section">
+            <h2>Why Learn Chinese Numbers?</h2>
+            <p>Numbers are essential for everyday interactions in China, from shopping and bargaining to telling time and dates. Learning Chinese numbers will help you navigate prices, understand quantities, and communicate more effectively during your travels.</p>
+            
+            <div class="number-example">
+                <h4>Quick Number Facts</h4>
+                <ul>
+                    <li><strong>Counting System:</strong> Chinese uses a decimal system similar to English</li>
+                    <li><strong>Number Characters:</strong> Each number has a unique character</li>
+                    <li><strong>Counting Units:</strong> Chinese uses measure words (量词) when counting objects</li>
+                    <li><strong>Lucky Numbers:</strong> Some numbers are considered lucky (8) or unlucky (4) in Chinese culture</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="numbers-section">
+            <h2>Basic Numbers (1-10)</h2>
+            <div class="number-visual">
+                <div class="number-item">
+                    <span class="number-symbol">一</span>
+                    <span class="number-value">1</span>
+                    <span class="pinyin">yī</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">二</span>
+                    <span class="number-value">2</span>
+                    <span class="pinyin">èr</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">三</span>
+                    <span class="number-value">3</span>
+                    <span class="pinyin">sān</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">四</span>
+                    <span class="number-value">4</span>
+                    <span class="pinyin">sì</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">五</span>
+                    <span class="number-value">5</span>
+                    <span class="pinyin">wǔ</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">六</span>
+                    <span class="number-value">6</span>
+                    <span class="pinyin">liù</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">七</span>
+                    <span class="number-value">7</span>
+                    <span class="pinyin">qī</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">八</span>
+                    <span class="number-value">8</span>
+                    <span class="pinyin">bā</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">九</span>
+                    <span class="number-value">9</span>
+                    <span class="pinyin">jiǔ</span>
+                </div>
+                <div class="number-item">
+                    <span class="number-symbol">十</span>
+                    <span class="number-value">10</span>
+                    <span class="pinyin">shí</span>
+                </div>
+            </div>
+
+            <div class="audio-example">
+                <button aria-label="Play pronunciation"><i class="fas fa-volume-up"></i></button>
+                <span>Listen to pronunciation: 一, 二, 三 (yī, èr, sān)</span>
+            </div>
+        </section>
+
+        <section class="numbers-section">
+            <h2>Numbers 11-100</h2>
+            <table class="number-table">
+                <thead>
+                    <tr>
+                        <th>English</th>
+                        <th>Chinese</th>
+                        <th>Pinyin</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>11</td>
+                        <td class="chinese-text">十一</td>
+                        <td class="pinyin">shí yī</td>
+                        <td>10 + 1</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td class="chinese-text">二十</td>
+                        <td class="pinyin">èr shí</td>
+                        <td>2 × 10</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td class="chinese-text">二十一</td>
+                        <td class="pinyin">èr shí yī</td>
+                        <td>2 × 10 + 1</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td class="chinese-text">三十</td>
+                        <td class="pinyin">sān shí</td>
+                        <td>3 × 10</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td class="chinese-text">四十</td>
+                        <td class="pinyin">sì shí</td>
+                        <td>4 × 10</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td class="chinese-text">五十</td>
+                        <td class="pinyin">wǔ shí</td>
+                        <td>5 × 10</td>
+                    </tr>
+                    <tr>
+                        <td>60</td>
+                        <td class="chinese-text">六十</td>
+                        <td class="pinyin">liù shí</td>
+                        <td>6 × 10</td>
+                    </tr>
+                    <tr>
+                        <td>70</td>
+                        <td class="chinese-text">七十</td>
+                        <td class="pinyin">qī shí</td>
+                        <td>7 × 10</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td class="chinese-text">八十</td>
+                        <td class="pinyin">bā shí</td>
+                        <td>8 × 10</td>
+                    </tr>
+                    <tr>
+                        <td>90</td>
+                        <td class="chinese-text">九十</td>
+                        <td class="pinyin">jiǔ shí</td>
+                        <td>9 × 10</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td class="chinese-text">一百</td>
+                        <td class="pinyin">yī bǎi</td>
+                        <td>1 × 100</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="number-example">
+                <h4>Pattern for Numbers 11-99</h4>
+                <p>For numbers between 11 and 99, the pattern is: [tens digit] + 十 + [ones digit]</p>
+                <p>Example: 35 = 三十五 (sān shí wǔ) = 3 × 10 + 5</p>
+                <p>Note: For numbers ending in zero, you only need the tens digit + 十</p>
+                <p>Example: 40 = 四十 (sì shí) = 4 × 10</p>
+            </div>
+        </section>
+
+        <section class="numbers-section">
+            <h2>Larger Numbers</h2>
+            <table class="number-table">
+                <thead>
+                    <tr>
+                        <th>English</th>
+                        <th>Chinese</th>
+                        <th>Pinyin</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>100</td>
+                        <td class="chinese-text">一百</td>
+                        <td class="pinyin">yī bǎi</td>
+                        <td>1 × 100</td>
+                    </tr>
+                    <tr>
+                        <td>1,000</td>
+                        <td class="chinese-text">一千</td>
+                        <td class="pinyin">yī qiān</td>
+                        <td>1 × 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>10,000</td>
+                        <td class="chinese-text">一万</td>
+                        <td class="pinyin">yī wàn</td>
+                        <td>1 × 10,000</td>
+                    </tr>
+                    <tr>
+                        <td>100,000</td>
+                        <td class="chinese-text">十万</td>
+                        <td class="pinyin">shí wàn</td>
+                        <td>10 × 10,000</td>
+                    </tr>
+                    <tr>
+                        <td>1,000,000</td>
+                        <td class="chinese-text">一百万</td>
+                        <td class="pinyin">yī bǎi wàn</td>
+                        <td>1 × 100 × 10,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="number-example">
+                <h4>Important Note About Large Numbers</h4>
+                <p>Chinese uses a different counting system for large numbers compared to English. The key difference is the use of 万 (wàn) for 10,000, which is a fundamental unit in Chinese counting.</p>
+                <p>For example, 50,000 in Chinese is 五万 (wǔ wàn) = 5 × 10,000, not "fifty thousand" as in English.</p>
+            </div>
+        </section>
+
+        <section class="numbers-section">
+            <h2>Counting Objects</h2>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="number-card-header">
+                        <h3>Measure Words</h3>
+                    </div>
+                    <div class="number-card-content">
+                        <div class="number-card-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <p>In Chinese, you must use a measure word (量词) between a number and a noun when counting objects.</p>
+                        <ul class="feature-list">
+                            <li>个 (gè) - General measure word for most objects</li>
+                            <li>只 (zhī) - For animals and certain objects</li>
+                            <li>张 (zhāng) - For flat objects like paper, tables</li>
+                            <li>本 (běn) - For books and bound items</li>
+                            <li>杯 (bēi) - For cups and glasses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="number-card">
+                    <div class="number-card-header">
+                        <h3>Common Examples</h3>
+                    </div>
+                    <div class="number-card-content">
+                        <div class="number-card-icon">
+                            <i class="fas fa-list-ol"></i>
+                        </div>
+                        <p>Here are some common examples of counting objects in Chinese:</p>
+                        <ul class="feature-list">
+                            <li>一个苹果 (yī gè píngguǒ) - One apple</li>
+                            <li>两只猫 (liǎng zhī māo) - Two cats</li>
+                            <li>三本书 (sān běn shū) - Three books</li>
+                            <li>四张桌子 (sì zhāng zhuōzi) - Four tables</li>
+                            <li>五杯水 (wǔ bēi shuǐ) - Five glasses of water</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="number-card">
+                    <div class="number-card-header">
+                        <h3>Special Cases</h3>
+                    </div>
+                    <div class="number-card-content">
+                        <div class="number-card-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <p>Some special cases and exceptions in Chinese counting:</p>
+                        <ul class="feature-list">
+                            <li>两 (liǎng) is used instead of 二 (èr) for counting objects</li>
+                            <li>Some nouns don't require measure words (time, money)</li>
+                            <li>Some nouns have specific measure words that must be used</li>
+                            <li>Measure words can change based on context or region</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="numbers-section">
+            <h2>Numbers in Daily Life</h2>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="number-card-header">
+                        <h3>Time</h3>
+                    </div>
+                    <div class="number-card-content">
+                        <div class="number-card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <p>Numbers are essential for telling time in Chinese:</p>
+                        <ul class="feature-list">
+                            <li>点 (diǎn) - Used for hours</li>
+                            <li>分 (fēn) - Used for minutes</li>
+                            <li>Example: 三点十五分 (sān diǎn shí wǔ fēn) - 3:15</li>
+                            <li>Example: 早上七点 (zǎo shang qī diǎn) - 7:00 AM</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="number-card">
+                    <div class="number-card-header">
+                        <h3>Money</h3>
+                    </div>
+                    <div class="number-card-content">
+                        <div class="number-card-icon">
+                            <i class="fas fa-yen-sign"></i>
+                        </div>
+                        <p>Numbers are used for prices and currency in Chinese:</p>
+                        <ul class="feature-list">
+                            <li>元/块 (yuán/kuài) - Used for Chinese Yuan</li>
+                            <li>角 (jiǎo) - Used for 1/10 of a Yuan</li>
+                            <li>分 (fēn) - Used for 1/100 of a Yuan</li>
+                            <li>Example: 十五元 (shí wǔ yuán) - 15 Yuan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="number-card">
+                    <div class="number-card-header">
+                        <h3>Dates</h3>
+                    </div>
+                    <div class="number-card-content">
+                        <div class="number-card-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <p>Numbers are used for dates in Chinese:</p>
+                        <ul class="feature-list">
+                            <li>年 (nián) - Year</li>
+                            <li>月 (yuè) - Month</li>
+                            <li>日/号 (rì/hào) - Day</li>
+                            <li>Example: 二零二三年五月十五日 (èr líng èr sān nián wǔ yuè shí wǔ rì) - May 15, 2023</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="numbers-section">
+            <h2>Cultural Significance</h2>
+            <div class="number-example">
+                <h4>Lucky and Unlucky Numbers</h4>
+                <ul>
+                    <li><strong>8 (八 bā):</strong> Considered very lucky, sounds like "prosperity" (发 fā)</li>
+                    <li><strong>6 (六 liù):</strong> Considered lucky, sounds like "smooth" (溜 liū)</li>
+                    <li><strong>9 (九 jiǔ):</strong> Considered lucky, sounds like "long-lasting" (久 jiǔ)</li>
+                    <li><strong>4 (四 sì):</strong> Considered unlucky, sounds like "death" (死 sǐ)</li>
+                    <li><strong>7 (七 qī):</strong> Sometimes considered unlucky, especially in Cantonese</li>
+                </ul>
+            </div>
+
+            <div class="number-context">
+                <p>These lucky and unlucky numbers influence many aspects of Chinese culture, from building floor numbers to phone numbers and license plates. When traveling in China, you may notice that some buildings skip the 4th floor or that certain numbers are more expensive in phone numbers.</p>
+            </div>
+        </section>
+
+        <section class="numbers-section">
+            <h2>Practical Tips</h2>
+            <div class="number-example">
+                <h4>Making the Most of Your Number Knowledge</h4>
+                <ul>
+                    <li><strong>Start with the basics:</strong> Master numbers 1-10 first</li>
+                    <li><strong>Learn common measure words:</strong> Focus on 个 (gè) and a few others</li>
+                    <li><strong>Practice counting objects:</strong> Use the pattern [number] + [measure word] + [noun]</li>
+                    <li><strong>Learn prices:</strong> Practice saying and recognizing prices in Chinese</li>
+                    <li><strong>Use hand gestures:</strong> Chinese people often use hand gestures to indicate numbers</li>
+                </ul>
+            </div>
+
+            <div class="number-context">
+                <p>Remember that Chinese people are generally patient with foreigners learning their language. Even if your pronunciation isn't perfect, your effort to use numbers in Chinese will be appreciated and often lead to more positive interactions during your travels in China.</p>
+            </div>
+        </section>
+
+        <section class="numbers-section">
+            <h2>Additional Resources</h2>
+            <ul class="feature-list">
+                <li><a href="language.html">Complete Chinese Language Guide</a> - Expand your vocabulary beyond numbers</li>
+                <li><a href="https://www.youtube.com/results?search_query=chinese+numbers+pronunciation" target="_blank">Video Tutorials <i class="fas fa-external-link-alt"></i></a> - Visual and audio learning resources</li>
+                <li><a href="https://www.duolingo.com/course/zh/en/Learn-Chinese" target="_blank">Language Learning Apps <i class="fas fa-external-link-alt"></i></a> - Interactive tools for practice</li>
+                <li><a href="travel.html">Back to Travel Guide</a> - Return to the main travel resources</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
