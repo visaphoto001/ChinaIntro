@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeChat Installation Guide - China Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7JV1YB8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CB7JV1YB8T');
+    </script>
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?wechat,mobile,china') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .wechat-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wechat-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .wechat-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .wechat-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .wechat-card li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .wechat-card li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .step-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .step-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content ul {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .tip-box h3 {
+            color: #1976d2;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .qr-code {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .qr-code img {
+            max-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .qr-code p {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .feature-item p {
+            margin-bottom: 0;
+            color: #666;
+        }
+        
+        /* Updated link styles */
+        .section-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .section-link:hover {
+            color: #a00;
+        }
+        
+        .section-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Add icon to external links */
+        .section-link[target="_blank"]::before {
+            content: '\f35d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 6px;
+            font-size: 0.8em;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .section-link[target="_blank"]:hover::before {
+            opacity: 1;
+            transform: translateX(2px);
+        }
+        
+        /* Add styles for links in step containers */
+        .step-container a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+        }
+        
+        .step-container a:hover {
+            color: #a00;
+        }
+        
+        .step-container a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .step-container a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Add styles for links in feature items */
+        .feature-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+        }
+        
+        .feature-item a:hover {
+            color: #a00;
+        }
+        
+        .feature-item a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Add styles for links in wechat-card */
+        .wechat-card a:not(.section-link) {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+        }
+        
+        .wechat-card a:not(.section-link):hover {
+            color: #a00;
+        }
+        
+        .wechat-card a:not(.section-link)::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .wechat-card a:not(.section-link):hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Dark mode support for all links */
+        .dark-mode .section-link,
+        .dark-mode .step-container a,
+        .dark-mode .feature-item a,
+        .dark-mode .wechat-card a:not(.section-link) {
+            color: #ff6b6b;
+        }
+        
+        .dark-mode .section-link:hover,
+        .dark-mode .step-container a:hover,
+        .dark-mode .feature-item a:hover,
+        .dark-mode .wechat-card a:not(.section-link):hover {
+            color: #ff5252;
+        }
+        
+        .dark-mode .section-link::after,
+        .dark-mode .step-container a::after,
+        .dark-mode .feature-item a::after,
+        .dark-mode .wechat-card a:not(.section-link)::after {
+            background-color: #ff6b6b;
+        }
+        
+        /* Updated button styles */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 1.2rem;
+        }
+        
+        #back-to-top:hover {
+            background: #a00;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* Add styles for navigation links */
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: rgba(200, 16, 46, 0.1);
+        }
+        
+        .dark-mode .nav-links a {
+            color: #f5f5f5;
+        }
+        
+        .dark-mode .nav-links a:hover {
+            color: #ff6b6b;
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        /* Add styles for the logo */
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            color: var(--primary-color);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo-tagline {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .dark-mode .logo {
+            color: #f5f5f5;
+        }
+        
+        .dark-mode .logo:hover {
+            color: #ff6b6b;
+        }
+        
+        /* Add styles for the breadcrumb */
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #a00;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb .separator {
+            margin: 0 0.5rem;
+            color: #6c757d;
+        }
+        
+        .dark-mode .breadcrumb {
+            background-color: #2d2d2d;
+            border-bottom-color: #3d3d3d;
+        }
+        
+        .dark-mode .breadcrumb a {
+            color: #ff6b6b;
+        }
+        
+        .dark-mode .breadcrumb a:hover {
+            color: #ff5252;
+        }
+        
+        .dark-mode .breadcrumb .separator {
+            color: #adb5bd;
+        }
+
+        /* Add styles for social links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f8f9fa;
+            color: #333;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .dark-mode .social-links a {
+            background-color: #2d2d2d;
+            color: #f5f5f5;
+        }
+        
+        .dark-mode .social-links a:hover {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        /* Dark mode support for back-to-top button */
+        .dark-mode #back-to-top {
+            background: #ff6b6b;
+        }
+        
+        .dark-mode #back-to-top:hover {
+            background: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover China</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="geography.html">Geography</a></li>
+                <li><a href="cuisine.html">Cuisine</a></li>
+                <li><a href="travel.html">Travel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="travel.html">Travel Guide</a>
+        <span class="separator">/</span>
+        <span>WeChat Installation</span>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>WeChat Installation Guide <span class="chinese-text">微信安装指南</span></h1>
+                <p>Essential information for setting up WeChat in China</p>
+            </div>
+        </section>
+
+        <section class="wechat-section">
+            <div class="wechat-card">
+                <h2>Why WeChat is Essential in China</h2>
+                <p>WeChat (微信) is more than just a messaging app in China—it's a comprehensive platform that integrates social media, payments, transportation, food delivery, and more. For travelers to China, having WeChat installed is almost essential for:</p>
+                <ul>
+                    <li>Communication with locals and other travelers</li>
+                    <li>Making payments at most establishments</li>
+                    <li>Booking transportation and accommodation</li>
+                    <li>Accessing digital services and maps</li>
+                    <li>Sharing experiences and photos</li>
+                </ul>
+            </div>
+
+            <div class="wechat-card">
+                <h2>Installation Steps</h2>
+                
+                <div class="step-container">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download WeChat</h3>
+                        <p>Before traveling to China, download WeChat from your device's app store:</p>
+                        <ul>
+                            <li><strong>iOS:</strong> Search for "WeChat" in the App Store</li>
+                            <li><strong>Android:</strong> Search for "WeChat" in Google Play Store</li>
+                            <li><strong>Alternative:</strong> Visit <a href="https://www.wechat.com" target="_blank" class="section-link">wechat.com</a> and scan the QR code</li>
+                        </ul>
+                        <div class="tip-box">
+                            <h3>Pro Tip</h3>
+                            <p>Download WeChat before arriving in China, as some app stores may be inaccessible within the country.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Create an Account</h3>
+                        <p>Open the app and follow these steps to create your account:</p>
+                        <ul>
+                            <li>Tap "Sign Up" or "Register"</li>
+                            <li>Enter your phone number (international format)</li>
+                            <li>Verify your phone number via SMS code</li>
+                            <li>Set up your profile with a name and profile picture</li>
+                        </ul>
+                        <div class="tip-box">
+                            <h3>Important Note</h3>
+                            <p>You'll need a working phone number that can receive SMS verification codes. Consider getting a local SIM card in China for better service.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Set Up WeChat Pay</h3>
+                        <p>WeChat Pay is essential for making payments in China:</p>
+                        <ul>
+                            <li>Go to "Me" > "Wallet" > "Pay"</li>
+                            <li>Link a bank card (international cards may have limitations)</li>
+                            <li>Set up a payment password</li>
+                            <li>Add funds to your WeChat Pay balance</li>
+                        </ul>
+                        <div class="tip-box">
+                            <h3>Alternative Payment Options</h3>
+                            <p>If you can't set up WeChat Pay with your international card, consider using Alipay or carrying cash for smaller transactions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Add Essential Contacts and Services</h3>
+                        <p>Set up your WeChat with useful contacts and services:</p>
+                        <ul>
+                            <li>Add your hotel's WeChat account for communication</li>
+                            <li>Follow official accounts for tourist information</li>
+                            <li>Add your tour guide or travel companions</li>
+                            <li>Set up location sharing for safety</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wechat-card">
+                <h2>Essential WeChat Features for Travelers</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Maps & Navigation</h3>
+                        <p>Use WeChat's built-in maps or link to other mapping services for navigation in China.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Translation</h3>
+                        <p>Use the built-in translation feature to communicate with locals who don't speak English.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h3>Tickets & Bookings</h3>
+                        <p>Book train tickets, flights, and hotel rooms directly through WeChat.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Food Delivery</h3>
+                        <p>Order food delivery to your hotel or current location using WeChat's food delivery services.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-taxi"></i>
+                        </div>
+                        <h3>Transportation</h3>
+                        <p>Hail taxis, book ride-sharing services, and access public transportation information.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h3>Shopping</h3>
+                        <p>Make purchases at physical stores using WeChat Pay or shop online through WeChat's mini-programs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wechat-card">
+                <h2>Troubleshooting Common Issues</h2>
+                <ul>
+                    <li><strong>Verification Problems:</strong> If you can't receive verification codes, try using a different phone number or contact WeChat support.</li>
+                    <li><strong>Payment Limitations:</strong> International cards may have restrictions. Consider using Alipay or carrying cash as alternatives.</li>
+                    <li><strong>Account Security:</strong> Enable two-factor authentication and regularly update your password to protect your account.</li>
+                    <li><strong>App Updates:</strong> Keep WeChat updated to the latest version to avoid compatibility issues.</li>
+                    <li><strong>Network Access:</strong> If you can't access WeChat, check your VPN settings or try connecting to a different network.</li>
+                </ul>
+            </div>
+
+            <div class="wechat-card">
+                <h2>Additional Resources</h2>
+                <ul>
+                    <li><a href="https://www.wechat.com" target="_blank" class="section-link">Official WeChat Website</a> - Download links and general information</li>
+                    <li><a href="https://help.wechat.com" target="_blank" class="section-link">WeChat Help Center</a> - Troubleshooting guides and FAQs</li>
+                    <li><a href="https://pay.weixin.qq.com" target="_blank" class="section-link">WeChat Pay</a> - Information about payment services</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+    
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 
