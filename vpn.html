@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPN Services for China Travel - China Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?vpn,internet,technology') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .vpn-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vpn-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .vpn-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .vpn-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .vpn-card li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .vpn-card li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .step-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .step-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content ul {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .tip-box h3 {
+            color: #1976d2;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .feature-item p {
+            margin-bottom: 0;
+            color: #666;
+        }
+        
+        /* Updated link styles */
+        .section-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .section-link:hover {
+            color: #a00;
+        }
+        
+        .section-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Add icon to external links */
+        .section-link[target="_blank"]::before {
+            content: '\f35d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 6px;
+            font-size: 0.8em;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .section-link[target="_blank"]:hover::before {
+            opacity: 1;
+            transform: translateX(2px);
+        }
+        
+        /* Add styles for links in step containers */
+        .step-container a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+        }
+        
+        .step-container a:hover {
+            color: #a00;
+        }
+        
+        .step-container a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .step-container a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Add styles for links in feature items */
+        .feature-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+        }
+        
+        .feature-item a:hover {
+            color: #a00;
+        }
+        
+        .feature-item a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Add styles for links in vpn-card */
+        .vpn-card a:not(.section-link) {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+        }
+        
+        .vpn-card a:not(.section-link):hover {
+            color: #a00;
+        }
+        
+        .vpn-card a:not(.section-link)::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .vpn-card a:not(.section-link):hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Dark mode support for all links */
+        .dark-mode .section-link,
+        .dark-mode .step-container a,
+        .dark-mode .feature-item a,
+        .dark-mode .vpn-card a:not(.section-link) {
+            color: #ff6b6b;
+        }
+        
+        .dark-mode .section-link:hover,
+        .dark-mode .step-container a:hover,
+        .dark-mode .feature-item a:hover,
+        .dark-mode .vpn-card a:not(.section-link):hover {
+            color: #ff5252;
+        }
+        
+        .dark-mode .section-link::after,
+        .dark-mode .step-container a::after,
+        .dark-mode .feature-item a::after,
+        .dark-mode .vpn-card a:not(.section-link)::after {
+            background-color: #ff6b6b;
+        }
+        
+        /* Dark mode support for back-to-top button */
+        .dark-mode #back-to-top {
+            background: #ff6b6b;
+        }
+        
+        .dark-mode #back-to-top:hover {
+            background: #ff5252;
+        }
+        
+        /* Add styles for navigation links */
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: rgba(200, 16, 46, 0.1);
+        }
+        
+        .dark-mode .nav-links a {
+            color: #f5f5f5;
+        }
+        
+        .dark-mode .nav-links a:hover {
+            color: #ff6b6b;
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        /* Add styles for the logo */
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            color: var(--primary-color);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo-tagline {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .dark-mode .logo {
+            color: #f5f5f5;
+        }
+        
+        .dark-mode .logo:hover {
+            color: #ff6b6b;
+        }
+        
+        /* Add styles for the breadcrumb */
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #a00;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb .separator {
+            margin: 0 0.5rem;
+            color: #6c757d;
+        }
+        
+        .dark-mode .breadcrumb {
+            background-color: #2d2d2d;
+            border-bottom-color: #3d3d3d;
+        }
+        
+        .dark-mode .breadcrumb a {
+            color: #ff6b6b;
+        }
+        
+        .dark-mode .breadcrumb a:hover {
+            color: #ff5252;
+        }
+        
+        .dark-mode .breadcrumb .separator {
+            color: #adb5bd;
+        }
+        
+        /* Add styles for social links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f8f9fa;
+            color: #333;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .dark-mode .social-links a {
+            background-color: #2d2d2d;
+            color: #f5f5f5;
+        }
+        
+        .dark-mode .social-links a:hover {
+            background-color: #ff6b6b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Your Gateway to China</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="travel.html">Travel Guide</a>
+                <a href="culture.html">Culture</a>
+                <a href="history.html">History</a>
+                <a href="visa.html">Visa</a>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="travel.html">Travel Guide</a>
+        <span class="separator">/</span>
+        <span>VPN Services</span>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>VPN Services for China Travel</h1>
+                <p>Essential guide to staying connected in China</p>
+            </div>
+        </section>
+
+        <section class="vpn-section">
+            <div class="vpn-card">
+                <h2>Why You Need a VPN in China</h2>
+                <p>China's internet restrictions (often called the "Great Firewall") block access to many popular websites and services that travelers rely on, including:</p>
+                <ul>
+                    <li>Google services (Search, Maps, Gmail)</li>
+                    <li>Social media platforms (Facebook, Instagram, Twitter)</li>
+                    <li>Messaging apps (WhatsApp, Telegram)</li>
+                    <li>News websites</li>
+                    <li>Streaming services (Netflix, YouTube)</li>
+                </ul>
+                <div class="tip-box">
+                    <h3>Important Note</h3>
+                    <p>Using a VPN is legal for foreigners in China, but the Chinese government occasionally blocks VPN services. It's recommended to have multiple VPN options as backup.</p>
+                </div>
+            </div>
+
+            <div class="vpn-card">
+                <h2>Choosing the Right VPN</h2>
+                <p>Not all VPNs work reliably in China. Here are the key factors to consider:</p>
+                <ul>
+                    <li><strong>Server Locations:</strong> Look for VPNs with servers in nearby countries (Japan, South Korea, Singapore)</li>
+                    <li><strong>Protocol Support:</strong> VPNs that support multiple protocols (OpenVPN, IKEv2, WireGuard) are more likely to work</li>
+                    <li><strong>Speed:</strong> China's internet can be slow, so choose a VPN with good performance</li>
+                    <li><strong>Customer Support:</strong> 24/7 support is valuable if you encounter issues</li>
+                    <li><strong>Multi-device Support:</strong> Ensure the VPN works on all your devices</li>
+                </ul>
+            </div>
+
+            <div class="vpn-card">
+                <h2>Popular VPN Options for China</h2>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>VPN Service</th>
+                                <th>Key Features</th>
+                                <th>Price Range</th>
+                                <th>Reliability in China</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ExpressVPN</td>
+                                <td>Fast speeds, multiple protocols, 24/7 support</td>
+                                <td>$$$</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>NordVPN</td>
+                                <td>Large server network, double encryption</td>
+                                <td>$$</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>Surfshark</td>
+                                <td>Unlimited devices, budget-friendly</td>
+                                <td>$</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>VyprVPN</td>
+                                <td>Proprietary Chameleon protocol</td>
+                                <td>$$</td>
+                                <td>Medium-High</td>
+                            </tr>
+                            <tr>
+                                <td>Astrill VPN</td>
+                                <td>Optimized for China, multiple protocols</td>
+                                <td>$$$</td>
+                                <td>High</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tip-box">
+                    <h3>Pro Tip</h3>
+                    <p>VPN reliability in China can change frequently. It's recommended to check recent reviews and user experiences before purchasing.</p>
+                </div>
+            </div>
+
+            <div class="vpn-card">
+                <h2>Setting Up Your VPN</h2>
+                <div class="step-container">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download Before Travel</h3>
+                        <p>Install your chosen VPN on all your devices before traveling to China. Many VPN websites are blocked within China.</p>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Configure Your VPN</h3>
+                        <p>Set up your VPN with the following recommendations:</p>
+                        <ul>
+                            <li>Choose servers in nearby countries (Japan, South Korea, Singapore)</li>
+                            <li>Enable "Kill Switch" feature if available</li>
+                            <li>Use the most reliable protocol for China (usually OpenVPN or the provider's proprietary protocol)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Test Your Connection</h3>
+                        <p>Before your trip, test your VPN to ensure it works properly. Connect to different servers to find the fastest ones.</p>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Backup Options</h3>
+                        <p>Consider having a second VPN service as backup. Some travelers also use a portable router with VPN capabilities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vpn-card">
+                <h2>Troubleshooting Common Issues</h2>
+                <ul>
+                    <li><strong>Connection Drops:</strong> Try switching servers or protocols</li>
+                    <li><strong>Slow Speeds:</strong> Connect to servers in countries closer to China</li>
+                    <li><strong>App Not Working:</strong> Try reinstalling or updating the app</li>
+                    <li><strong>Authentication Issues:</strong> Contact your VPN provider's support</li>
+                </ul>
+                <div class="tip-box">
+                    <h3>Emergency Solution</h3>
+                    <p>If your VPN stops working, consider using a data roaming plan from your home country, which bypasses China's restrictions.</p>
+                </div>
+            </div>
+
+            <div class="vpn-card">
+                <h2>Additional Resources</h2>
+                <ul>
+                    <li><a href="https://www.expressvpn.com/blog/vpn-china/" target="_blank" class="section-link">ExpressVPN China Guide</a> - Comprehensive guide to using VPNs in China</li>
+                    <li><a href="https://www.nordvpn.com/blog/vpn-china/" target="_blank" class="section-link">NordVPN China Guide</a> - Tips for staying connected in China</li>
+                    <li><a href="https://www.reddit.com/r/VPN/comments/7v2v3c/which_vpn_works_best_in_china_2023_guide/" target="_blank" class="section-link">Reddit VPN Discussion</a> - User experiences and recommendations</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>China Guide</h3>
+                <p>Your comprehensive resource for exploring China's rich culture, history, and travel opportunities.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="travel.html">Travel Guide</a></li>
+                    <li><a href="culture.html">Culture</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="visa.html">Visa</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Have questions or suggestions? We'd love to hear from you!</p>
+                <p>Email: info@chinaguide.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 China Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+    
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 
