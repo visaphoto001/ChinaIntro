@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Chinese Greetings - China Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7JV1YB8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CB7JV1YB8T');
+    </script>
+    
+    <style>
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://source.unsplash.com/1600x900/?chinese,greeting,language') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content h1 .chinese-text {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.9);
+            display: inline;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .greetings-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .greetings-section {
+            margin-bottom: 3rem;
+        }
+
+        .greetings-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .greetings-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .greetings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .greeting-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .greeting-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .greeting-card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .greeting-card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .greeting-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .greeting-card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .greeting-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .greeting-table th, .greeting-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .greeting-table th {
+            background-color: rgba(200, 16, 46, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .greeting-table tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .chinese-text {
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .pinyin {
+            color: #666;
+            font-style: italic;
+        }
+
+        .pronunciation-tip {
+            background-color: rgba(200, 16, 46, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .pronunciation-tip h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .pronunciation-tip ul {
+            padding-left: 1.5rem;
+        }
+
+        .pronunciation-tip li {
+            margin-bottom: 0.5rem;
+        }
+
+        .audio-example {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.02);
+            border-radius: 8px;
+        }
+
+        .audio-example button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .audio-example button:hover {
+            background-color: #a00c24;
+        }
+
+        .audio-example span {
+            font-weight: 500;
+        }
+
+        .greeting-context {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .dark-mode .greeting-card {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .greeting-card-content {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .dark-mode .greeting-card p,
+        .dark-mode .greeting-table td {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .greeting-table th {
+            background-color: rgba(200, 16, 46, 0.2);
+        }
+
+        .dark-mode .greeting-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .chinese-text {
+            color: #f5f5f5;
+        }
+
+        .dark-mode .pinyin {
+            color: #aaa;
+        }
+
+        .dark-mode .pronunciation-tip {
+            background-color: rgba(200, 16, 46, 0.15);
+        }
+
+        .dark-mode .audio-example {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 50vh;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-content h1 .chinese-text {
+                font-size: 0.8em;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .greeting-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 40vh;
+                padding: 2rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" aria-label="Return to homepage">
+                <span class="logo-text">China Guide</span>
+                <span class="logo-tagline">Discover the Middle Kingdom</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="geography.html">Geography</a></li>
+                <li><a href="cuisine.html">Cuisine</a></li>
+                <li><a href="language.html">Language</a></li>
+                <li><a href="travel.html">Travel Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="travel.html">Travel Guide</a>
+        <span class="separator">/</span>
+        <span>Essential Greetings</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Essential Chinese Greetings <span class="chinese-text">基本问候语</span></h1>
+            <p>Master the basics of Chinese communication</p>
+        </div>
+    </section>
+
+    <main class="greetings-content">
+        <section class="greetings-section">
+            <h2>Why Learn Chinese Greetings?</h2>
+            <p>Learning basic Chinese greetings is one of the most practical ways to enhance your travel experience in China. Even a simple "hello" or "thank you" in Chinese can break down barriers, show respect for local culture, and often lead to more positive interactions with locals.</p>
+            
+            <div class="pronunciation-tip">
+                <h4>Quick Pronunciation Guide</h4>
+                <ul>
+                    <li><strong>Pinyin:</strong> The romanization system for Chinese characters</li>
+                    <li><strong>Tones:</strong> Chinese is a tonal language with four tones (plus a neutral tone)</li>
+                    <li><strong>First tone (ā):</strong> High and level, like singing a note</li>
+                    <li><strong>Second tone (á):</strong> Rising, like asking a question</li>
+                    <li><strong>Third tone (ǎ):</strong> Falling-rising, like saying "huh?"</li>
+                    <li><strong>Fourth tone (à):</strong> Falling, like giving a command</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="greetings-section">
+            <h2>Basic Greetings</h2>
+            <table class="greeting-table">
+                <thead>
+                    <tr>
+                        <th>English</th>
+                        <th>Chinese</th>
+                        <th>Pinyin</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hello</td>
+                        <td class="chinese-text">你好</td>
+                        <td class="pinyin">nǐ hǎo</td>
+                        <td>Universal greeting, formal and informal</td>
+                    </tr>
+                    <tr>
+                        <td>Good morning</td>
+                        <td class="chinese-text">早上好</td>
+                        <td class="pinyin">zǎo shang hǎo</td>
+                        <td>Used until around 10am</td>
+                    </tr>
+                    <tr>
+                        <td>Good afternoon</td>
+                        <td class="chinese-text">下午好</td>
+                        <td class="pinyin">xià wǔ hǎo</td>
+                        <td>Used from noon until evening</td>
+                    </tr>
+                    <tr>
+                        <td>Good evening</td>
+                        <td class="chinese-text">晚上好</td>
+                        <td class="pinyin">wǎn shang hǎo</td>
+                        <td>Used after dark</td>
+                    </tr>
+                    <tr>
+                        <td>Goodbye</td>
+                        <td class="chinese-text">再见</td>
+                        <td class="pinyin">zài jiàn</td>
+                        <td>Standard farewell</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="audio-example">
+                <button aria-label="Play pronunciation"><i class="fas fa-volume-up"></i></button>
+                <span>Listen to pronunciation: 你好 (nǐ hǎo)</span>
+            </div>
+        </section>
+
+        <section class="greetings-section">
+            <h2>Polite Expressions</h2>
+            <table class="greeting-table">
+                <thead>
+                    <tr>
+                        <th>English</th>
+                        <th>Chinese</th>
+                        <th>Pinyin</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Thank you</td>
+                        <td class="chinese-text">谢谢</td>
+                        <td class="pinyin">xiè xiè</td>
+                        <td>Universal expression of gratitude</td>
+                    </tr>
+                    <tr>
+                        <td>You're welcome</td>
+                        <td class="chinese-text">不客气</td>
+                        <td class="pinyin">bú kè qì</td>
+                        <td>Response to thank you</td>
+                    </tr>
+                    <tr>
+                        <td>Excuse me</td>
+                        <td class="chinese-text">对不起</td>
+                        <td class="pinyin">duì bù qǐ</td>
+                        <td>Apologizing or getting attention</td>
+                    </tr>
+                    <tr>
+                        <td>Please</td>
+                        <td class="chinese-text">请</td>
+                        <td class="pinyin">qǐng</td>
+                        <td>Used before requests</td>
+                    </tr>
+                    <tr>
+                        <td>Yes</td>
+                        <td class="chinese-text">是</td>
+                        <td class="pinyin">shì</td>
+                        <td>Formal affirmative</td>
+                    </tr>
+                    <tr>
+                        <td>No</td>
+                        <td class="chinese-text">不是</td>
+                        <td class="pinyin">bú shì</td>
+                        <td>Formal negative</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="greetings-section">
+            <h2>Cultural Context</h2>
+            <div class="greetings-grid">
+                <div class="greeting-card">
+                    <div class="greeting-card-header">
+                        <h3>Formal vs. Informal</h3>
+                    </div>
+                    <div class="greeting-card-content">
+                        <div class="greeting-card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <p>Chinese language has different levels of formality. Understanding when to use formal or informal greetings is important for showing respect.</p>
+                        <ul class="feature-list">
+                            <li>Use formal language with elders, superiors, or in business settings</li>
+                            <li>Informal language is acceptable with peers, friends, or in casual settings</li>
+                            <li>When in doubt, err on the side of formality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="greeting-card">
+                    <div class="greeting-card-header">
+                        <h3>Body Language</h3>
+                    </div>
+                    <div class="greeting-card-content">
+                        <div class="greeting-card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <p>Non-verbal communication plays a significant role in Chinese greetings and interactions.</p>
+                        <ul class="feature-list">
+                            <li>A slight nod or bow may accompany greetings</li>
+                            <li>Handshakes are common in business settings</li>
+                            <li>Maintain appropriate eye contact without staring</li>
+                            <li>Avoid excessive physical contact</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="greeting-card">
+                    <div class="greeting-card-header">
+                        <h3>Regional Variations</h3>
+                    </div>
+                    <div class="greeting-card-content">
+                        <div class="greeting-card-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <p>China's vast size and diverse population have led to regional variations in greetings.</p>
+                        <ul class="feature-list">
+                            <li>Northern and Southern China may use different expressions</li>
+                            <li>Some regions have unique local greetings</li>
+                            <li>Standard Mandarin (普通话) is understood everywhere</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="greetings-section">
+            <h2>Practical Tips</h2>
+            <div class="pronunciation-tip">
+                <h4>Making the Most of Your Greetings</h4>
+                <ul>
+                    <li><strong>Start with the basics:</strong> Master 你好 (nǐ hǎo) and 谢谢 (xiè xiè) first</li>
+                    <li><strong>Practice pronunciation:</strong> Pay special attention to tones</li>
+                    <li><strong>Use context clues:</strong> Observe how locals greet each other</li>
+                    <li><strong>Be patient:</strong> Locals appreciate any effort to speak Chinese</li>
+                    <li><strong>Learn to recognize responses:</strong> Understand common replies to your greetings</li>
+                </ul>
+            </div>
+
+            <div class="greeting-context">
+                <p>Remember that Chinese people are generally very patient with foreigners learning their language. Even if your pronunciation isn't perfect, your effort will be appreciated and often lead to more positive interactions during your travels in China.</p>
+            </div>
+        </section>
+
+        <section class="greetings-section">
+            <h2>Additional Resources</h2>
+            <ul class="feature-list">
+                <li><a href="language.html">Complete Chinese Language Guide</a> - Expand your vocabulary beyond greetings</li>
+                <li><a href="https://www.youtube.com/results?search_query=chinese+greetings+pronunciation" target="_blank">Video Tutorials <i class="fas fa-external-link-alt"></i></a> - Visual and audio learning resources</li>
+                <li><a href="https://www.duolingo.com/course/zh/en/Learn-Chinese" target="_blank">Language Learning Apps <i class="fas fa-external-link-alt"></i></a> - Interactive tools for practice</li>
+                <li><a href="travel.html">Back to Travel Guide</a> - Return to the main travel resources</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About China Guide</h3>
+                <p>Your comprehensive resource for exploring Chinese culture, traditions, and modern life.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 China Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+</body>
+</html> 
